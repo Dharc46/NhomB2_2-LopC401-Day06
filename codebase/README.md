@@ -1,19 +1,13 @@
 # Codebase
 
-Nhóm nộp **toàn bộ code prototype** vào folder này.
+Đây là nơi nhóm nộp toàn bộ phần code của prototype. Mục tiêu là để giảng viên và các nhóm khác nhìn được sản phẩm chạy như thế nào, và mỗi thành viên đã đóng góp ra sao.
 
-## Yêu cầu
+## Nhóm cần làm
 
-- Đưa source code của prototype vào đây (hoặc để link nếu deploy / host ở nơi khác — kèm hướng dẫn truy cập).
-- `codebase/README.md` của nhóm cần ghi:
-  - **Cách chạy** prototype (bước cài đặt, biến môi trường nếu có).
-  - **Tools / API** đã dùng (model AI, framework, builder…).
-  - **Phân công**: ai làm phần nào.
-- **Mỗi thành viên có ít nhất một commit thực chất** — đây là căn cứ cho điểm đóng góp cá nhân.
-
-> Dùng AI builder (Cursor, Claude Code, v0, Replit Agent…) hoàn toàn được — nhưng mỗi người phải **giải thích được phần mình làm**. Không giải thích được = 0 điểm demo cá nhân.
+- Đưa mã nguồn của prototype vào folder này. Nếu prototype được deploy hoặc host ở nơi khác, hãy để lại đường link kèm hướng dẫn truy cập.
+- Trong file `README.md` của nhóm, ghi rõ ba điều: cách chạy prototype (các bước cài đặt và biến môi trường nếu cần), những công cụ và API đã dùng (model AI, framework, công cụ dựng giao diện…), và phần phân công ai làm gì.
+- Mỗi thành viên nên có ít nhất một commit thực chất trong repo — đây là căn cứ để ghi nhận đóng góp của từng người.
 
 ## Lưu ý
 
-- **Không commit secrets** (API key, `.env`). Dùng `.env.example` để mô tả các biến cần có.
-- Prototype phải có **ít nhất một lời gọi AI thật** — nếu không, điểm prototype bị giới hạn ở 4/10.
+Đừng commit những thông tin nhạy cảm như API key hay file `.env`. Nếu prototype cần các biến môi trường, hãy dùng một file `.env.example` để mô tả các biến đó thay vì để lộ giá trị thật.
