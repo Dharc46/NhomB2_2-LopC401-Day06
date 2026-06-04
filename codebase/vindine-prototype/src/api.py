@@ -248,6 +248,8 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
         status = "no_match"
     elif not has_meaningful_constraints and clarification_questions:
         status = "needs_clarification"
+        recommendations = []
+        ai_explanations = None
     else:
         status = "success"
 
