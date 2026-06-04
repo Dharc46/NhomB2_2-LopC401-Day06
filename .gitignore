@@ -2,3 +2,15 @@
 node_modules/
 .env
 *.log
+
+# Ignore the Python virtual environment anywhere in the project
+.venv/
+**/venv/
+**/.venv/
+
+# Ignore Claude markdown files
+CLAUDE.md
+**/CLAUDE.md
+
+# Ignore Windows/WSL Zone Identifier metadata files
+*:Zone.Identifier

@@ -8,7 +8,7 @@ from fastapi.responses import JSONResponse
 
 from src.data_loader import get_dataset_summary, load_restaurants
 from src.mock_parser import parse_user_text_stub
-from src.mock_ranking import rank_restaurants_stub
+from src.ranking_engine import rank_restaurants
 from src.schemas import (
     ApiErrorResponse,
     ClarificationQuestion,
@@ -40,7 +40,9 @@ async def unhandled_exception_handler(_: Request, exc: Exception) -> JSONRespons
     """Return a consistent error shape for unexpected backend failures."""
     return JSONResponse(
         status_code=500,
-        content=ApiErrorResponse(message="Internal API error", detail=str(exc)).model_dump(),
+        content=ApiErrorResponse(
+            message="Internal API error", detail=str(exc)
+        ).model_dump(),
     )
 
 
@@ -76,13 +78,19 @@ def list_restaurants(
     if brand_area:
         restaurants = [item for item in restaurants if item.brand_area == brand_area]
     if accept_voucher is not None:
-        restaurants = [item for item in restaurants if item.accept_voucher is accept_voucher]
+        restaurants = [
+            item for item in restaurants if item.accept_voucher is accept_voucher
+        ]
     if cuisine:
         restaurants = [item for item in restaurants if cuisine in item.cuisine_types]
     if max_price is not None:
         restaurants = [item for item in restaurants if item.avg_price_vnd <= max_price]
     if stroller_accessible is not None:
-        restaurants = [item for item in restaurants if item.stroller_accessible is stroller_accessible]
+        restaurants = [
+            item
+            for item in restaurants
+            if item.stroller_accessible is stroller_accessible
+        ]
     return restaurants
 
 
@@ -92,7 +100,9 @@ def get_restaurant(restaurant_id: str) -> Restaurant:
     for restaurant in _restaurants_or_500():
         if restaurant.id == restaurant_id:
             return restaurant
-    raise HTTPException(status_code=404, detail=f"Restaurant not found: {restaurant_id}")
+    raise HTTPException(
+        status_code=404, detail=f"Restaurant not found: {restaurant_id}"
+    )
 
 
 @app.get("/dataset/summary")
@@ -101,7 +111,9 @@ def dataset_summary() -> dict:
     return get_dataset_summary(_restaurants_or_500())
 
 
-def _clarification_questions(request: RecommendationRequest, confidence: float) -> list[ClarificationQuestion]:
+def _clarification_questions(
+    request: RecommendationRequest, confidence: float
+) -> list[ClarificationQuestion]:
     questions: list[ClarificationQuestion] = []
     if not request.current_zone and confidence < 0.6:
         questions.append(
@@ -167,8 +179,24 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
     """Parse a group request, rank restaurants, and return cards or fallback guidance."""
     restaurants = _restaurants_or_500()
     parsed_constraints = parse_user_text_stub(request)
-    recommendations, fallback_suggestions = rank_restaurants_stub(restaurants, parsed_constraints)
-    clarification_questions = _clarification_questions(request, parsed_constraints.confidence)
+
+    if request.correction:
+        from src.fallback_handler import generate_correction_adjustments
+
+        rejected_ids, score_adjustments = generate_correction_adjustments(
+            request.correction, parsed_constraints
+        )
+        recommendations, fallback_suggestions = rank_restaurants(
+            restaurants, parsed_constraints, rejected_ids, score_adjustments
+        )
+    else:
+        recommendations, fallback_suggestions = rank_restaurants(
+            restaurants, parsed_constraints
+        )
+
+    clarification_questions = _clarification_questions(
+        request, parsed_constraints.confidence
+    )
 
     if not recommendations:
         status = "no_match"
@@ -193,11 +221,13 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
         clarification_questions=clarification_questions,
         recommendations=recommendations,
         fallback_suggestions=fallback_suggestions,
-        error_route=_error_route(status, fallback_suggestions, has_risky_recommendation),
+        error_route=_error_route(
+            status, fallback_suggestions, has_risky_recommendation
+        ),
         human_role=HumanRole(),
         debug={
             "parser": "parse_user_text_stub",
-            "ranker": "rank_restaurants_stub",
+            "ranker": "rank_restaurants",
             "restaurant_count": len(restaurants),
         },
     )
