@@ -146,7 +146,6 @@ except Exception:
 st.sidebar.markdown("---")
 st.sidebar.markdown("### 📍 Vị trí của bạn")
 ZONE_OPTIONS = {
-    "Chưa chọn": None,
     "🚪 Cổng chính (VinWonders NT)": "sanh chinh",
     "🏨 Sảnh Resort (Hon Tre)": "sanh resort",
     "⚓ Harbour (Nha Trang)": "harbour",
