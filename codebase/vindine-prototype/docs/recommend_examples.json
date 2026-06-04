@@ -1,0 +1,50 @@
+{
+  "happy_path": {
+    "description": "Family group with elderly, kids, buffet voucher, and stroller need.",
+    "request": {
+      "user_text": "Nhóm 6 người ở sảnh chính, có ông bà và trẻ con, có voucher buffet, muốn món Việt hoặc pizza, cần xe đẩy",
+      "current_zone": "sảnh chính",
+      "voucher_type": "buffet",
+      "party_size": 6,
+      "correction": null
+    },
+    "expected_status": ["success", "needs_clarification"],
+    "expected_fields": ["parsed_constraints", "recommendations", "human_role"]
+  },
+  "low_confidence": {
+    "description": "Underspecified request should ask clarification and expose missing info.",
+    "request": {
+      "user_text": "Tìm quán ăn ngon có voucher",
+      "current_zone": null,
+      "voucher_type": null,
+      "party_size": null,
+      "correction": null
+    },
+    "expected_status": ["needs_clarification"],
+    "expected_error_route": "low_confidence"
+  },
+  "no_match": {
+    "description": "Very low budget with buffet voucher should return no_match or fallbacks.",
+    "request": {
+      "user_text": "Tìm món dưới 40000/người trong resort, có voucher buffet",
+      "current_zone": "resort",
+      "voucher_type": "buffet",
+      "party_size": null,
+      "correction": null
+    },
+    "expected_status": ["no_match"],
+    "expected_error_route": "no_match"
+  },
+  "correction": {
+    "description": "User correction adds dietary and quiet preferences for re-rank.",
+    "request": {
+      "user_text": "Nhóm 4 người gần food court, muốn ăn nhẹ",
+      "current_zone": "food court",
+      "voucher_type": null,
+      "party_size": 4,
+      "correction": "Có người ăn chay và muốn chỗ yên tĩnh"
+    },
+    "expected_status": ["success", "needs_clarification"],
+    "expected_fields": ["parsed_constraints.dietary_needs", "recommendations.assumptions"]
+  }
+}
