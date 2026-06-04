@@ -14,6 +14,7 @@ from src.schemas import (
     ClarificationQuestion,
     ErrorRoute,
     HumanRole,
+    ParsedConstraints,
     RecommendationRequest,
     RecommendationResponse,
     Restaurant,
@@ -112,10 +113,10 @@ def dataset_summary() -> dict:
 
 
 def _clarification_questions(
-    request: RecommendationRequest, confidence: float
+    parsed_constraints: ParsedConstraints
 ) -> list[ClarificationQuestion]:
     questions: list[ClarificationQuestion] = []
-    if not request.current_zone and confidence < 0.6:
+    if not parsed_constraints.current_zone and parsed_constraints.confidence < 0.6:
         questions.append(
             ClarificationQuestion(
                 id="current_zone",
@@ -123,7 +124,7 @@ def _clarification_questions(
                 options=["Cổng chính", "Sảnh resort", "Harbour", "Food Court"],
             )
         )
-    if "voucher" in request.user_text.lower() and not request.voucher_type:
+    if parsed_constraints.voucher_required and not parsed_constraints.voucher_type:
         questions.append(
             ClarificationQuestion(
                 id="voucher_type",
@@ -194,9 +195,7 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
             restaurants, parsed_constraints
         )
 
-    clarification_questions = _clarification_questions(
-        request, parsed_constraints.confidence
-    )
+    clarification_questions = _clarification_questions(parsed_constraints)
 
     if not recommendations:
         status = "no_match"
