@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VinDine Concierge — Thin SPEC</title>
+  <style>
+:root {
+  --bg: #fff8ef;
+  --paper: #ffffff;
+  --ink: #1f2937;
+  --muted: #667085;
+  --brand: #ff6b35;
+  --brand2: #f7931e;
+  --dark: #1f2933;
+  --green: #12b76a;
+  --blue: #2563eb;
+  --red: #ef4444;
+  --purple: #7c3aed;
+  --yellow: #f59e0b;
+  --line: #efd8c7;
+  --soft: #fff1e6;
+  --soft2: #f8fafc;
+  --radius: 24px;
+  --shadow: 0 22px 60px rgba(79, 45, 18, .13);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink); line-height: 1.65;
+  background:
+    radial-gradient(circle at top left, rgba(255,107,53,.22), transparent 27%),
+    radial-gradient(circle at top right, rgba(247,147,30,.16), transparent 28%),
+    linear-gradient(180deg, #fff8ef 0%, #fffdf8 46%, #ffffff 100%);
+}
+.page { width: min(1180px, calc(100% - 38px)); margin: 0 auto; padding: 34px 0 72px; }
+.hero { position: relative; overflow: hidden; color: white; background: linear-gradient(135deg, #171f2a 0%, #3b2418 48%, #ff6b35 145%); border-radius: 34px; padding: 56px; box-shadow: var(--shadow); }
+.hero:after { content:""; position:absolute; width:420px; height:420px; border-radius:50%; right:-150px; top:-160px; background:rgba(255,255,255,.12); }
+.hero-grid { display:grid; grid-template-columns:1fr; gap:34px; position:relative; z-index:1; align-items:center; }
+.badge { display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.24); font-weight:800; font-size:14px; letter-spacing:.2px; backdrop-filter: blur(10px); }
+h1 { font-size: clamp(40px, 6vw, 76px); line-height:.95; letter-spacing:-2.5px; margin:24px 0 18px; }
+.subtitle { color: rgba(255,255,255,.86); font-size:20px; max-width:860px; }
+.metrics { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:18px; }
+.metric { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:18px; padding:14px; }
+.metric strong { display:block; font-size:24px; line-height:1; }
+.metric span { color:rgba(255,255,255,.78); font-size:13px; }
+.nav { display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 8px; }
+.nav a { color:#7c2d12; background:white; border:1px solid var(--line); text-decoration:none; padding:9px 12px; border-radius:999px; font-weight:800; font-size:13px; box-shadow:0 8px 20px rgba(79,45,18,.06); }
+section { margin-top:24px; }
+.card { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:28px; box-shadow:0 10px 30px rgba(79,45,18,.06); }
+.section-title { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.icon { width:42px; height:42px; display:grid; place-items:center; border-radius:14px; background:var(--soft); color:var(--brand); font-size:22px; flex:0 0 auto; }
+h2 { font-size:28px; line-height:1.2; letter-spacing:-.6px; }
+h3 { font-size:19px; margin:18px 0 8px; }
+p { color:var(--muted); }
+.lead { color:var(--ink); font-size:18px; }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.grid-3 { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+.mini { background:var(--soft2); border:1px solid #e7edf3; border-radius:18px; padding:18px; }
+.mini strong { color:var(--ink); }
+.mini p { margin-top:4px; }
+.tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.tag { display:inline-flex; align-items:center; gap:6px; padding:7px 10px; border-radius:999px; font-size:13px; font-weight:800; background:#eef4ff; color:#1849a9; }
+.tag.green { background:#ecfdf3; color:#027a48; }
+.tag.red { background:#fef3f2; color:#b42318; }
+.tag.orange { background:#fff7ed; color:#c2410c; }
+.tag.purple { background:#f3e8ff; color:#6d28d9; }
+.tag.blue { background:#eff6ff; color:#1d4ed8; }
+table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:18px; margin-top:12px; }
+th, td { padding:14px 15px; border-bottom:1px solid #edf2f7; text-align:left; vertical-align:top; }
+th { background:#fff7ed; color:#7c2d12; font-size:13px; text-transform:uppercase; letter-spacing:.4px; }
+td { color:var(--muted); }
+tr:last-child td { border-bottom:0; }
+.callout { border-left:5px solid var(--brand); background:#fff7ed; border-radius:18px; padding:18px; }
+.warning { border-left-color:var(--red); background:#fff4f3; }
+.success { border-left-color:var(--green); background:#ecfdf3; }
+.bluebox { border-left-color:var(--blue); background:#eff6ff; }
+.codebox { background:#111827; color:#e5e7eb; border-radius:18px; padding:18px; overflow-x:auto; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:14px; line-height:1.65; white-space:pre-wrap; }
+.flow { display:grid; grid-template-columns:repeat(7, 1fr); gap:10px; align-items:stretch; }
+.step { background:linear-gradient(180deg, #fff, #fff7ed); border:1px solid var(--line); border-radius:18px; padding:16px 12px; text-align:center; font-weight:900; font-size:14px; min-height:88px; display:grid; place-items:center; }
+.path-card { border:1px solid #e7edf3; border-radius:20px; padding:18px; background:white; }
+.path-card h3 { margin-top:0; display:flex; align-items:center; gap:8px; }
+.path-num { width:28px; height:28px; border-radius:9px; display:inline-grid; place-items:center; background:#111827; color:white; font-size:14px; }
+.owner-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+.owner { background:#fff; border:1px dashed #f3b391; border-radius:20px; padding:18px; }
+.owner strong { display:block; font-size:18px; }
+.owner span { color:var(--muted); font-size:14px; }
+.footer { text-align:center; color:var(--muted); margin-top:34px; font-size:14px; }
+@media (max-width: 900px) { .hero { padding:34px; } .grid-2, .grid-3, .owner-grid { grid-template-columns:1fr; } .metrics { grid-template-columns:repeat(2, 1fr); } .flow { grid-template-columns:1fr; } h1 { letter-spacing:-1.2px; } }
+@media print { body { background:white; } .nav { display:none; } .card, .hero { box-shadow:none; break-inside:avoid; } .page { width:100%; padding:0; } }
+</style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="badge">📄 Thin SPEC · Day 05 · AUGMENT</div>
+          <h1>VinDine Thin SPEC</h1>
+          <p class="subtitle">Bản cam kết đủ rõ để sáng Day 06 build ngay: một người đại diện nhập nhu cầu nhóm, AI rank Top 3 quán ăn trong khu nghỉ dưỡng Vin.</p>
+          <div class="metrics"><div class="metric"><strong>User</strong><span>Đại diện nhóm</span></div><div class="metric"><strong>Task</strong><span>Chọn quán nội khu</span></div><div class="metric"><strong>AI</strong><span>Parse + filter + rank</span></div><div class="metric"><strong>Human</strong><span>Decider</span></div></div>
+        </div>
+      </div>
+    </header>
+    <nav class="nav"><a href="#product">Product</a><a href="#evidence">Evidence</a><a href="#pain">Pain</a><a href="#slice">Build slice</a><a href="#autoaug">Auto/Aug</a><a href="#paths">4 paths</a><a href="#failure">Failure</a><a href="#architecture">Tech stack</a><a href="#owner">Owner plan</a></nav>
+    
+<section id="product" class="card">
+  <div class="section-title"><div class="icon">🧾</div><h2>1. Track, product/app và user</h2></div>
+  <table>
+    <tr><th>Mục</th><th>Nội dung</th></tr>
+    <tr><td>Track</td><td>Travel & Hospitality / Food Decision Support</td></tr>
+    <tr><td>Product/app thật</td><td><strong>VinDine Concierge</strong> — AI tìm nhà hàng/kiosk phù hợp trong khu nghỉ dưỡng Vin.</td></tr>
+    <tr><td>User cụ thể</td><td>Người đại diện gia đình/nhóm 3–8 người đang ở resort/công viên Vin, cần chọn chỗ ăn trong 5 phút.</td></tr>
+    <tr><td>Nhóm có phải user thật không?</td><td>Một phần. Nhóm có thể tự mô phỏng người đi nghỉ, nhưng khác ở chỗ chưa có đầy đủ trẻ em/người lớn tuổi/voucher thật. Cần kiểm chứng bằng phỏng vấn nhanh.</td></tr>
+  </table>
+</section>
+
+<section id="evidence" class="card">
+  <div class="section-title"><div class="icon">📌</div><h2>2. Evidence summary</h2></div>
+  <table>
+    <tr><th>Evidence</th><th>Nguồn</th><th>User/pain nói lên điều gì?</th><th>SPEC phải đổi gì?</th></tr>
+    <tr><td>Search quán trong resort trả về nhiều lựa chọn nhưng khó biết quán nào nằm trong nội khu, có voucher, có đi bộ được.</td><td>Self-use workflow</td><td>User cần decision support theo context nội khu, không chỉ list địa điểm.</td><td>Thêm field zone, distance_text, accept_voucher, accessibility.</td></tr>
+    <tr><td>Nhóm đa thế hệ có khẩu vị và giới hạn khác nhau.</td><td>Self-use + giả định phỏng vấn cần kiểm</td><td>Rating cao chưa đủ; phải cân bằng trẻ em, ông bà, dietary và budget.</td><td>AI parse hard constraints và soft preferences trước khi rank.</td></tr>
+    <tr><td>Khi không có quán đúng budget/voucher, user cần đường thoát thay vì “no result”.</td><td>Analog từ app delivery/filter</td><td>Failure path phải hữu ích.</td><td>Thêm fallback: nới budget, mở rộng khoảng cách, đổi loại món, kiosk/combo.</td></tr>
+  </table>
+</section>
+
+<section id="pain" class="card">
+  <div class="section-title"><div class="icon">🎯</div><h2>3. Pain statement</h2></div>
+  <div class="codebox">User người đại diện gia đình/nhóm đang gặp khó ở bước chọn quán ăn trong khu nghỉ dưỡng Vin,
+vì thông tin nhà hàng nội khu, voucher, khoảng cách đi bộ, accessibility và khẩu vị nhóm bị rải rác hoặc không chắc,
+dẫn tới mất thời gian, đi bộ sai chỗ, chọn quán không hợp trẻ em/người lớn tuổi hoặc không dùng được voucher.
+Bằng chứng chính là self-use observation: khi tìm quán gần resort, kết quả không đủ thông tin để quyết định cho cả nhóm.</div>
+</section>
+
+<section id="slice" class="card">
+  <div class="section-title"><div class="icon">✂️</div><h2>4. Build slice</h2></div>
+  <div class="codebox">Cho người đại diện gia đình/nhóm đang tìm chỗ ăn ngay trong khu nghỉ dưỡng Vin,
+prototype sẽ dùng AI để augment hành động hẹp: parse nhu cầu nhóm thành constraint, lọc nhà hàng/kiosk nội khu và rank Top 3,
+tạo ra card gợi ý gồm fit score, voucher match, khoảng cách, món phù hợp, trade-off và “ai có thể ít hài lòng nhất”,
+và xử lý failure mode bằng câu hỏi làm rõ, fallback nới điều kiện hoặc correction log khi user reject.</div>
+</section>
+
+<section id="autoaug" class="card">
+  <div class="section-title"><div class="icon">🤖</div><h2>5. Auto/Aug decision</h2></div>
+  <div class="grid-2">
+    <div class="mini"><strong>Chọn: Augmentation</strong><p>AI gợi ý, phân loại, rank và giải thích; người đại diện vẫn quyết cuối.</p></div>
+    <div class="mini"><strong>Lý do chọn</strong><p>Dữ liệu voucher/menu/đường đi có thể không chắc. Nếu AI tự quyết hoặc tự đặt bàn sẽ rủi ro cao.</p></div>
+  </div>
+  <table>
+    <tr><th>Human role</th><th>Mô tả</th></tr>
+    <tr><td>Decider</td><td>Chọn quán cuối cùng sau khi xem Top 3 và trade-off.</td></tr>
+    <tr><td>Reviewer</td><td>Kiểm tra voucher/khoảng cách/dietary trước khi đi.</td></tr>
+    <tr><td>Rescuer</td><td>Reject gợi ý sai để AI re-rank và ghi correction log.</td></tr>
+  </table>
+</section>
+
+<section id="paths" class="card">
+  <div class="section-title"><div class="icon">🛣️</div><h2>6. Four paths</h2></div>
+  <div class="grid-2">
+    <div class="path-card"><h3><span class="path-num">1</span>Happy</h3><p>Input: “Đang ở sảnh Vinpearl, 6 người, có voucher buffet, ông bà muốn món Việt, trẻ con thích pizza, cần xe đẩy.” AI trả Top 3, Top 1 pass voucher + gần + có món đa dạng.</p></div>
+    <div class="path-card"><h3><span class="path-num">2</span>Low-confidence</h3><p>Input thiếu vị trí hoặc voucher. AI không đoán, hỏi lại: “Bạn đang ở khu/sảnh nào?” hoặc “Voucher là buffet hay meal credit?”</p></div>
+    <div class="path-card"><h3><span class="path-num">3</span>Failure</h3><p>Input: “Tìm món dưới 40k/người trong resort.” AI báo không có match theo budget, đề xuất kiosk gần nhất, tăng budget, hoặc combo snack.</p></div>
+    <div class="path-card"><h3><span class="path-num">4</span>Correction</h3><p>User reject: “Quán này ồn, ông bà không thích.” AI ghi correction, giảm điểm tag noisy/festival-zone và re-rank quán yên tĩnh hơn.</p></div>
+  </div>
+</section>
+
+<section id="failure" class="card">
+  <div class="section-title"><div class="icon">⚠️</div><h2>7. Failure mode nguy hiểm nhất</h2></div>
+  <div class="codebox">Nếu user có trẻ nhỏ/người lớn tuổi/voucher/dietary,
+AI có thể gợi ý quán quá xa, không nhận voucher, hoặc không có món phù hợp,
+hậu quả là nhóm mất thời gian, mệt vì di chuyển, hoặc có người không ăn được.
+Prototype sẽ xử lý bằng show source field từ dataset, confidence tag, hỏi lại khi thiếu dữ liệu, và correction flow để user reject + re-rank.
+Owner kiểm thử path này là thành viên phụ trách Test / failure path.</div>
+</section>
+
+<section id="architecture" class="card">
+  <div class="section-title"><div class="icon">🏗️</div><h2>8. Architecture & tech stack</h2></div>
+  <p class="lead">Dùng lại tech stack GroupBite cũ, không dùng Laravel/Docker/Sail.</p>
+  <div class="flow">
+    <div class="step">User Input</div>
+    <div class="step">FastAPI Endpoint</div>
+    <div class="step">LLM Parser</div>
+    <div class="step">CSV/JSON Dataset</div>
+    <div class="step">Constraint Filter</div>
+    <div class="step">Weighted Ranking</div>
+    <div class="step">Streamlit/Next.js UI</div>
+  </div>
+  <div class="tag-row" style="margin-top:18px">
+    <span class="tag">Frontend: Streamlit / Next.js</span>
+    <span class="tag">Backend: FastAPI</span>
+    <span class="tag">Data: CSV/JSON 20–50 nhà hàng/kiosk</span>
+    <span class="tag">AI: GPT API / local LLM</span>
+    <span class="tag">Ranking: weighted scoring + LLM explanation</span>
+  </div>
+  <table>
+    <tr><th>Dataset field</th><th>Ý nghĩa</th></tr>
+    <tr><td><code>name, zone, distance_text</code></td><td>Tên quán, khu vực trong resort, mô tả khoảng cách đi bộ.</td></tr>
+    <tr><td><code>accept_voucher, avg_price</code></td><td>Kiểm tra voucher và budget.</td></tr>
+    <tr><td><code>menu_tags, dietary_tags</code></td><td>Món Việt, pizza, buffet, chay, không hải sản, đồ trẻ em.</td></tr>
+    <tr><td><code>stroller_accessible, quiet_level</code></td><td>Phù hợp xe đẩy, người lớn tuổi, nhóm cần ít ồn.</td></tr>
+  </table>
+</section>
+
+<section id="owner" class="card">
+  <div class="section-title"><div class="icon">👥</div><h2>9. Owner plan cho sáng Day 06</h2></div>
+  <div class="callout bluebox" style="margin-bottom:18px">
+    <strong>⚠️ Dependency bắt buộc:</strong> Người 1 push <code>vin_restaurants.json</code> schema trong <strong>30 phút đầu</strong> → Người 2 và 3 mới bắt đầu code được. Người 4 bắt đầu static UI song song, không cần đợi API.
+  </div>
+  <div class="owner-grid">
+    <div class="owner"><strong>Người 1 — Data + Glue</strong><span>Push JSON schema ngay (30 phút đầu). Điền 30–40 mock restaurants. Dựng FastAPI endpoints. Kết nối parser + ranking vào 1 API duy nhất. Hoàn thiện evidence pack (đã xong phần lớn).</span></div>
+    <div class="owner"><strong>Người 2 — Parser + Test</strong><span>Preference parser (text → constraint struct). Constraint classifier (hard vs soft). Low-confidence / clarification flow. Viết <code>test_4_paths.py</code> cho cả 4 path: Happy, Low-confidence, Failure, Correction.</span></div>
+    <div class="owner"><strong>Người 3 — AI + Ranking</strong><span>Hard constraint filter. Weighted scoring engine. LLM explanation generator. Fallback handler: nới budget, đổi loại món, kiosk/combo thay thế. Không lo parser và API — tập trung AI core.</span></div>
+    <div class="owner"><strong>Người 4 — UI + Demo</strong><span>Bắt đầu bằng static mockup (hardcode Top 3 giả) để không block. Dựng card Top 3 + fit score + trade-off + correction button. Giữa ngày swap vào real API. Demo script + screenshots cuối ngày.</span></div>
+  </div>
+  <table>
+    <tr><th>Thành viên</th><th>Việc phụ trách</th><th>Deliverable trong repo</th><th>Ước lượng</th></tr>
+    <tr><td><strong>Người 1</strong><br><small>Data + Glue</small></td><td>JSON schema → mock data → FastAPI → integration</td><td><code>/data/vin_restaurants.json</code><br><code>/src/api.py</code><br><code>/docs/evidence-pack.html</code></td><td>~6–7h</td></tr>
+    <tr><td><strong>Người 2</strong><br><small>Parser + Test</small></td><td>Preference parser, constraint classifier, low-confidence flow, test suite</td><td><code>/src/preference_parser.py</code><br><code>/src/constraint_classifier.py</code><br><code>/tests/test_4_paths.py</code></td><td>~6h</td></tr>
+    <tr><td><strong>Người 3</strong><br><small>AI + Ranking</small></td><td>Hard filter, weighted scoring, LLM explanation, fallback handler</td><td><code>/src/constraint_filter.py</code><br><code>/src/ranking_engine.py</code><br><code>/src/fallback_handler.py</code></td><td>~6h</td></tr>
+    <tr><td><strong>Người 4</strong><br><small>UI + Demo</small></td><td>Static mockup → card UI → correction flow → swap API → demo</td><td><code>/app.py</code> hoặc <code>/frontend/</code><br><code>/docs/demo_script.md</code></td><td>~6h</td></tr>
+  </table>
+  <div class="callout success" style="margin-top:18px">
+    <strong>So với plan cũ:</strong> Người 3 không còn ôm parser + FastAPI — giảm từ ~10h xuống ~6h. Người 1 trở thành glue engineer thay vì chỉ làm docs. Người 4 bắt đầu song song từ đầu. Người 2 nhận thêm test vì hiểu parser nhất.
+  </div>
+</section>
+
+    <div class="footer">VinDine Concierge · Thin SPEC · Repo-ready HTML</div>
+  </main>
+</body>
+</html>
