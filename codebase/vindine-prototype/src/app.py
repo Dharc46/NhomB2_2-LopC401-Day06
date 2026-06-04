@@ -361,7 +361,12 @@ if chat_input := st.chat_input("Nhập nhu cầu ăn uống của bạn..."):
             if res.get("ai_explanations"):
                 msg_data["ai_explanations"] = res["ai_explanations"]
             
-            if status == "success":
+            if status == "error":
+                err = res.get("error_route", {})
+                assistant_reply = err.get("user_message", "Có lỗi xảy ra, vui lòng thử lại.")
+                msg_data["content"] = assistant_reply
+
+            elif status == "success":
                 assistant_reply = f"Mình đã tìm thấy {len(recs)} quán ăn phù hợp nhất với nhu cầu của bạn:"
                 msg_data["content"] = assistant_reply
                 

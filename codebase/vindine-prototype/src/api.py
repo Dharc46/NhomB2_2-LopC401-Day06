@@ -22,6 +22,7 @@ from src.schemas import (
     ClarificationQuestion,
     ErrorRoute,
     HumanRole,
+    ParsedConstraints,
     RecommendationRequest,
     RecommendationResponse,
     Restaurant,
@@ -192,6 +193,28 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
     api_logger.info("Recommend request | mode=%s | text=%s", mode, request.user_text[:80])
 
     parsed_constraints = parse_user_text(request)
+
+    if parsed_constraints == "off_topic":
+        api_logger.info("Off-topic request rejected")
+        return RecommendationResponse(
+            status="error",
+            parsed_constraints=ParsedConstraints(confidence=0.0),
+            recommendations=[],
+            fallback_suggestions=[],
+            error_route=ErrorRoute(
+                type="missing_data",
+                user_message="Xin lỗi, mình chỉ hỗ trợ tìm quán ăn trong resort thôi nhé! Hãy cho mình biết nhu cầu ăn uống của bạn.",
+                next_action="ask_clarification",
+                recover_options=[
+                    "Cho biết số người và loại đồ ăn muốn ăn",
+                    "Nêu vị trí hiện tại trong resort",
+                    "Cho biết loại voucher nếu có",
+                ],
+                learning_signal="User input not related to dining.",
+            ),
+            human_role=HumanRole(),
+            debug={"mode": mode, "parser": "off_topic", "restaurant_count": len(restaurants)},
+        )
 
     if request.correction:
         from src.fallback_handler import generate_correction_adjustments

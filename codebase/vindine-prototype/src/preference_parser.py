@@ -195,11 +195,16 @@ def parse_preference_text(request: RecommendationRequest | str) -> ParsedConstra
     return classify_constraints(parsed)
 
 
-def parse_user_text(request: RecommendationRequest) -> ParsedConstraints:
-    """Try LLM parser first, fall back to regex."""
+def parse_user_text(request: RecommendationRequest) -> ParsedConstraints | str:
+    """Try LLM parser first, fall back to regex.
+
+    Returns ParsedConstraints on success, or "off_topic" if input is not dining-related.
+    """
     from src.llm_parser import parse_with_llm
 
     result = parse_with_llm(request)
+    if result == "off_topic":
+        return "off_topic"
     if result is not None:
         return result
 
