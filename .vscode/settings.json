@@ -1,0 +1,16 @@
+{
+  "python.defaultInterpreterPath": "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnknownArgumentType": "none",
+    "reportUnknownMemberType": "none",
+    "reportUnknownVariableType": "none"
+  },
+  "python.analysis.extraPaths": [
+    "./codebase/vindine-prototype"
+  ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "codebase/vindine-prototype/tests"
+  ]
+}

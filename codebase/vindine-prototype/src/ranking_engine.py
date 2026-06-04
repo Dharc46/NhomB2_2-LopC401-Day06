@@ -1,6 +1,7 @@
 """Weighted scoring engine and orchestrator for restaurant ranking."""
 
 import math
+from urllib.parse import quote_plus
 
 from src.constraint_filter import FilterReport, apply_hard_filters
 from src.fallback_handler import generate_fallback_suggestions
@@ -303,6 +304,80 @@ def _score_restaurant(
     return total, reasons, trade_offs
 
 
+def _matched_constraints(
+    restaurant: Restaurant,
+    constraints: ParsedConstraints,
+    reasons: list[str],
+) -> list[str]:
+    matched: list[str] = []
+    if constraints.current_zone:
+        matched.append(f"location_context:{constraints.current_zone}")
+    if constraints.budget_per_person and restaurant.avg_price_vnd <= constraints.budget_per_person * 1.3:
+        matched.append("budget")
+    if constraints.voucher_required and _voucher_match(restaurant, constraints):
+        matched.append("voucher")
+    for cuisine in constraints.preferred_cuisines:
+        if cuisine in restaurant.cuisine_types:
+            matched.append(f"cuisine:{cuisine}")
+    for dietary in constraints.dietary_needs:
+        if dietary in restaurant.dietary_tags:
+            matched.append(f"dietary:{dietary}")
+    if constraints.has_kids and restaurant.group_suitability.kids >= 4:
+        matched.append("kids")
+    if constraints.has_elderly and restaurant.group_suitability.elderly >= 4:
+        matched.append("elderly")
+    if constraints.needs_stroller and restaurant.stroller_accessible:
+        matched.append("stroller_accessible")
+    if constraints.needs_wheelchair and restaurant.wheelchair_accessible:
+        matched.append("wheelchair_accessible")
+    if constraints.quiet_preferred and restaurant.quiet_level >= 4:
+        matched.append("quiet")
+    if constraints.max_distance_minutes and restaurant.distance_minutes <= constraints.max_distance_minutes * 1.3:
+        matched.append("distance")
+    if not matched:
+        matched.extend(reasons[:2])
+    return sorted(set(matched))
+
+
+def _missed_preferences(restaurant: Restaurant, constraints: ParsedConstraints) -> list[str]:
+    missed: list[str] = []
+    if constraints.preferred_cuisines and not (set(constraints.preferred_cuisines) & set(restaurant.cuisine_types)):
+        missed.append("preferred_cuisine")
+    if constraints.quiet_preferred and restaurant.quiet_level < 4:
+        missed.append("quiet")
+    if constraints.has_kids and restaurant.group_suitability.kids < 4:
+        missed.append("kids")
+    if constraints.has_elderly and restaurant.group_suitability.elderly < 4:
+        missed.append("elderly")
+    if constraints.budget_per_person and restaurant.avg_price_vnd > constraints.budget_per_person:
+        missed.append("ideal_budget")
+    if constraints.voucher_required and not _voucher_match(restaurant, constraints):
+        missed.append("voucher")
+    return missed
+
+
+def _explanation(
+    restaurant: Restaurant,
+    matched: list[str],
+    missed: list[str],
+    trade_offs: list[str],
+) -> str:
+    why = ", ".join(matched[:4]) if matched else "cân bằng tốt giữa khoảng cách, giá và nhu cầu nhóm"
+    trade = "; ".join(trade_offs[:2]) if trade_offs else "không có đánh đổi lớn nào được ghi nhận"
+    miss = f" Tiêu chí chưa đáp ứng: {', '.join(missed)}." if missed else ""
+    return (
+        f"Đề xuất {restaurant.name} vì phù hợp với {why}. "
+        "This option is not simply chosen by rating. "
+        f"Xếp hạng này tối ưu sau khi cân đối giữa các ràng buộc, khoảng cách, khả năng tiếp cận và mức giá. "
+        f"Đánh đổi: {trade}.{miss}"
+    )
+
+
+def _maps_url(restaurant: Restaurant) -> str:
+    query = quote_plus(f"{restaurant.name} {restaurant.zone} {restaurant.brand_area}")
+    return f"https://www.google.com/maps/search/?api=1&query={query}"
+
+
 def _least_satisfied_person(
     restaurant: Restaurant, constraints: ParsedConstraints
 ) -> str | None:
@@ -417,7 +492,11 @@ def rank_restaurants(
         if missing_info:
             confidence = min(confidence, 0.79)
 
+        matched = _matched_constraints(restaurant, constraints, reasons)
+        missed = _missed_preferences(restaurant, constraints)
         recommendations.append(
+            # Cards expose product-facing explanation fields so the UI can show why
+            # the AI augmented the decision instead of presenting a black box rank.
             RecommendationCard(
                 restaurant_id=restaurant.id,
                 name=restaurant.name,
@@ -425,12 +504,19 @@ def rank_restaurants(
                 rank=rank,
                 zone=restaurant.zone,
                 brand_area=restaurant.brand_area,
+                location_hint=restaurant.location_hint,
+                lat=restaurant.lat,
+                lng=restaurant.lng,
                 distance_text=restaurant.distance_text,
                 avg_price_vnd=restaurant.avg_price_vnd,
                 accept_voucher=restaurant.accept_voucher,
                 voucher_match=_voucher_match(restaurant, constraints),
                 reasons=reasons,
                 trade_offs=trade_offs,
+                matched_constraints=matched,
+                missed_preferences=missed,
+                explanation=_explanation(restaurant, matched, missed, trade_offs),
+                google_maps_url=_maps_url(restaurant),
                 least_satisfied_person=_least_satisfied_person(restaurant, constraints),
                 confidence=confidence,
                 confidence_label=_confidence_label(confidence),
