@@ -358,16 +358,20 @@ if chat_input := st.chat_input("Nhập nhu cầu ăn uống của bạn..."):
     # Hiển thị tin nhắn người dùng nhập lên khung chat
     st.session_state.messages.append({"role": "user", "content": chat_input})
     
-    # Xác định đây là lượt hỏi đầu tiên hay là câu chỉnh sửa (Correction)
-    is_correction = len(st.session_state.messages) > 2
-    
+    # Only treat as correction if we had a successful previous query
+    last_status = st.session_state.get("last_status", "")
+    is_correction = (
+        last_status == "success"
+        and st.session_state.get("original_query", "")
+    )
+
     with st.chat_message("user"):
         st.write(chat_input)
-        
+
     with st.chat_message("assistant"):
         with st.spinner("VinDine Concierge đang phân tích nhu cầu..."):
             user_zone = st.session_state.get("user_zone")
-            if is_correction and st.session_state.original_query:
+            if is_correction:
                 res = call_recommend_api(st.session_state.original_query, current_zone=user_zone, correction=chat_input)
             else:
                 st.session_state.original_query = chat_input
@@ -410,6 +414,7 @@ if chat_input := st.chat_input("Nhập nhu cầu ăn uống của bạn..."):
                 msg_data["content"] = assistant_reply
                 msg_data["fallbacks"] = res.get("fallback_suggestions", [])
                 
+            st.session_state["last_status"] = status
             st.session_state.messages.append(msg_data)
             st.rerun()
 

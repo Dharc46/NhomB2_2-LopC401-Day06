@@ -236,9 +236,17 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
 
     clarification_questions = build_clarification_questions(request, parsed_constraints)
 
+    has_meaningful_constraints = bool(
+        parsed_constraints.preferred_cuisines
+        or parsed_constraints.dietary_needs
+        or parsed_constraints.budget_per_person
+        or parsed_constraints.voucher_required
+        or parsed_constraints.party_size
+    )
+
     if not recommendations:
         status = "no_match"
-    elif parsed_constraints.confidence <= 0.3 and clarification_questions:
+    elif not has_meaningful_constraints and clarification_questions:
         status = "needs_clarification"
     else:
         status = "success"
