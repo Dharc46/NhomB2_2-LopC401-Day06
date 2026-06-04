@@ -24,7 +24,16 @@
       "seafood buffet",
       "hot dishes",
       "kids desserts",
-      "rice station"
+      "rice station",
+      "tôm hùm nướng bơ tỏi",
+      "cua rang me",
+      "mực chiên giòn",
+      "cá hồi sashimi",
+      "hàu nướng phô mai",
+      "lẩu hải sản",
+      "sushi tổng hợp",
+      "cơm chiên hải sản",
+      "canh chua cá"
     ],
     "dietary_tags": [
       "seafood",
@@ -91,7 +100,16 @@
       "family buffet",
       "noodle station",
       "grilled chicken",
-      "fruit"
+      "fruit",
+      "phở bò tái",
+      "bún bò Huế",
+      "cơm tấm sườn bì chả",
+      "gỏi cuốn tôm thịt",
+      "bánh xèo",
+      "chả giò rán",
+      "gà nướng sả",
+      "mì xào hải sản",
+      "chè ba màu"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -158,7 +176,16 @@
       "rice plates",
       "burger",
       "noodles",
-      "combo tray"
+      "combo tray",
+      "cơm gà Hội An",
+      "mì Quảng",
+      "bánh mì thịt nướng",
+      "bún chả Hà Nội",
+      "cơm rang dương châu",
+      "phở gà",
+      "burger bò phô mai",
+      "khoai tây chiên",
+      "trà sữa"
     ],
     "dietary_tags": [
       "non_seafood_options",
@@ -221,7 +248,13 @@
       "personal pizza",
       "family pizza",
       "fries",
-      "soft drinks"
+      "soft drinks",
+      "pizza hải sản",
+      "pizza pepperoni",
+      "pizza margherita",
+      "mì Ý sốt bò bằm",
+      "khoai tây chiên truffle",
+      "salad Caesar"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -286,7 +319,14 @@
       "grilled squid",
       "hotpot",
       "claypot rice",
-      "steamed fish"
+      "steamed fish",
+      "mực nướng sa tế",
+      "lẩu thái chua cay",
+      "cơm niêu cá kho tộ",
+      "cá chẽm hấp Hồng Kông",
+      "tôm sú nướng muối ớt",
+      "bò lúc lắc khoai tây",
+      "rau muống xào tỏi"
     ],
     "dietary_tags": [
       "seafood",
@@ -348,7 +388,13 @@
       "iced coffee",
       "gelato",
       "waffle",
-      "fruit tea"
+      "fruit tea",
+      "cà phê sữa đá",
+      "sinh tố bơ",
+      "nước ép dưa hấu",
+      "kem dừa tươi",
+      "bánh flan caramel",
+      "trà đào cam sả"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -412,7 +458,16 @@
       "breakfast buffet",
       "pho station",
       "salad bar",
-      "western mains"
+      "western mains",
+      "phở bò tái chín",
+      "bún riêu cua",
+      "bánh cuốn Thanh Trì",
+      "trứng benedict",
+      "pancake blueberry",
+      "salad hải sản",
+      "bò bít tết",
+      "cá hồi áp chảo",
+      "súp bí đỏ"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -476,7 +531,15 @@
       "lobster",
       "seafood platter",
       "steak",
-      "wine"
+      "wine",
+      "tôm hùm thermidor",
+      "bò wagyu nướng",
+      "sò điệp áp chảo",
+      "cua hoàng đế Alaska",
+      "cocktail tôm",
+      "foie gras",
+      "risotto nấm truffle",
+      "chocolate lava cake"
     ],
     "dietary_tags": [
       "seafood",
@@ -541,7 +604,14 @@
       "buffet",
       "pasta",
       "fried rice",
-      "dessert station"
+      "dessert station",
+      "cơm chiên Dương Châu",
+      "mì hoành thánh",
+      "dimsum tổng hợp",
+      "vịt quay Bắc Kinh",
+      "sườn xào chua ngọt",
+      "tôm lăn bột chiên",
+      "chè đậu đỏ"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -604,7 +674,14 @@
       "family set",
       "pho",
       "claypot rice",
-      "spring rolls"
+      "spring rolls",
+      "bún thịt nướng",
+      "bánh xèo miền Tây",
+      "gỏi bưởi tôm",
+      "cá tai tượng chiên xù",
+      "lẩu mắm miền Tây",
+      "cơm tấm Long Xuyên",
+      "chè bưởi"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -668,7 +745,13 @@
       "burger",
       "fried chicken",
       "rice bowl",
-      "combo drinks"
+      "combo drinks",
+      "bún bò Huế",
+      "cơm sườn nướng",
+      "nem nướng Nha Trang",
+      "gỏi cuốn chay",
+      "mì xào giòn",
+      "sinh tố xoài"
     ],
     "dietary_tags": [
       "non_seafood_options",
@@ -732,7 +815,13 @@
       "buffet line",
       "pizza slices",
       "noodle soup",
-      "dessert"
+      "dessert",
+      "steak bò Úc",
+      "pasta carbonara",
+      "pizza bốn mùa",
+      "salad Hy Lạp",
+      "soup hành Pháp",
+      "crème brûlée"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -794,7 +883,13 @@
       "hotdog",
       "corn cup",
       "fried balls",
-      "bottled water"
+      "bottled water",
+      "xúc xích nướng",
+      "bắp rang bơ",
+      "hot dog",
+      "khoai tây lốc xoáy",
+      "kem que",
+      "nước ngọt"
     ],
     "dietary_tags": [
       "non_seafood_options",
@@ -858,7 +953,12 @@
       "kids combo",
       "mini burger",
       "juice box",
-      "ice cream"
+      "ice cream",
+      "combo gà rán khoai tây",
+      "mì xào trứng",
+      "cơm cuộn rong biển",
+      "sữa chua uống",
+      "nước ép táo"
     ],
     "dietary_tags": [
       "non_seafood_options",
@@ -920,7 +1020,14 @@
       "pho",
       "bun bo",
       "dry noodles",
-      "fresh rolls"
+      "fresh rolls",
+      "phở bò Hà Nội",
+      "bún bò Huế",
+      "mì Quảng",
+      "hủ tiếu Nam Vang",
+      "bún riêu cua đồng",
+      "cao lầu Hội An",
+      "bánh canh cua"
     ],
     "dietary_tags": [
       "no_pork",
@@ -982,7 +1089,13 @@
       "coffee",
       "tea",
       "cheesecake",
-      "sandwich"
+      "sandwich",
+      "cà phê trứng Hà Nội",
+      "cà phê sữa đá",
+      "trà sen",
+      "bánh mì pate",
+      "croissant nhân kem",
+      "matcha latte"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1045,7 +1158,14 @@
       "family set",
       "grilled pork",
       "vegetable soup",
-      "fried rice"
+      "fried rice",
+      "cơm tấm Sài Gòn",
+      "bún thịt nướng chả giò",
+      "canh chua cá lóc",
+      "thịt kho tàu",
+      "gỏi gà bắp cải",
+      "rau muống xào tỏi",
+      "chè đậu xanh"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1107,7 +1227,14 @@
       "seafood platter",
       "grilled prawns",
       "oysters",
-      "cocktails"
+      "cocktails",
+      "tôm nướng muối ớt",
+      "mực một nắng nướng",
+      "ghẹ hấp bia",
+      "ốc hương nướng mỡ hành",
+      "cá mú nướng giấy bạc",
+      "nghêu hấp sả",
+      "cơm chiên hải sản"
     ],
     "dietary_tags": [
       "seafood"
@@ -1170,7 +1297,11 @@
       "tteokbokki",
       "kimbap",
       "fried chicken cup",
-      "corn dog"
+      "corn dog",
+      "tokbokki",
+      "mì cay Hàn Quốc",
+      "gà chiên Hàn Quốc",
+      "bánh gạo phô mai"
     ],
     "dietary_tags": [
       "no_beef",
@@ -1233,7 +1364,14 @@
       "com ga",
       "cao lau",
       "vegetable soup",
-      "family set"
+      "family set",
+      "mì Quảng",
+      "cao lầu Hội An",
+      "bánh bèo",
+      "bánh bao bánh vạc",
+      "cơm gà Hội An",
+      "chè bắp",
+      "nem lụi"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1298,7 +1436,14 @@
       "cao lau",
       "banh mi",
       "rice plate",
-      "sweet soup"
+      "sweet soup",
+      "bánh mì Hội An",
+      "cơm tấm",
+      "phở gà",
+      "bún chả",
+      "gỏi cuốn",
+      "nước mía",
+      "chè"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1359,7 +1504,12 @@
       "corn cup",
       "sausages",
       "bottled water",
-      "iced tea"
+      "iced tea",
+      "bắp nướng mỡ hành",
+      "bắp luộc",
+      "khoai lang nướng",
+      "nước dừa",
+      "kem bắp"
     ],
     "dietary_tags": [
       "non_seafood_options",
@@ -1421,7 +1571,12 @@
       "che",
       "ice cream",
       "fruit tea",
-      "waffle"
+      "waffle",
+      "chè Hội An",
+      "bánh đập",
+      "kem bơ",
+      "sinh tố mãng cầu",
+      "sữa chua nếp cẩm"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1486,7 +1641,16 @@
       "buffet",
       "roast chicken",
       "noodle station",
-      "desserts"
+      "desserts",
+      "phở bò",
+      "bún bò Huế",
+      "cơm gà",
+      "pizza",
+      "sushi",
+      "lẩu Thái",
+      "gỏi cuốn",
+      "kem tự chọn",
+      "trái cây"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1549,7 +1713,13 @@
       "burger",
       "fries",
       "fried chicken",
-      "soda"
+      "soda",
+      "burger bò phô mai",
+      "burger gà giòn",
+      "hot dog",
+      "onion rings",
+      "milkshake",
+      "khoai tây chiên"
     ],
     "dietary_tags": [
       "non_seafood_options",
@@ -1611,7 +1781,12 @@
       "gelato",
       "popsicle",
       "fruit cup",
-      "water"
+      "water",
+      "gelato Ý",
+      "sorbet trái cây",
+      "kem ốc quế",
+      "kem dừa",
+      "nước ép cam"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1673,7 +1848,13 @@
       "curry",
       "naan",
       "biryani",
-      "lassi"
+      "lassi",
+      "cà ri gà",
+      "naan bơ tỏi",
+      "biryani cừu",
+      "samosa",
+      "lassi xoài",
+      "tikka masala"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1738,7 +1919,14 @@
       "tea set",
       "cake",
       "sandwich",
-      "fresh juice"
+      "fresh juice",
+      "trà Ô Long",
+      "bánh scone",
+      "sandwich club",
+      "tiramisu",
+      "macaron",
+      "trà Earl Grey",
+      "croissant bơ"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1800,7 +1988,13 @@
       "lobster set",
       "oysters",
       "crab",
-      "premium wine"
+      "premium wine",
+      "yến sào chưng",
+      "bào ngư xào nấm đông cô",
+      "tôm hùm sốt XO",
+      "cua rang muối Cần Giờ",
+      "cá mú hấp xì dầu",
+      "súp vi cá"
     ],
     "dietary_tags": [
       "seafood"
@@ -1867,7 +2061,16 @@
       "kids pasta",
       "pho",
       "salad",
-      "cakes"
+      "cakes",
+      "phở bò tái",
+      "cơm tấm",
+      "lẩu hải sản Phú Quốc",
+      "gỏi cá trích",
+      "bánh xèo",
+      "bún quậy Phú Quốc",
+      "pizza hải sản",
+      "sushi",
+      "kem tự chọn"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1933,7 +2136,12 @@
       "pizza combo",
       "pasta cup",
       "fries",
-      "soft drinks"
+      "soft drinks",
+      "pizza hải sản Phú Quốc",
+      "pizza Hawaiian",
+      "garlic bread",
+      "pasta pesto",
+      "tiramisu mini"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -1997,7 +2205,12 @@
       "pizza slice",
       "family combo",
       "fries",
-      "juice"
+      "juice",
+      "pizza margherita",
+      "pizza thịt xông khói",
+      "pizza rau củ",
+      "khoai tây chiên",
+      "nước ngọt"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -2059,7 +2272,11 @@
       "banh mi",
       "iced tea",
       "pate",
-      "egg sandwich"
+      "egg sandwich",
+      "bánh mì thịt nướng",
+      "bánh mì pate chả",
+      "bánh mì trứng ốp la",
+      "nước chanh đá"
     ],
     "dietary_tags": [
       "non_seafood_options"
@@ -2121,7 +2338,12 @@
       "chicken combo",
       "fries",
       "sandwich",
-      "drink"
+      "drink",
+      "combo cơm gà",
+      "combo burger khoai tây",
+      "combo mì xào",
+      "nước ngọt",
+      "kem que"
     ],
     "dietary_tags": [
       "non_seafood_options",
@@ -2183,7 +2405,12 @@
       "coffee",
       "cake",
       "toast",
-      "fruit juice"
+      "fruit juice",
+      "cà phê Việt Nam",
+      "trà sữa trân châu",
+      "bánh crepe",
+      "sandwich phô mai nướng",
+      "smoothie dâu"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -2245,7 +2472,12 @@
       "chicken rice",
       "egg rice",
       "vegetable rice",
-      "soup"
+      "soup",
+      "cơm gà teriyaki",
+      "cơm bò xào",
+      "cơm chay rau củ",
+      "bún gạo xào",
+      "canh rau ngót"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -2309,7 +2541,12 @@
       "fruit cup",
       "coconut",
       "smoothie",
-      "water"
+      "water",
+      "sinh tố dừa",
+      "nước mía",
+      "trái cây cắt tươi",
+      "kem trái cây",
+      "nước dừa tươi"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -2370,7 +2607,13 @@
       "steak",
       "salmon",
       "wine",
-      "set dinner"
+      "set dinner",
+      "bò ribeye Úc",
+      "bò tenderloin nướng",
+      "sườn cừu nướng",
+      "khoai tây nghiền truffle",
+      "rượu vang nhập khẩu",
+      "chocolate fondant"
     ],
     "dietary_tags": [
       "non_seafood_options"
@@ -2432,7 +2675,13 @@
       "vegetarian rice",
       "tofu noodles",
       "mushroom soup",
-      "fruit"
+      "fruit",
+      "cơm chay rau củ",
+      "bún chay",
+      "phở chay",
+      "đậu hũ xào nấm",
+      "gỏi cuốn chay",
+      "nước ép cần tây"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -2498,7 +2747,13 @@
       "kids pasta",
       "mini pizza",
       "fries",
-      "juice"
+      "juice",
+      "mì Ý sốt cà chua",
+      "pizza phô mai mini",
+      "nuggets gà",
+      "khoai tây chiên",
+      "kem sundae",
+      "nước cam ép"
     ],
     "dietary_tags": [
       "vegetarian",
@@ -2561,7 +2816,13 @@
       "seafood hotpot",
       "grilled shellfish",
       "beer",
-      "river view"
+      "river view",
+      "lẩu hải sản chua cay",
+      "tôm sú hấp",
+      "mực nướng sa tế",
+      "cá chẽm nướng muối ớt",
+      "nghêu xào me",
+      "cơm trắng"
     ],
     "dietary_tags": [
       "seafood"
