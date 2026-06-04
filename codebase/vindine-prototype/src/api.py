@@ -130,7 +130,7 @@ def _clarification_questions(
         questions.append(
             ClarificationQuestion(
                 id="current_zone",
-                question="Bạn đang ở khu/sảnh nào trong Vin?",
+                question="Bạn đang ở khu/sảnh nào trong Vinpearl?",
                 options=["Cổng chính", "Sảnh resort", "Harbour", "Food Court"],
             )
         )
