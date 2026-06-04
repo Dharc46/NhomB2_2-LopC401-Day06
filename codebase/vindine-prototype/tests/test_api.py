@@ -80,10 +80,10 @@ def test_recommend_low_confidence_needs_clarification():
 
     assert response.status_code == 200
     body = response.json()
-    assert body["status"] in {"needs_clarification", "success"}
-    assert body["recommendations"]
-    assert body["recommendations"][0]["confidence"] < 1
-    assert "current_zone" in body["recommendations"][0]["missing_info"]
+    assert body["status"] == "needs_clarification"
+    assert body["type"] == "clarification"
+    assert body["questions"]
+    assert body["uncertainty"]["should_ask_clarification"] is True
 
 
 def test_recommend_failure_returns_no_match_or_fallbacks():

@@ -2,7 +2,7 @@
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 PriceTier = Literal["budget", "mid", "premium", "luxury"]
@@ -10,7 +10,15 @@ SourceStatus = Literal["verified_name", "realistic_mock", "synthetic"]
 ResponseStatus = Literal["success", "needs_clarification", "no_match", "error"]
 ConfidenceLabel = Literal["low", "medium", "high"]
 ErrorRouteType = Literal["low_confidence", "no_match", "risky_recommendation", "missing_data"]
-NextAction = Literal["ask_clarification", "relax_constraint", "show_fallback", "human_review"]
+NextAction = Literal[
+    "ask_clarification",
+    "relax_constraint",
+    "show_fallback",
+    "human_review",
+    "show_best_compromise",
+    "suggest_relax_constraints",
+    "rerank_after_feedback",
+]
 
 
 class GroupSuitability(BaseModel):
@@ -67,11 +75,38 @@ class Restaurant(BaseModel):
 
 
 class RecommendationRequest(BaseModel):
-    user_text: str = Field(min_length=1)
+    user_text: str | None = Field(default=None, min_length=1)
+    text: str | None = Field(default=None, min_length=1)
     current_zone: str | None = None
     voucher_type: str | None = None
     party_size: int | None = Field(default=None, ge=1)
     correction: str | None = None
+
+    @model_validator(mode="after")
+    def require_text(self) -> "RecommendationRequest":
+        if not self.user_text and self.text:
+            self.user_text = self.text
+        if not self.user_text:
+            raise ValueError("user_text or text is required")
+        return self
+
+
+class ParsePreferencesRequest(BaseModel):
+    text: str = Field(min_length=1)
+
+
+class FeedbackRequest(BaseModel):
+    original_text: str = Field(min_length=1)
+    rejected_restaurant_id: str
+    reason: Literal[
+        "too_noisy",
+        "too_far",
+        "too_expensive",
+        "no_kids_menu",
+        "no_voucher",
+        "dietary_risk",
+        "other",
+    ]
 
 
 class ParsedConstraints(BaseModel):
@@ -100,12 +135,19 @@ class RecommendationCard(BaseModel):
     rank: int
     zone: str
     brand_area: str
+    location_hint: str
+    lat: float | None = None
+    lng: float | None = None
     distance_text: str
     avg_price_vnd: int
     accept_voucher: bool
     voucher_match: bool
     reasons: list[str]
     trade_offs: list[str]
+    matched_constraints: list[str] = Field(default_factory=list)
+    missed_preferences: list[str] = Field(default_factory=list)
+    explanation: str | None = None
+    google_maps_url: str | None = None
     least_satisfied_person: str | None = None
     confidence: float = Field(ge=0, le=1)
     confidence_label: ConfidenceLabel
