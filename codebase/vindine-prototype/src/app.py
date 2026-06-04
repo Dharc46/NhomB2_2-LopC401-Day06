@@ -321,6 +321,30 @@ for msg_idx, msg in enumerate(st.session_state.messages):
 
                     st.write("")
 
+                    # Chi tiết nhà hàng (expandable)
+                    with st.expander("📋 Xem chi tiết", expanded=False):
+                        try:
+                            detail_resp = requests.get(f"{st.session_state.api_url}/restaurants/{card.get('restaurant_id')}", timeout=3)
+                            if detail_resp.status_code == 200:
+                                d = detail_resp.json()
+                                st.markdown(f"**🏷️ {d.get('name')}** — {d.get('brand_area')}")
+                                st.markdown(f"📍 {d.get('zone')} · {d.get('location_hint')}")
+                                st.markdown(f"💰 **{d.get('avg_price_vnd', 0):,}đ** ({d.get('price_tier')})")
+                                st.markdown(f"🎟️ Voucher: {'✅ ' + ', '.join(d.get('voucher_types', [])) if d.get('accept_voucher') else '❌ Không nhận'}")
+                                st.markdown(f"🍽️ **Ẩm thực:** {', '.join(d.get('cuisine_types', []))}")
+                                st.markdown(f"📖 **Menu:** {', '.join(d.get('menu_tags', []))}")
+                                st.markdown(f"🥗 **Dietary:** {', '.join(d.get('dietary_tags', []))}")
+                                gs = d.get('group_suitability', {})
+                                st.markdown(f"👶 Trẻ em: {gs.get('kids')}/5 · 👴 Người lớn tuổi: {gs.get('elderly')}/5 · 👥 Nhóm lớn: {gs.get('large_group')}/5")
+                                st.markdown(f"♿ Xe đẩy: {'✅' if d.get('stroller_accessible') else '❌'} · Xe lăn: {'✅' if d.get('wheelchair_accessible') else '❌'}")
+                                st.markdown(f"🔇 Yên tĩnh: {d.get('quiet_level')}/5 · 👥 Đông đúc: {d.get('crowd_level')}/5")
+                                st.markdown(f"🏠 {'Trong nhà' if d.get('indoor') else ''} {'Ngoài trời' if d.get('outdoor') else ''}")
+                                st.markdown(f"✨ **Phù hợp cho:** {', '.join(d.get('best_for', []))}")
+                                if d.get('avoid_if'):
+                                    st.markdown(f"⚠️ **Tránh nếu:** {', '.join(d.get('avoid_if', []))}")
+                        except Exception:
+                            st.caption("Không tải được chi tiết")
+
                     # Các nút hành động tương tác ngay trong khung chat
                     btn_sel = st.button("Chọn 👍", key=f"sel_{msg_idx}_{idx}_{card.get('restaurant_id')}")
                     if btn_sel:
