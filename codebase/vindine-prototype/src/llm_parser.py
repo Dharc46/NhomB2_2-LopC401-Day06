@@ -56,6 +56,12 @@ Infer what the user implies. "Đi cả nhà" with elderly and children = has_eld
 If something is not mentioned, set it to null/false/[].
 Set confidence based on how much information the user provided (0.3 for sparse, 0.9 for detailed).
 
+Handle simple/casual queries naturally:
+- "quán gần nhất" / "closest restaurant" → max_distance_minutes=5, confidence=0.5
+- "quán nào ngon" / "chỗ nào ăn ngon" → is_dining_related=true, confidence=0.4
+- "quán rẻ và gần" → budget_per_person=150000, max_distance_minutes=8, confidence=0.5
+- "chỗ nào yên tĩnh cho người lớn tuổi" → quiet_preferred=true, has_elderly=true, confidence=0.6
+
 IMPORTANT: Do NOT include "hard_constraints" or "soft_preferences" fields. Only return the fields listed above."""
 
 

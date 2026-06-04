@@ -238,7 +238,7 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
 
     if not recommendations:
         status = "no_match"
-    elif parsed_constraints.confidence < 0.6 or clarification_questions:
+    elif parsed_constraints.confidence <= 0.3 and clarification_questions:
         status = "needs_clarification"
     else:
         status = "success"
