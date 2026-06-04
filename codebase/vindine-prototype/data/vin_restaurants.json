@@ -2861,5 +2861,930 @@
     "last_checked": "2026-06-03",
     "lat": 15.847085,
     "lng": 108.366342
-  }
+  },
+  {
+    "id": "lotus-vegetarian-garden",
+    "name": "Lotus Vegetarian Garden",
+    "brand_area": "Vinpearl Resort Nha Trang / Hon Tre Island",
+    "zone": "Resort Garden Walk",
+    "location_hint": "Quiet garden-side dining room behind the resort lobby, suitable for vegetarian groups and elderly guests.",
+    "distance_text": "4 minutes walk from resort lobby",
+    "distance_minutes": 4,
+    "accept_voucher": true,
+    "voucher_types": [
+      "meal_credit",
+      "discount"
+    ],
+    "avg_price_vnd": 190000,
+    "price_tier": "mid",
+    "cuisine_types": [
+      "vietnamese",
+      "asian",
+      "vegetarian"
+    ],
+    "menu_tags": [
+      "vegetarian hotpot",
+      "mushroom rice",
+      "fresh rolls",
+      "herbal tea"
+    ],
+    "dietary_tags": [
+      "vegetarian",
+      "non_seafood_options",
+      "no_pork",
+      "kids_menu"
+    ],
+    "group_suitability": {
+      "kids": 4,
+      "elderly": 5,
+      "large_group": 4,
+      "couple": 4
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 5,
+    "crowd_level": 2,
+    "indoor": true,
+    "outdoor": true,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "11:00-14:30",
+      "dinner": "17:00-21:00",
+      "all_day": null
+    },
+    "best_for": [
+      "vegetarian",
+      "elderly",
+      "quiet",
+      "wheelchair"
+    ],
+    "avoid_if": [
+      "wants seafood",
+      "strict fast food"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic vegetarian venue added to improve dietary and quiet-path coverage.",
+    "last_checked": "2026-06-04",
+    "lat": 12.21491,
+    "lng": 109.20973
+  },
+  {
+    "id": "harbour-halal-rice-house",
+    "name": "Harbour Halal Rice House",
+    "brand_area": "Vinpearl Harbour Nha Trang",
+    "zone": "Harbour Promenade",
+    "location_hint": "Counter-service rice house beside the harbour promenade information kiosk.",
+    "distance_text": "3 minutes walk from harbour information kiosk",
+    "distance_minutes": 3,
+    "accept_voucher": true,
+    "voucher_types": [
+      "meal_credit",
+      "combo"
+    ],
+    "avg_price_vnd": 135000,
+    "price_tier": "budget",
+    "cuisine_types": [
+      "asian",
+      "vietnamese",
+      "fast_food"
+    ],
+    "menu_tags": [
+      "chicken rice",
+      "vegetable rice",
+      "family combo",
+      "iced tea"
+    ],
+    "dietary_tags": [
+      "halal_friendly",
+      "no_pork",
+      "non_seafood_options",
+      "kids_menu"
+    ],
+    "group_suitability": {
+      "kids": 4,
+      "elderly": 4,
+      "large_group": 3,
+      "couple": 3
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 3,
+    "crowd_level": 3,
+    "indoor": true,
+    "outdoor": false,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "10:30-15:00",
+      "dinner": "16:30-20:30",
+      "all_day": null
+    },
+    "best_for": [
+      "halal",
+      "budget",
+      "kids",
+      "near harbour"
+    ],
+    "avoid_if": [
+      "wants buffet"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic halal-friendly option for dietary diversity testing.",
+    "last_checked": "2026-06-04",
+    "lat": 12.23512,
+    "lng": 109.19384
+  },
+  {
+    "id": "grand-world-korean-bbq",
+    "name": "Grand World Korean BBQ",
+    "brand_area": "Grand World / Vinpearl Phu Quoc area",
+    "zone": "Grand World Night Market",
+    "location_hint": "Korean grill restaurant on the night market lane near the lake show entrance.",
+    "distance_text": "8 minutes walk from Grand World lake stage",
+    "distance_minutes": 8,
+    "accept_voucher": true,
+    "voucher_types": [
+      "discount",
+      "meal_credit"
+    ],
+    "avg_price_vnd": 290000,
+    "price_tier": "premium",
+    "cuisine_types": [
+      "korean",
+      "asian",
+      "bbq"
+    ],
+    "menu_tags": [
+      "bbq set",
+      "kimchi soup",
+      "rice",
+      "group grill table"
+    ],
+    "dietary_tags": [
+      "non_seafood_options"
+    ],
+    "group_suitability": {
+      "kids": 3,
+      "elderly": 3,
+      "large_group": 5,
+      "couple": 4
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": false,
+    "quiet_level": 2,
+    "crowd_level": 5,
+    "indoor": true,
+    "outdoor": false,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "11:30-14:30",
+      "dinner": "17:00-23:00",
+      "all_day": null
+    },
+    "best_for": [
+      "korean",
+      "large group",
+      "night market",
+      "discount voucher"
+    ],
+    "avoid_if": [
+      "needs quiet",
+      "wheelchair required"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic Korean BBQ option for cuisine diversity and noisy trade-off testing.",
+    "last_checked": "2026-06-04",
+    "lat": 10.32841,
+    "lng": 103.86036
+  },
+  {
+    "id": "nam-hoi-an-japanese-bento",
+    "name": "Nam Hoi An Japanese Bento",
+    "brand_area": "VinWonders Nam Hoi An",
+    "zone": "Folk Island Arcade",
+    "location_hint": "Compact bento counter at the covered arcade between Folk Island and family rides.",
+    "distance_text": "6 minutes walk from Folk Island gate",
+    "distance_minutes": 6,
+    "accept_voucher": true,
+    "voucher_types": [
+      "combo",
+      "meal_credit"
+    ],
+    "avg_price_vnd": 175000,
+    "price_tier": "mid",
+    "cuisine_types": [
+      "japanese",
+      "asian",
+      "fast_food"
+    ],
+    "menu_tags": [
+      "bento",
+      "udon",
+      "katsu rice",
+      "kids bento"
+    ],
+    "dietary_tags": [
+      "non_seafood_options",
+      "kids_menu"
+    ],
+    "group_suitability": {
+      "kids": 5,
+      "elderly": 3,
+      "large_group": 3,
+      "couple": 4
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 3,
+    "crowd_level": 3,
+    "indoor": true,
+    "outdoor": false,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "10:30-15:30",
+      "dinner": "16:00-20:00",
+      "all_day": null
+    },
+    "best_for": [
+      "japanese",
+      "kids",
+      "combo",
+      "quick lunch"
+    ],
+    "avoid_if": [
+      "wants buffet"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic Japanese bento option for cuisine diversity testing.",
+    "last_checked": "2026-06-04",
+    "lat": 15.85025,
+    "lng": 108.36522
+  },
+  {
+    "id": "phu-quoc-indian-curry-corner",
+    "name": "Phu Quoc Indian Curry Corner",
+    "brand_area": "VinWonders Phu Quoc",
+    "zone": "Adventure Avenue",
+    "location_hint": "Small indoor curry counter near Adventure Avenue lockers and shaded seating.",
+    "distance_text": "7 minutes walk from Adventure Avenue",
+    "distance_minutes": 7,
+    "accept_voucher": false,
+    "voucher_types": [
+      "none"
+    ],
+    "avg_price_vnd": 165000,
+    "price_tier": "mid",
+    "cuisine_types": [
+      "indian",
+      "asian",
+      "vegetarian"
+    ],
+    "menu_tags": [
+      "vegetable curry",
+      "chicken tikka rice",
+      "naan",
+      "lassi"
+    ],
+    "dietary_tags": [
+      "vegetarian",
+      "halal_friendly",
+      "no_pork",
+      "non_seafood_options"
+    ],
+    "group_suitability": {
+      "kids": 3,
+      "elderly": 4,
+      "large_group": 3,
+      "couple": 4
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 4,
+    "crowd_level": 2,
+    "indoor": true,
+    "outdoor": false,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "11:00-15:00",
+      "dinner": "17:00-20:30",
+      "all_day": null
+    },
+    "best_for": [
+      "indian",
+      "vegetarian",
+      "halal",
+      "quiet"
+    ],
+    "avoid_if": [
+      "voucher required",
+      "very spice sensitive"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic Indian option for vegetarian and halal-friendly coverage.",
+    "last_checked": "2026-06-04",
+    "lat": 10.33624,
+    "lng": 103.85564
+  },
+  {
+    "id": "main-gate-budget-banh-mi",
+    "name": "Main Gate Budget Banh Mi",
+    "brand_area": "VinWonders Nha Trang",
+    "zone": "Main Gate",
+    "location_hint": "Budget kiosk beside the main gate locker area, best for quick takeaway before rides.",
+    "distance_text": "2 minutes walk from main gate",
+    "distance_minutes": 2,
+    "accept_voucher": true,
+    "voucher_types": [
+      "combo",
+      "discount"
+    ],
+    "avg_price_vnd": 65000,
+    "price_tier": "budget",
+    "cuisine_types": [
+      "vietnamese",
+      "snack",
+      "fast_food"
+    ],
+    "menu_tags": [
+      "banh mi",
+      "sticky rice",
+      "iced tea",
+      "combo snack"
+    ],
+    "dietary_tags": [
+      "non_seafood_options",
+      "kids_menu"
+    ],
+    "group_suitability": {
+      "kids": 4,
+      "elderly": 2,
+      "large_group": 3,
+      "couple": 2
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 1,
+    "crowd_level": 5,
+    "indoor": false,
+    "outdoor": true,
+    "opening_hours": {
+      "breakfast": "08:00-10:30",
+      "lunch": "10:30-15:00",
+      "dinner": null,
+      "all_day": null
+    },
+    "best_for": [
+      "budget",
+      "near entrance",
+      "quick snack",
+      "kids"
+    ],
+    "avoid_if": [
+      "needs quiet",
+      "formal meal",
+      "elderly comfort"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic low-budget kiosk for strict budget and distance demos.",
+    "last_checked": "2026-06-04",
+    "lat": 12.22578,
+    "lng": 109.19749
+  },
+  {
+    "id": "quiet-lagoon-tea-room",
+    "name": "Quiet Lagoon Tea Room",
+    "brand_area": "Grand World / Vinpearl Phu Quoc area",
+    "zone": "Lagoon Walk",
+    "location_hint": "Calm tea room facing the lagoon path, away from the night market speakers.",
+    "distance_text": "5 minutes walk from Grand World lake stage",
+    "distance_minutes": 5,
+    "accept_voucher": true,
+    "voucher_types": [
+      "discount",
+      "meal_credit"
+    ],
+    "avg_price_vnd": 120000,
+    "price_tier": "budget",
+    "cuisine_types": [
+      "cafe",
+      "dessert",
+      "snack",
+      "vegetarian"
+    ],
+    "menu_tags": [
+      "tea set",
+      "fruit dessert",
+      "vegetarian pastry",
+      "soft drinks"
+    ],
+    "dietary_tags": [
+      "vegetarian",
+      "non_seafood_options",
+      "no_pork"
+    ],
+    "group_suitability": {
+      "kids": 3,
+      "elderly": 5,
+      "large_group": 2,
+      "couple": 5
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 5,
+    "crowd_level": 1,
+    "indoor": true,
+    "outdoor": true,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "11:00-15:30",
+      "dinner": "16:00-22:00",
+      "all_day": null
+    },
+    "best_for": [
+      "quiet",
+      "elderly",
+      "couple",
+      "vegetarian"
+    ],
+    "avoid_if": [
+      "large group",
+      "full dinner"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic quiet cafe for elderly and correction-path demos.",
+    "last_checked": "2026-06-04",
+    "lat": 10.32818,
+    "lng": 103.85981
+  },
+  {
+    "id": "wheelchair-family-buffet-hall",
+    "name": "Wheelchair Family Buffet Hall",
+    "brand_area": "VinWonders Phu Quoc",
+    "zone": "Central Plaza",
+    "location_hint": "Step-free buffet hall beside Central Plaza elevators and accessible restrooms.",
+    "distance_text": "3 minutes walk from Central Plaza",
+    "distance_minutes": 3,
+    "accept_voucher": true,
+    "voucher_types": [
+      "buffet",
+      "meal_credit",
+      "discount"
+    ],
+    "avg_price_vnd": 310000,
+    "price_tier": "premium",
+    "cuisine_types": [
+      "buffet",
+      "vietnamese",
+      "western",
+      "asian"
+    ],
+    "menu_tags": [
+      "family buffet",
+      "noodle bar",
+      "salad",
+      "kids desserts"
+    ],
+    "dietary_tags": [
+      "vegetarian",
+      "non_seafood_options",
+      "kids_menu",
+      "no_pork"
+    ],
+    "group_suitability": {
+      "kids": 5,
+      "elderly": 5,
+      "large_group": 5,
+      "couple": 3
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 3,
+    "crowd_level": 3,
+    "indoor": true,
+    "outdoor": false,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "10:30-14:30",
+      "dinner": "17:00-21:00",
+      "all_day": null
+    },
+    "best_for": [
+      "wheelchair",
+      "stroller",
+      "buffet voucher",
+      "large group",
+      "elderly",
+      "kids"
+    ],
+    "avoid_if": [
+      "strict low budget"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic accessibility-heavy buffet option for wheelchair and family demos.",
+    "last_checked": "2026-06-04",
+    "lat": 10.33602,
+    "lng": 103.85522
+  },
+  {
+    "id": "harbour-late-night-noodle",
+    "name": "Harbour Late Night Noodle",
+    "brand_area": "Vinpearl Harbour Nha Trang",
+    "zone": "Harbour Night Lane",
+    "location_hint": "Late-night noodle stand at the covered lane behind the harbour souvenir shops.",
+    "distance_text": "6 minutes walk from cable car station",
+    "distance_minutes": 6,
+    "accept_voucher": false,
+    "voucher_types": [
+      "none"
+    ],
+    "avg_price_vnd": 90000,
+    "price_tier": "budget",
+    "cuisine_types": [
+      "vietnamese",
+      "snack",
+      "fast_food"
+    ],
+    "menu_tags": [
+      "pho",
+      "dry noodles",
+      "spring rolls",
+      "late snack"
+    ],
+    "dietary_tags": [
+      "non_seafood_options"
+    ],
+    "group_suitability": {
+      "kids": 3,
+      "elderly": 2,
+      "large_group": 3,
+      "couple": 3
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": false,
+    "quiet_level": 2,
+    "crowd_level": 4,
+    "indoor": false,
+    "outdoor": true,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": null,
+      "dinner": "18:00-23:30",
+      "all_day": null
+    },
+    "best_for": [
+      "late night",
+      "budget",
+      "quick snack",
+      "vietnamese"
+    ],
+    "avoid_if": [
+      "voucher required",
+      "wheelchair required",
+      "needs quiet"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic late-night budget option for time and fallback variety.",
+    "last_checked": "2026-06-04",
+    "lat": 12.23482,
+    "lng": 109.19421
+  },
+  {
+    "id": "lagoon-couple-fine-dining",
+    "name": "Lagoon Couple Fine Dining",
+    "brand_area": "Grand World / Vinpearl Phu Quoc area",
+    "zone": "Lagoon Bridge",
+    "location_hint": "Small table-service restaurant beside Lagoon Bridge with quiet two-person seating.",
+    "distance_text": "9 minutes walk from Grand World lake stage",
+    "distance_minutes": 9,
+    "accept_voucher": true,
+    "voucher_types": [
+      "discount"
+    ],
+    "avg_price_vnd": 690000,
+    "price_tier": "luxury",
+    "cuisine_types": [
+      "western",
+      "seafood",
+      "asian"
+    ],
+    "menu_tags": [
+      "set menu",
+      "wine pairing",
+      "grilled fish",
+      "dessert"
+    ],
+    "dietary_tags": [
+      "seafood",
+      "non_seafood_options"
+    ],
+    "group_suitability": {
+      "kids": 1,
+      "elderly": 3,
+      "large_group": 1,
+      "couple": 5
+    },
+    "stroller_accessible": false,
+    "wheelchair_accessible": true,
+    "quiet_level": 5,
+    "crowd_level": 1,
+    "indoor": true,
+    "outdoor": true,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": null,
+      "dinner": "17:30-22:00",
+      "all_day": null
+    },
+    "best_for": [
+      "couple",
+      "quiet",
+      "luxury",
+      "discount voucher"
+    ],
+    "avoid_if": [
+      "kids",
+      "large group",
+      "strict low budget",
+      "stroller required"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic fine-dining option for couple and luxury trade-off demos.",
+    "last_checked": "2026-06-04",
+    "lat": 10.32789,
+    "lng": 103.86061
+  },
+  {
+    "id": "water-park-splash-pizza",
+    "name": "Water Park Splash Pizza",
+    "brand_area": "VinWonders Phu Quoc",
+    "zone": "Water Park Exit",
+    "location_hint": "Covered pizza stall immediately outside the water park exit showers.",
+    "distance_text": "2 minutes walk from water park exit",
+    "distance_minutes": 2,
+    "accept_voucher": true,
+    "voucher_types": [
+      "combo",
+      "meal_credit",
+      "discount"
+    ],
+    "avg_price_vnd": 125000,
+    "price_tier": "budget",
+    "cuisine_types": [
+      "pizza",
+      "western",
+      "fast_food",
+      "snack"
+    ],
+    "menu_tags": [
+      "pizza slice",
+      "pasta cup",
+      "fries",
+      "kids drink"
+    ],
+    "dietary_tags": [
+      "vegetarian",
+      "non_seafood_options",
+      "kids_menu"
+    ],
+    "group_suitability": {
+      "kids": 5,
+      "elderly": 2,
+      "large_group": 4,
+      "couple": 2
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 1,
+    "crowd_level": 5,
+    "indoor": false,
+    "outdoor": true,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "10:00-15:30",
+      "dinner": "16:00-19:30",
+      "all_day": null
+    },
+    "best_for": [
+      "pizza",
+      "kids",
+      "water park",
+      "combo",
+      "budget"
+    ],
+    "avoid_if": [
+      "needs quiet",
+      "elderly comfort"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic water-park pizza option for kid and budget prompts.",
+    "last_checked": "2026-06-04",
+    "lat": 10.33513,
+    "lng": 103.85491
+  },
+  {
+    "id": "nam-hoi-an-river-vegan-bowl",
+    "name": "Nam Hoi An River Vegan Bowl",
+    "brand_area": "VinWonders Nam Hoi An",
+    "zone": "Riverfront Dining",
+    "location_hint": "Vegan rice-bowl kiosk on the shaded riverfront path near the evening show queue.",
+    "distance_text": "10 minutes walk from main gate",
+    "distance_minutes": 10,
+    "accept_voucher": true,
+    "voucher_types": [
+      "meal_credit",
+      "discount"
+    ],
+    "avg_price_vnd": 110000,
+    "price_tier": "budget",
+    "cuisine_types": [
+      "vegetarian",
+      "vietnamese",
+      "asian",
+      "snack"
+    ],
+    "menu_tags": [
+      "vegan rice bowl",
+      "tofu rolls",
+      "mushroom soup",
+      "fruit tea"
+    ],
+    "dietary_tags": [
+      "vegetarian",
+      "non_seafood_options",
+      "no_pork"
+    ],
+    "group_suitability": {
+      "kids": 3,
+      "elderly": 4,
+      "large_group": 3,
+      "couple": 4
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 4,
+    "crowd_level": 2,
+    "indoor": false,
+    "outdoor": true,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "10:30-15:00",
+      "dinner": "16:00-20:30",
+      "all_day": null
+    },
+    "best_for": [
+      "vegetarian",
+      "budget",
+      "quiet",
+      "elderly"
+    ],
+    "avoid_if": [
+      "wants buffet",
+      "needs indoor air conditioning"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic vegan budget option for dietary fallback demos.",
+    "last_checked": "2026-06-04",
+    "lat": 15.84731,
+    "lng": 108.36597
+  },
+  {
+    "id": "aquarium-non-seafood-family-table",
+    "name": "Aquarium Non-Seafood Family Table",
+    "brand_area": "VinWonders Nha Trang",
+    "zone": "Sea Shell Aquarium",
+    "location_hint": "Family table-service corner opposite the aquarium gift shop, designed for guests avoiding seafood.",
+    "distance_text": "4 minutes walk from Sea Shell Aquarium",
+    "distance_minutes": 4,
+    "accept_voucher": true,
+    "voucher_types": [
+      "meal_credit",
+      "discount",
+      "combo"
+    ],
+    "avg_price_vnd": 180000,
+    "price_tier": "mid",
+    "cuisine_types": [
+      "vietnamese",
+      "western",
+      "asian"
+    ],
+    "menu_tags": [
+      "chicken rice",
+      "vegetable noodles",
+      "pasta",
+      "kids soup"
+    ],
+    "dietary_tags": [
+      "non_seafood_options",
+      "vegetarian",
+      "kids_menu",
+      "no_pork"
+    ],
+    "group_suitability": {
+      "kids": 5,
+      "elderly": 4,
+      "large_group": 4,
+      "couple": 3
+    },
+    "stroller_accessible": true,
+    "wheelchair_accessible": true,
+    "quiet_level": 4,
+    "crowd_level": 2,
+    "indoor": true,
+    "outdoor": false,
+    "opening_hours": {
+      "breakfast": null,
+      "lunch": "10:30-14:30",
+      "dinner": "16:30-20:30",
+      "all_day": null
+    },
+    "best_for": [
+      "non seafood",
+      "kids",
+      "elderly",
+      "quiet",
+      "combo"
+    ],
+    "avoid_if": [
+      "wants seafood buffet"
+    ],
+    "source_status": "synthetic",
+    "source_note": "Synthetic non-seafood family venue for allergy and kid-friendly demos.",
+    "last_checked": "2026-06-04",
+    "lat": 12.22371,
+    "lng": 109.19272
+  },
+  {"id":"nha-trang-ramen-stop","name":"Nha Trang Ramen Stop","brand_area":"VinWonders Nha Trang","zone":"Main Gate","location_hint":"Small ramen counter next to the main gate locker corridor.","distance_text":"3 minutes walk from main gate","distance_minutes":3,"accept_voucher":true,"voucher_types":["meal_credit","combo"],"avg_price_vnd":155000,"price_tier":"mid","cuisine_types":["japanese","asian","fast_food"],"menu_tags":["ramen","gyoza","chicken broth","kids noodles"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":3,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":4,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-20:30"},"best_for":["japanese","quick lunch","kids","combo"],"avoid_if":["needs very quiet place"],"source_status":"synthetic","source_note":"Synthetic ramen counter for cuisine diversity.","last_checked":"2026-06-04","lat":12.22562,"lng":109.19732},
+  {"id":"nha-trang-smoothie-kiosk","name":"Nha Trang Smoothie Kiosk","brand_area":"VinWonders Nha Trang","zone":"Food Court","location_hint":"Fruit smoothie kiosk beside the shared food court seating.","distance_text":"6 minutes walk from main gate","distance_minutes":6,"accept_voucher":true,"voucher_types":["discount","combo"],"avg_price_vnd":55000,"price_tier":"budget","cuisine_types":["dessert","snack","cafe","vegetarian"],"menu_tags":["smoothie","fruit cup","yogurt","juice"],"dietary_tags":["vegetarian","non_seafood_options","no_pork","kids_menu"],"group_suitability":{"kids":5,"elderly":3,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"all_day":"09:00-20:30"},"best_for":["budget","dessert","kids","vegetarian"],"avoid_if":["full meal"],"source_status":"synthetic","source_note":"Synthetic smoothie kiosk for budget snack demos.","last_checked":"2026-06-04","lat":12.2219,"lng":109.1931},
+  {"id":"nha-trang-family-pho-house","name":"Nha Trang Family Pho House","brand_area":"VinWonders Nha Trang","zone":"Family Rides","location_hint":"Indoor noodle house between family rides and shaded rest area.","distance_text":"7 minutes walk from main gate","distance_minutes":7,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":115000,"price_tier":"budget","cuisine_types":["vietnamese","asian"],"menu_tags":["pho","bun bo","chicken noodle","rice"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":4,"large_group":4,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"breakfast":"08:30-10:30","lunch":"10:30-15:00","dinner":"16:30-20:00"},"best_for":["vietnamese","budget","elderly","kids"],"avoid_if":["wants western food"],"source_status":"synthetic","source_note":"Synthetic Vietnamese noodle house for family prompts.","last_checked":"2026-06-04","lat":12.2228,"lng":109.1941},
+  {"id":"nha-trang-sea-view-taco-bar","name":"Nha Trang Sea View Taco Bar","brand_area":"VinWonders Nha Trang","zone":"Sea View Deck","location_hint":"Outdoor taco bar overlooking the bay near the sea-view photo deck.","distance_text":"11 minutes walk from main gate","distance_minutes":11,"accept_voucher":false,"voucher_types":["none"],"avg_price_vnd":210000,"price_tier":"mid","cuisine_types":["western","mexican","snack"],"menu_tags":["fish taco","chicken taco","nachos","mocktail"],"dietary_tags":["non_seafood_options","vegetarian"],"group_suitability":{"kids":3,"elderly":2,"large_group":3,"couple":5},"stroller_accessible":true,"wheelchair_accessible":false,"quiet_level":4,"crowd_level":2,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"11:00-15:00","dinner":"16:30-21:00"},"best_for":["couple","view","western","quiet"],"avoid_if":["voucher required","wheelchair required"],"source_status":"synthetic","source_note":"Synthetic western taco venue for trade-off demos.","last_checked":"2026-06-04","lat":12.2241,"lng":109.1908},
+  {"id":"nha-trang-mini-dumpling-cart","name":"Nha Trang Mini Dumpling Cart","brand_area":"VinWonders Nha Trang","zone":"Indoor Games","location_hint":"Dumpling cart beside indoor games and vending machines.","distance_text":"5 minutes walk from food court","distance_minutes":5,"accept_voucher":true,"voucher_types":["combo"],"avg_price_vnd":75000,"price_tier":"budget","cuisine_types":["asian","snack","fast_food"],"menu_tags":["dumplings","bao bun","soy milk","combo box"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":3,"large_group":2,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":true,"outdoor":false,"opening_hours":{"all_day":"09:30-20:00"},"best_for":["budget","snack","combo","kids"],"avoid_if":["large group seating"],"source_status":"synthetic","source_note":"Synthetic snack cart for budget quick-bite coverage.","last_checked":"2026-06-04","lat":12.2222,"lng":109.1937},
+  {"id":"nha-trang-senior-comfort-cafe","name":"Nha Trang Senior Comfort Cafe","brand_area":"VinWonders Nha Trang","zone":"Garden Rest Area","location_hint":"Quiet cafe at the shaded garden rest area with low-noise seating.","distance_text":"8 minutes walk from main gate","distance_minutes":8,"accept_voucher":true,"voucher_types":["discount","meal_credit"],"avg_price_vnd":125000,"price_tier":"budget","cuisine_types":["cafe","dessert","vietnamese"],"menu_tags":["tea","coffee","soft cake","rice porridge"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":5,"large_group":2,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":true,"opening_hours":{"all_day":"09:00-20:00"},"best_for":["elderly","quiet","cafe","wheelchair"],"avoid_if":["large group","fast turnover"],"source_status":"synthetic","source_note":"Synthetic quiet cafe for elderly demos.","last_checked":"2026-06-04","lat":12.2232,"lng":109.1951},
+  {"id":"harbour-sushi-roll-bar","name":"Harbour Sushi Roll Bar","brand_area":"Vinpearl Harbour Nha Trang","zone":"Harbour Promenade","location_hint":"Sushi roll bar facing the harbour steps near the evening show path.","distance_text":"4 minutes walk from cable car station","distance_minutes":4,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":230000,"price_tier":"mid","cuisine_types":["japanese","asian","seafood"],"menu_tags":["sushi rolls","teriyaki chicken","miso soup","rice bowl"],"dietary_tags":["seafood","non_seafood_options"],"group_suitability":{"kids":3,"elderly":3,"large_group":3,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"11:00-14:30","dinner":"17:00-21:30"},"best_for":["japanese","couple","harbour","discount voucher"],"avoid_if":["strict low budget"],"source_status":"synthetic","source_note":"Synthetic sushi venue for Japanese cuisine coverage.","last_checked":"2026-06-04","lat":12.2353,"lng":109.1936},
+  {"id":"harbour-bubble-tea-dessert","name":"Harbour Bubble Tea Dessert","brand_area":"Vinpearl Harbour Nha Trang","zone":"Harbour Promenade","location_hint":"Bubble tea and dessert shop beside the harbour souvenir lane.","distance_text":"2 minutes walk from harbour information kiosk","distance_minutes":2,"accept_voucher":true,"voucher_types":["discount","combo"],"avg_price_vnd":80000,"price_tier":"budget","cuisine_types":["dessert","cafe","snack","vegetarian"],"menu_tags":["bubble tea","cheese foam","pudding","fruit tea"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":true,"outdoor":false,"opening_hours":{"all_day":"09:30-22:30"},"best_for":["dessert","kids","budget","near harbour"],"avoid_if":["full meal"],"source_status":"synthetic","source_note":"Synthetic dessert shop for snack and kid prompts.","last_checked":"2026-06-04","lat":12.23508,"lng":109.19391},
+  {"id":"harbour-vegan-noodle-bowl","name":"Harbour Vegan Noodle Bowl","brand_area":"Vinpearl Harbour Nha Trang","zone":"Harbour Night Lane","location_hint":"Vegan noodle counter in the covered night lane behind the harbour shops.","distance_text":"5 minutes walk from cable car station","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit"],"avg_price_vnd":110000,"price_tier":"budget","cuisine_types":["vegetarian","vietnamese","asian","snack"],"menu_tags":["vegan noodles","tofu bowl","mushroom broth","herbal drink"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":4,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-22:00"},"best_for":["vegetarian","quiet","budget","vietnamese"],"avoid_if":["wants meat heavy menu"],"source_status":"synthetic","source_note":"Synthetic vegan noodle option for vegetarian diversity.","last_checked":"2026-06-04","lat":12.23467,"lng":109.19417},
+  {"id":"harbour-bbq-skewer-stand","name":"Harbour BBQ Skewer Stand","brand_area":"Vinpearl Harbour Nha Trang","zone":"Harbour Night Lane","location_hint":"Outdoor skewer stand near the night lane music corner.","distance_text":"7 minutes walk from cable car station","distance_minutes":7,"accept_voucher":false,"voucher_types":["none"],"avg_price_vnd":95000,"price_tier":"budget","cuisine_types":["bbq","asian","snack","fast_food"],"menu_tags":["chicken skewer","beef skewer","corn","iced tea"],"dietary_tags":["non_seafood_options"],"group_suitability":{"kids":3,"elderly":1,"large_group":4,"couple":3},"stroller_accessible":true,"wheelchair_accessible":false,"quiet_level":1,"crowd_level":5,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:00-23:30"},"best_for":["bbq","budget","night market","large group"],"avoid_if":["needs quiet","voucher required","wheelchair required"],"source_status":"synthetic","source_note":"Synthetic noisy budget BBQ option for negative trade-offs.","last_checked":"2026-06-04","lat":12.23455,"lng":109.19443},
+  {"id":"harbour-seafood-soup-house","name":"Harbour Seafood Soup House","brand_area":"Vinpearl Harbour Nha Trang","zone":"Harbour Promenade","location_hint":"Seafood soup house on the promenade corner opposite the cable car queue.","distance_text":"4 minutes walk from cable car station","distance_minutes":4,"accept_voucher":true,"voucher_types":["discount"],"avg_price_vnd":260000,"price_tier":"premium","cuisine_types":["seafood","vietnamese","asian"],"menu_tags":["seafood soup","fish noodle","clam rice","vegetable soup"],"dietary_tags":["seafood","non_seafood_options"],"group_suitability":{"kids":3,"elderly":4,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":true,"opening_hours":{"lunch":"11:00-14:30","dinner":"17:00-21:30"},"best_for":["seafood","elderly","near harbour","discount voucher"],"avoid_if":["no seafood allergy"],"source_status":"synthetic","source_note":"Synthetic seafood soup venue with non-seafood backup.","last_checked":"2026-06-04","lat":12.23522,"lng":109.19358},
+  {"id":"resort-lobby-breakfast-bakery","name":"Resort Lobby Breakfast Bakery","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Resort Lobby","location_hint":"Bakery counter next to resort reception and morning coffee bar.","distance_text":"1 minute walk from resort lobby","distance_minutes":1,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":130000,"price_tier":"budget","cuisine_types":["cafe","dessert","western","vegetarian"],"menu_tags":["croissant","sandwich","coffee","fruit bowl"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":4,"elderly":5,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"breakfast":"06:30-10:30","lunch":"10:30-14:00"},"best_for":["breakfast","elderly","near lobby","quiet"],"avoid_if":["dinner"],"source_status":"synthetic","source_note":"Synthetic breakfast bakery for morning/lobby prompts.","last_checked":"2026-06-04","lat":12.21498,"lng":109.20991},
+  {"id":"resort-poolside-salad-bar","name":"Resort Poolside Salad Bar","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Poolside","location_hint":"Poolside salad and light-meal bar beside towel station.","distance_text":"3 minutes walk from resort lobby","distance_minutes":3,"accept_voucher":true,"voucher_types":["meal_credit"],"avg_price_vnd":175000,"price_tier":"mid","cuisine_types":["western","vegetarian","cafe","snack"],"menu_tags":["salad bowl","grilled chicken","fruit plate","smoothie"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":4,"large_group":2,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"10:30-15:30","dinner":"16:00-19:30"},"best_for":["vegetarian","couple","quiet","light meal"],"avoid_if":["large group","buffet"],"source_status":"synthetic","source_note":"Synthetic poolside salad option for light healthy prompts.","last_checked":"2026-06-04","lat":12.21621,"lng":109.21156},
+  {"id":"resort-island-seafood-grill","name":"Resort Island Seafood Grill","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Beachfront","location_hint":"Beachfront seafood grill near the resort boardwalk and sunset seating.","distance_text":"12 minutes walk from resort lobby","distance_minutes":12,"accept_voucher":true,"voucher_types":["discount"],"avg_price_vnd":520000,"price_tier":"luxury","cuisine_types":["seafood","western","vietnamese"],"menu_tags":["grilled lobster","fish steak","salad","wine"],"dietary_tags":["seafood","non_seafood_options"],"group_suitability":{"kids":2,"elderly":3,"large_group":3,"couple":5},"stroller_accessible":false,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":2,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:30-22:00"},"best_for":["seafood","couple","luxury","quiet"],"avoid_if":["strict low budget","stroller required"],"source_status":"synthetic","source_note":"Synthetic luxury beachfront seafood option.","last_checked":"2026-06-04","lat":12.21388,"lng":109.21234},
+  {"id":"resort-kids-pancake-corner","name":"Resort Kids Pancake Corner","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Kids Club","location_hint":"Colorful pancake counter outside the kids club entrance.","distance_text":"2 minutes walk from kids club","distance_minutes":2,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":85000,"price_tier":"budget","cuisine_types":["dessert","western","snack"],"menu_tags":["mini pancakes","waffles","fruit","milk"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":3,"couple":2},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":true,"outdoor":false,"opening_hours":{"breakfast":"08:00-10:30","lunch":"10:30-14:00"},"best_for":["kids","dessert","budget","combo"],"avoid_if":["needs quiet","formal meal"],"source_status":"synthetic","source_note":"Synthetic kids dessert counter for family prompts.","last_checked":"2026-06-04","lat":12.21548,"lng":109.21071},
+  {"id":"resort-halal-grill-platter","name":"Resort Halal Grill Platter","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Resort Garden Walk","location_hint":"Halal-friendly grill platter station beside the garden walkway dining patio.","distance_text":"5 minutes walk from resort lobby","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":240000,"price_tier":"mid","cuisine_types":["bbq","asian","western"],"menu_tags":["grilled chicken","beef platter","rice","vegetables"],"dietary_tags":["halal_friendly","no_pork","non_seafood_options"],"group_suitability":{"kids":3,"elderly":4,"large_group":4,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"11:30-14:30","dinner":"17:00-21:00"},"best_for":["halal","large group","quiet","bbq"],"avoid_if":["vegetarian only"],"source_status":"synthetic","source_note":"Synthetic halal-friendly grill option.","last_checked":"2026-06-04","lat":12.21477,"lng":109.21018},
+  {"id":"phu-quoc-waterpark-burger","name":"Phu Quoc Waterpark Burger","brand_area":"VinWonders Phu Quoc","zone":"Water Park Exit","location_hint":"Burger counter outside the water park exit with wet-floor friendly seating.","distance_text":"2 minutes walk from water park exit","distance_minutes":2,"accept_voucher":true,"voucher_types":["combo","meal_credit"],"avg_price_vnd":145000,"price_tier":"mid","cuisine_types":["western","fast_food","snack"],"menu_tags":["burger","fries","chicken nuggets","soft drink"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":4,"couple":2},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":1,"crowd_level":5,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"10:00-15:30","dinner":"16:00-19:30"},"best_for":["kids","water park","combo","fast food"],"avoid_if":["needs quiet","elderly comfort"],"source_status":"synthetic","source_note":"Synthetic waterpark burger venue.","last_checked":"2026-06-04","lat":10.33521,"lng":103.85482},
+  {"id":"phu-quoc-aquarium-curry-bowl","name":"Phu Quoc Aquarium Curry Bowl","brand_area":"VinWonders Phu Quoc","zone":"Aquarium Walk","location_hint":"Curry bowl counter on Aquarium Walk near shaded benches.","distance_text":"6 minutes walk from Central Plaza","distance_minutes":6,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":160000,"price_tier":"mid","cuisine_types":["indian","asian","vegetarian"],"menu_tags":["vegetable curry","chicken curry","rice bowl","naan"],"dietary_tags":["vegetarian","halal_friendly","no_pork","non_seafood_options"],"group_suitability":{"kids":3,"elderly":4,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"11:00-15:00","dinner":"16:30-20:30"},"best_for":["indian","vegetarian","halal","quiet"],"avoid_if":["spice sensitive"],"source_status":"synthetic","source_note":"Synthetic curry option to strengthen Indian coverage.","last_checked":"2026-06-04","lat":10.33637,"lng":103.85611},
+  {"id":"phu-quoc-family-buffet-east","name":"Phu Quoc Family Buffet East","brand_area":"VinWonders Phu Quoc","zone":"Central Plaza","location_hint":"Large buffet hall on the east side of Central Plaza, close to accessible restrooms.","distance_text":"4 minutes walk from Central Plaza","distance_minutes":4,"accept_voucher":true,"voucher_types":["buffet","meal_credit"],"avg_price_vnd":330000,"price_tier":"premium","cuisine_types":["buffet","asian","vietnamese","western"],"menu_tags":["buffet","noodle station","salad","kids dessert"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":5,"large_group":5,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":4,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-14:30","dinner":"17:00-21:00"},"best_for":["buffet voucher","large group","elderly","kids"],"avoid_if":["strict low budget","needs very quiet place"],"source_status":"synthetic","source_note":"Synthetic family buffet for voucher happy path.","last_checked":"2026-06-04","lat":10.33609,"lng":103.85533},
+  {"id":"phu-quoc-korean-corn-dog","name":"Phu Quoc Korean Corn Dog","brand_area":"VinWonders Phu Quoc","zone":"Adventure Avenue","location_hint":"Korean corn dog kiosk beside Adventure Avenue game stalls.","distance_text":"5 minutes walk from Adventure Avenue","distance_minutes":5,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":70000,"price_tier":"budget","cuisine_types":["korean","snack","fast_food"],"menu_tags":["corn dog","tteokbokki cup","soda","combo snack"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":1,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":1,"crowd_level":5,"indoor":false,"outdoor":true,"opening_hours":{"all_day":"10:00-21:00"},"best_for":["korean","budget","kids","snack"],"avoid_if":["needs quiet","elderly comfort"],"source_status":"synthetic","source_note":"Synthetic Korean snack kiosk for cuisine variety.","last_checked":"2026-06-04","lat":10.33648,"lng":103.8557},
+  {"id":"phu-quoc-quiet-family-rice","name":"Phu Quoc Quiet Family Rice","brand_area":"VinWonders Phu Quoc","zone":"Garden Shelter","location_hint":"Air-conditioned rice restaurant inside the garden shelter near stroller parking.","distance_text":"5 minutes walk from Central Plaza","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":170000,"price_tier":"mid","cuisine_types":["vietnamese","asian"],"menu_tags":["family rice set","soup","stir-fry vegetables","chicken"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu","no_pork"],"group_suitability":{"kids":5,"elderly":5,"large_group":4,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-14:30","dinner":"16:30-20:30"},"best_for":["quiet","elderly","kids","vietnamese"],"avoid_if":["wants western fast food"],"source_status":"synthetic","source_note":"Synthetic quiet family rice restaurant.","last_checked":"2026-06-04","lat":10.33574,"lng":103.85501},
+  {"id":"phu-quoc-night-market-pizza","name":"Phu Quoc Night Market Pizza","brand_area":"VinWonders Phu Quoc","zone":"Night Market Lane","location_hint":"Pizza stall at the start of Night Market Lane near the souvenir lights.","distance_text":"9 minutes walk from Central Plaza","distance_minutes":9,"accept_voucher":false,"voucher_types":["none"],"avg_price_vnd":135000,"price_tier":"budget","cuisine_types":["pizza","western","fast_food","snack"],"menu_tags":["pizza slice","garlic bread","pasta cup","soda"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":false,"quiet_level":1,"crowd_level":5,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:00-23:00"},"best_for":["pizza","budget","night market","kids"],"avoid_if":["voucher required","needs quiet","wheelchair required"],"source_status":"synthetic","source_note":"Synthetic night pizza option with voucher trade-off.","last_checked":"2026-06-04","lat":10.33701,"lng":103.8562},
+  {"id":"grand-world-italian-pasta","name":"Grand World Italian Pasta","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Venice Canal","location_hint":"Italian pasta restaurant beside the canal bridge near evening boat show seating.","distance_text":"6 minutes walk from Grand World lake stage","distance_minutes":6,"accept_voucher":true,"voucher_types":["discount","meal_credit"],"avg_price_vnd":240000,"price_tier":"mid","cuisine_types":["western","italian","pizza"],"menu_tags":["pasta","pizza","salad","gelato"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":4,"large_group":4,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":true,"opening_hours":{"lunch":"11:00-14:30","dinner":"17:00-22:00"},"best_for":["pizza","couple","kids","discount voucher"],"avoid_if":["strict low budget"],"source_status":"synthetic","source_note":"Synthetic Italian restaurant for western cuisine coverage.","last_checked":"2026-06-04","lat":10.32812,"lng":103.86043},
+  {"id":"grand-world-halal-kebab","name":"Grand World Halal Kebab","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Night Market Lane","location_hint":"Halal-friendly kebab stand near the night market arch.","distance_text":"4 minutes walk from Grand World lake stage","distance_minutes":4,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":105000,"price_tier":"budget","cuisine_types":["middle_eastern","fast_food","snack"],"menu_tags":["chicken kebab","beef wrap","falafel","juice"],"dietary_tags":["halal_friendly","no_pork","vegetarian","non_seafood_options"],"group_suitability":{"kids":3,"elderly":3,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:00-23:00"},"best_for":["halal","budget","night market","combo"],"avoid_if":["needs quiet","formal dinner"],"source_status":"synthetic","source_note":"Synthetic halal kebab stand.","last_checked":"2026-06-04","lat":10.32855,"lng":103.86004},
+  {"id":"grand-world-lake-dessert-lab","name":"Grand World Lake Dessert Lab","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Lake Stage","location_hint":"Dessert cafe behind the lake stage seating with indoor booths.","distance_text":"2 minutes walk from Grand World lake stage","distance_minutes":2,"accept_voucher":true,"voucher_types":["discount","meal_credit"],"avg_price_vnd":95000,"price_tier":"budget","cuisine_types":["dessert","cafe","snack","vegetarian"],"menu_tags":["ice cream","waffle","fruit tea","cake"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":3,"large_group":3,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"all_day":"10:00-23:00"},"best_for":["dessert","kids","couple","budget"],"avoid_if":["full meal"],"source_status":"synthetic","source_note":"Synthetic dessert cafe near lake stage.","last_checked":"2026-06-04","lat":10.32802,"lng":103.85986},
+  {"id":"grand-world-river-buffet","name":"Grand World River Buffet","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"River Walk","location_hint":"Buffet restaurant along River Walk close to shuttle pickup.","distance_text":"7 minutes walk from Grand World lake stage","distance_minutes":7,"accept_voucher":true,"voucher_types":["buffet","meal_credit"],"avg_price_vnd":360000,"price_tier":"premium","cuisine_types":["buffet","asian","western","vietnamese"],"menu_tags":["buffet","grilled meats","noodle bar","dessert station"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":4,"large_group":5,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":4,"indoor":true,"outdoor":true,"opening_hours":{"lunch":"11:00-14:30","dinner":"17:00-21:30"},"best_for":["buffet voucher","large group","kids","shuttle pickup"],"avoid_if":["needs very quiet place"],"source_status":"synthetic","source_note":"Synthetic Grand World buffet for voucher coverage.","last_checked":"2026-06-04","lat":10.32872,"lng":103.85944},
+  {"id":"grand-world-vegan-pho","name":"Grand World Vegan Pho","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Quiet Alley","location_hint":"Small vegan pho shop in Quiet Alley behind the canal retail row.","distance_text":"5 minutes walk from lake stage","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":100000,"price_tier":"budget","cuisine_types":["vegetarian","vietnamese","asian"],"menu_tags":["vegan pho","tofu rice","mushroom broth","herbal tea"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":5,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-21:30"},"best_for":["vegetarian","quiet","elderly","budget"],"avoid_if":["wants meat menu"],"source_status":"synthetic","source_note":"Synthetic vegan pho venue for quiet dietary prompts.","last_checked":"2026-06-04","lat":10.32771,"lng":103.85958},
+  {"id":"grand-world-seafood-tapas","name":"Grand World Seafood Tapas","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Venice Canal","location_hint":"Canal-side seafood tapas bar near the bridge photo spot.","distance_text":"8 minutes walk from lake stage","distance_minutes":8,"accept_voucher":false,"voucher_types":["none"],"avg_price_vnd":420000,"price_tier":"premium","cuisine_types":["seafood","western","snack"],"menu_tags":["shrimp tapas","grilled squid","salad","mocktail"],"dietary_tags":["seafood","non_seafood_options"],"group_suitability":{"kids":2,"elderly":3,"large_group":2,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:30-23:00"},"best_for":["seafood","couple","quiet","canal view"],"avoid_if":["voucher required","strict low budget"],"source_status":"synthetic","source_note":"Synthetic seafood tapas option for couple and no-voucher trade-off.","last_checked":"2026-06-04","lat":10.32824,"lng":103.86076},
+  {"id":"nam-hoi-an-folk-island-com-rang","name":"Nam Hoi An Folk Island Com Rang","brand_area":"VinWonders Nam Hoi An","zone":"Folk Island Arcade","location_hint":"Fried-rice counter beside Folk Island Arcade rest benches.","distance_text":"4 minutes walk from Folk Island gate","distance_minutes":4,"accept_voucher":true,"voucher_types":["combo","meal_credit"],"avg_price_vnd":85000,"price_tier":"budget","cuisine_types":["vietnamese","asian","fast_food"],"menu_tags":["fried rice","egg rice","chicken rice","iced tea"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":3,"large_group":4,"couple":2},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-20:30"},"best_for":["budget","vietnamese","kids","combo"],"avoid_if":["wants quiet premium meal"],"source_status":"synthetic","source_note":"Synthetic fried-rice counter for budget demos.","last_checked":"2026-06-04","lat":15.85018,"lng":108.36508},
+  {"id":"nam-hoi-an-lantern-tea-cafe","name":"Nam Hoi An Lantern Tea Cafe","brand_area":"VinWonders Nam Hoi An","zone":"Lantern Street","location_hint":"Quiet tea cafe under lanterns near the shaded cultural street.","distance_text":"7 minutes walk from main gate","distance_minutes":7,"accept_voucher":true,"voucher_types":["discount","meal_credit"],"avg_price_vnd":105000,"price_tier":"budget","cuisine_types":["cafe","dessert","vegetarian"],"menu_tags":["tea","sesame cake","fruit dessert","coffee"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":5,"large_group":2,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":true,"opening_hours":{"all_day":"09:00-21:00"},"best_for":["quiet","elderly","couple","dessert"],"avoid_if":["large group meal"],"source_status":"synthetic","source_note":"Synthetic quiet cafe for Nam Hoi An coverage.","last_checked":"2026-06-04","lat":15.84932,"lng":108.36555},
+  {"id":"nam-hoi-an-wheelchair-noodle-house","name":"Nam Hoi An Wheelchair Noodle House","brand_area":"VinWonders Nam Hoi An","zone":"Main Gate","location_hint":"Step-free noodle house opposite main gate accessible restroom block.","distance_text":"2 minutes walk from main gate","distance_minutes":2,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":120000,"price_tier":"budget","cuisine_types":["vietnamese","asian"],"menu_tags":["cao lau","pho","chicken noodles","vegetable soup"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":5,"large_group":4,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"breakfast":"08:30-10:30","lunch":"10:30-15:00","dinner":"16:30-20:00"},"best_for":["wheelchair","elderly","near entrance","vietnamese"],"avoid_if":["wants buffet"],"source_status":"synthetic","source_note":"Synthetic accessible noodle restaurant.","last_checked":"2026-06-04","lat":15.85102,"lng":108.36501},
+  {"id":"nam-hoi-an-kids-chicken-combo","name":"Nam Hoi An Kids Chicken Combo","brand_area":"VinWonders Nam Hoi An","zone":"Family Rides","location_hint":"Chicken combo stand near the family rides stroller bay.","distance_text":"5 minutes walk from main gate","distance_minutes":5,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":95000,"price_tier":"budget","cuisine_types":["fast_food","western","snack"],"menu_tags":["fried chicken","fries","kids combo","juice"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":4,"couple":2},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"10:00-15:00","dinner":"16:00-20:00"},"best_for":["kids","combo","budget","fast food"],"avoid_if":["needs quiet","elderly comfort"],"source_status":"synthetic","source_note":"Synthetic kids chicken combo stand.","last_checked":"2026-06-04","lat":15.85062,"lng":108.36564},
+  {"id":"nam-hoi-an-spice-curry-house","name":"Nam Hoi An Spice Curry House","brand_area":"VinWonders Nam Hoi An","zone":"Riverfront Dining","location_hint":"Indoor curry house beside riverfront dining entrance.","distance_text":"11 minutes walk from main gate","distance_minutes":11,"accept_voucher":true,"voucher_types":["meal_credit"],"avg_price_vnd":180000,"price_tier":"mid","cuisine_types":["indian","asian","vegetarian"],"menu_tags":["vegetable curry","chicken curry","naan","rice"],"dietary_tags":["vegetarian","halal_friendly","no_pork","non_seafood_options"],"group_suitability":{"kids":2,"elderly":4,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"11:00-14:30","dinner":"17:00-20:30"},"best_for":["indian","vegetarian","quiet","halal"],"avoid_if":["spice sensitive kids"],"source_status":"synthetic","source_note":"Synthetic Indian curry house for Nam Hoi An.","last_checked":"2026-06-04","lat":15.84722,"lng":108.36601},
+  {"id":"nam-hoi-an-river-bbq-night","name":"Nam Hoi An River BBQ Night","brand_area":"VinWonders Nam Hoi An","zone":"Riverfront Dining","location_hint":"Open-air BBQ night stall close to riverfront show seating.","distance_text":"13 minutes walk from main gate","distance_minutes":13,"accept_voucher":false,"voucher_types":["none"],"avg_price_vnd":230000,"price_tier":"mid","cuisine_types":["bbq","vietnamese","asian"],"menu_tags":["grilled pork","chicken skewer","corn","beer"],"dietary_tags":["non_seafood_options"],"group_suitability":{"kids":2,"elderly":2,"large_group":5,"couple":3},"stroller_accessible":false,"wheelchair_accessible":false,"quiet_level":1,"crowd_level":5,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:00-22:00"},"best_for":["bbq","large group","night show"],"avoid_if":["voucher required","needs quiet","wheelchair required"],"source_status":"synthetic","source_note":"Synthetic BBQ stall for negative and trade-off coverage.","last_checked":"2026-06-04","lat":15.84688,"lng":108.3664},
+  {"id":"central-plaza-matcha-shop","name":"Central Plaza Matcha Shop","brand_area":"VinWonders Phu Quoc","zone":"Central Plaza","location_hint":"Matcha dessert shop beside Central Plaza fountain seating.","distance_text":"1 minute walk from Central Plaza","distance_minutes":1,"accept_voucher":true,"voucher_types":["discount","combo"],"avg_price_vnd":90000,"price_tier":"budget","cuisine_types":["japanese","dessert","cafe","vegetarian"],"menu_tags":["matcha latte","mochi","soft serve","cake"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":3,"large_group":2,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"all_day":"09:30-21:30"},"best_for":["japanese","dessert","couple","near plaza"],"avoid_if":["full meal"],"source_status":"synthetic","source_note":"Synthetic matcha shop for dessert diversity.","last_checked":"2026-06-04","lat":10.33605,"lng":103.85518},
+  {"id":"central-plaza-taco-kiosk","name":"Central Plaza Taco Kiosk","brand_area":"VinWonders Phu Quoc","zone":"Central Plaza","location_hint":"Taco kiosk beside Central Plaza queue line and shade umbrellas.","distance_text":"2 minutes walk from Central Plaza","distance_minutes":2,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":120000,"price_tier":"budget","cuisine_types":["mexican","western","snack","fast_food"],"menu_tags":["chicken taco","bean taco","nachos","soda"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":2,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"10:00-15:30","dinner":"16:00-20:00"},"best_for":["budget","western","kids","combo"],"avoid_if":["needs quiet","elderly comfort"],"source_status":"synthetic","source_note":"Synthetic taco kiosk for western budget prompts.","last_checked":"2026-06-04","lat":10.33611,"lng":103.85542},
+  {"id":"central-plaza-senior-soup","name":"Central Plaza Senior Soup","brand_area":"VinWonders Phu Quoc","zone":"Central Plaza","location_hint":"Quiet soup restaurant behind Central Plaza elevators with soft seating.","distance_text":"2 minutes walk from Central Plaza","distance_minutes":2,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":150000,"price_tier":"mid","cuisine_types":["vietnamese","asian"],"menu_tags":["chicken soup","vegetable soup","rice porridge","tea"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":5,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-14:30","dinner":"16:30-20:30"},"best_for":["elderly","quiet","wheelchair","vietnamese"],"avoid_if":["fast food only"],"source_status":"synthetic","source_note":"Synthetic senior-friendly soup restaurant.","last_checked":"2026-06-04","lat":10.33595,"lng":103.85512},
+  {"id":"grand-world-kids-ice-cream-cart","name":"Grand World Kids Ice Cream Cart","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Lake Stage","location_hint":"Ice cream cart behind the family seating area at the lake stage.","distance_text":"1 minute walk from lake stage","distance_minutes":1,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":60000,"price_tier":"budget","cuisine_types":["dessert","snack","vegetarian"],"menu_tags":["ice cream","popsicle","fruit cup","water"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":2,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"all_day":"10:00-22:30"},"best_for":["kids","dessert","budget","near stage"],"avoid_if":["full meal"],"source_status":"synthetic","source_note":"Synthetic ice cream cart for kids snack prompts.","last_checked":"2026-06-04","lat":10.32801,"lng":103.85973},
+  {"id":"grand-world-wheelchair-family-pizza","name":"Grand World Wheelchair Family Pizza","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Lake Stage","location_hint":"Step-free pizza restaurant beside the lake stage accessible ramp.","distance_text":"3 minutes walk from lake stage","distance_minutes":3,"accept_voucher":true,"voucher_types":["combo","meal_credit","discount"],"avg_price_vnd":165000,"price_tier":"mid","cuisine_types":["pizza","western","fast_food"],"menu_tags":["family pizza","pasta","salad","kids soda"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":4,"large_group":5,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"11:00-14:30","dinner":"16:30-22:00"},"best_for":["wheelchair","pizza","kids","large group"],"avoid_if":["needs very quiet place"],"source_status":"synthetic","source_note":"Synthetic accessible family pizza venue.","last_checked":"2026-06-04","lat":10.32817,"lng":103.85988},
+  {"id":"grand-world-vietnamese-hotpot","name":"Grand World Vietnamese Hotpot","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Night Market Lane","location_hint":"Vietnamese hotpot house at the end of Night Market Lane near shuttle signs.","distance_text":"8 minutes walk from lake stage","distance_minutes":8,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":280000,"price_tier":"premium","cuisine_types":["vietnamese","asian","seafood"],"menu_tags":["hotpot","chicken hotpot","seafood hotpot","vegetables"],"dietary_tags":["seafood","non_seafood_options"],"group_suitability":{"kids":3,"elderly":3,"large_group":5,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":true,"outdoor":false,"opening_hours":{"dinner":"17:00-23:00"},"best_for":["large group","vietnamese","hotpot","discount voucher"],"avoid_if":["needs quiet","strict low budget"],"source_status":"synthetic","source_note":"Synthetic hotpot venue for group dinner coverage.","last_checked":"2026-06-04","lat":10.32886,"lng":103.86022},
+  {"id":"nha-trang-allergy-safe-rice","name":"Nha Trang Allergy Safe Rice","brand_area":"VinWonders Nha Trang","zone":"Main Gate","location_hint":"Simple rice counter near first-aid room, useful for seafood-avoidance requests.","distance_text":"3 minutes walk from main gate","distance_minutes":3,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":120000,"price_tier":"budget","cuisine_types":["vietnamese","asian"],"menu_tags":["plain rice","grilled chicken","vegetable soup","fruit"],"dietary_tags":["non_seafood_options","vegetarian","no_pork","kids_menu"],"group_suitability":{"kids":4,"elderly":4,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-20:00"},"best_for":["non seafood","kids","elderly","budget"],"avoid_if":["wants seafood"],"source_status":"synthetic","source_note":"Synthetic allergy-safe rice option.","last_checked":"2026-06-04","lat":12.2255,"lng":109.19762},
+  {"id":"nha-trang-harbour-shuttle-coffee","name":"Nha Trang Harbour Shuttle Coffee","brand_area":"Vinpearl Harbour Nha Trang","zone":"Cable Car Station","location_hint":"Coffee stand next to cable car station shuttle waiting line.","distance_text":"1 minute walk from cable car station","distance_minutes":1,"accept_voucher":true,"voucher_types":["discount"],"avg_price_vnd":70000,"price_tier":"budget","cuisine_types":["cafe","snack","dessert"],"menu_tags":["coffee","tea","banana cake","water"],"dietary_tags":["vegetarian","non_seafood_options"],"group_suitability":{"kids":2,"elderly":4,"large_group":2,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":false,"outdoor":true,"opening_hours":{"all_day":"07:30-22:00"},"best_for":["near shuttle","cafe","budget","elderly"],"avoid_if":["full meal"],"source_status":"synthetic","source_note":"Synthetic shuttle coffee point.","last_checked":"2026-06-04","lat":12.23501,"lng":109.19402},
+  {"id":"resort-beach-smoothie-shack","name":"Resort Beach Smoothie Shack","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Beachfront","location_hint":"Smoothie shack by the beachfront towel counter and shaded loungers.","distance_text":"9 minutes walk from resort lobby","distance_minutes":9,"accept_voucher":true,"voucher_types":["discount","combo"],"avg_price_vnd":85000,"price_tier":"budget","cuisine_types":["dessert","snack","cafe","vegetarian"],"menu_tags":["smoothie","coconut water","fruit bowl","yogurt"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":3,"large_group":2,"couple":5},"stroller_accessible":true,"wheelchair_accessible":false,"quiet_level":4,"crowd_level":2,"indoor":false,"outdoor":true,"opening_hours":{"all_day":"09:00-19:00"},"best_for":["beach","kids","dessert","couple"],"avoid_if":["wheelchair required","full meal"],"source_status":"synthetic","source_note":"Synthetic beach smoothie shack.","last_checked":"2026-06-04","lat":12.21377,"lng":109.21208},
+  {"id":"phu-quoc-stroller-safe-cafe","name":"Phu Quoc Stroller Safe Cafe","brand_area":"VinWonders Phu Quoc","zone":"Central Plaza","location_hint":"Wide-aisle cafe beside stroller parking at Central Plaza.","distance_text":"2 minutes walk from Central Plaza","distance_minutes":2,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":115000,"price_tier":"budget","cuisine_types":["cafe","dessert","western","snack"],"menu_tags":["sandwich","coffee","fruit cake","kids milk"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":4,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"all_day":"08:30-21:00"},"best_for":["stroller","kids","quiet","budget"],"avoid_if":["heavy dinner"],"source_status":"synthetic","source_note":"Synthetic stroller-friendly cafe.","last_checked":"2026-06-04","lat":10.3359,"lng":103.85529},
+  {"id":"phu-quoc-seafood-family-noodle","name":"Phu Quoc Seafood Family Noodle","brand_area":"VinWonders Phu Quoc","zone":"Aquarium Walk","location_hint":"Family noodle shop near Aquarium Walk with seafood and chicken noodle choices.","distance_text":"5 minutes walk from Central Plaza","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":145000,"price_tier":"mid","cuisine_types":["seafood","vietnamese","asian"],"menu_tags":["seafood noodle","chicken noodle","vegetable soup","rice"],"dietary_tags":["seafood","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":4,"large_group":4,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-20:30"},"best_for":["seafood","kids","elderly","vietnamese"],"avoid_if":["strict no seafood smell"],"source_status":"synthetic","source_note":"Synthetic seafood noodle with non-seafood options.","last_checked":"2026-06-04","lat":10.33631,"lng":103.85589},
+  {"id":"nam-hoi-an-coconut-dessert","name":"Nam Hoi An Coconut Dessert","brand_area":"VinWonders Nam Hoi An","zone":"Lantern Street","location_hint":"Coconut dessert kiosk near Lantern Street photo corner.","distance_text":"6 minutes walk from main gate","distance_minutes":6,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":65000,"price_tier":"budget","cuisine_types":["dessert","snack","vegetarian"],"menu_tags":["coconut ice cream","sweet soup","fruit cup","tea"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":3,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":false,"outdoor":true,"opening_hours":{"all_day":"09:30-21:00"},"best_for":["dessert","budget","kids","vegetarian"],"avoid_if":["full meal"],"source_status":"synthetic","source_note":"Synthetic coconut dessert kiosk.","last_checked":"2026-06-04","lat":15.84945,"lng":108.36542},
+  {"id":"nam-hoi-an-buffet-market","name":"Nam Hoi An Buffet Market","brand_area":"VinWonders Nam Hoi An","zone":"Main Gate","location_hint":"Large market-style buffet hall just inside the main gate entrance.","distance_text":"3 minutes walk from main gate","distance_minutes":3,"accept_voucher":true,"voucher_types":["buffet","meal_credit"],"avg_price_vnd":300000,"price_tier":"premium","cuisine_types":["buffet","vietnamese","asian","western"],"menu_tags":["buffet","cao lau station","pasta","dessert"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":5,"large_group":5,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":4,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-14:30","dinner":"17:00-20:30"},"best_for":["buffet voucher","large group","kids","elderly"],"avoid_if":["strict low budget","needs very quiet place"],"source_status":"synthetic","source_note":"Synthetic buffet hall for Nam Hoi An voucher coverage.","last_checked":"2026-06-04","lat":15.85088,"lng":108.36517},
+  {"id":"grand-world-canal-cafe-brunch","name":"Grand World Canal Cafe Brunch","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Venice Canal","location_hint":"Brunch cafe beside the canal railing with shaded stroller space.","distance_text":"5 minutes walk from lake stage","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":160000,"price_tier":"mid","cuisine_types":["cafe","western","vegetarian"],"menu_tags":["brunch plate","omelet","salad","coffee"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":4,"large_group":3,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":true,"opening_hours":{"breakfast":"08:00-10:30","lunch":"10:30-15:00"},"best_for":["brunch","couple","quiet","vegetarian"],"avoid_if":["late dinner"],"source_status":"synthetic","source_note":"Synthetic canal brunch cafe.","last_checked":"2026-06-04","lat":10.3283,"lng":103.8605},
+  {"id":"grand-world-kids-noodle-cup","name":"Grand World Kids Noodle Cup","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Night Market Lane","location_hint":"Kids noodle cup counter near family souvenir stalls.","distance_text":"6 minutes walk from lake stage","distance_minutes":6,"accept_voucher":true,"voucher_types":["combo"],"avg_price_vnd":65000,"price_tier":"budget","cuisine_types":["asian","snack","fast_food"],"menu_tags":["noodle cup","egg rice","juice","small snack"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":3,"couple":2},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:00-23:00"},"best_for":["kids","budget","snack","combo"],"avoid_if":["needs quiet","formal meal"],"source_status":"synthetic","source_note":"Synthetic kids snack counter.","last_checked":"2026-06-04","lat":10.32865,"lng":103.8601},
+  {"id":"nha-trang-pizza-pasta-family","name":"Nha Trang Pizza Pasta Family","brand_area":"VinWonders Nha Trang","zone":"Food Court","location_hint":"Family pizza and pasta counter at the rear of the food court seating area.","distance_text":"6 minutes walk from main gate","distance_minutes":6,"accept_voucher":true,"voucher_types":["combo","meal_credit","discount"],"avg_price_vnd":150000,"price_tier":"mid","cuisine_types":["pizza","western","fast_food"],"menu_tags":["pizza","pasta","salad","kids drink"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":3,"large_group":4,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":true,"outdoor":true,"opening_hours":{"lunch":"10:00-15:30","dinner":"16:00-20:30"},"best_for":["pizza","kids","combo","large group"],"avoid_if":["needs quiet"],"source_status":"synthetic","source_note":"Synthetic pizza counter to improve pizza coverage.","last_checked":"2026-06-04","lat":12.22186,"lng":109.19318},
+  {"id":"nha-trang-korean-rice-box","name":"Nha Trang Korean Rice Box","brand_area":"VinWonders Nha Trang","zone":"Indoor Games","location_hint":"Korean rice box shop beside indoor games rest tables.","distance_text":"5 minutes walk from food court","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":135000,"price_tier":"budget","cuisine_types":["korean","asian","fast_food"],"menu_tags":["bibimbap","kimchi rice","chicken rice box","tea"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":3,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-20:00"},"best_for":["korean","budget","kids","quick lunch"],"avoid_if":["very spice sensitive"],"source_status":"synthetic","source_note":"Synthetic Korean rice box option.","last_checked":"2026-06-04","lat":12.22228,"lng":109.19366},
+  {"id":"harbour-family-buffet-deck","name":"Harbour Family Buffet Deck","brand_area":"Vinpearl Harbour Nha Trang","zone":"Harbour Promenade","location_hint":"Buffet deck above the promenade with elevator access from the harbour walkway.","distance_text":"5 minutes walk from cable car station","distance_minutes":5,"accept_voucher":true,"voucher_types":["buffet","meal_credit","discount"],"avg_price_vnd":340000,"price_tier":"premium","cuisine_types":["buffet","asian","western","vietnamese"],"menu_tags":["buffet","seafood corner","kids dessert","salad"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":4,"large_group":5,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":4,"indoor":true,"outdoor":true,"opening_hours":{"lunch":"11:00-14:30","dinner":"17:00-21:30"},"best_for":["buffet voucher","large group","kids","harbour"],"avoid_if":["strict low budget"],"source_status":"synthetic","source_note":"Synthetic harbour buffet option.","last_checked":"2026-06-04","lat":12.23518,"lng":109.19374},
+  {"id":"resort-sunset-couple-sushi","name":"Resort Sunset Couple Sushi","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Beachfront","location_hint":"Small sushi counter near sunset loungers on the resort beachfront.","distance_text":"10 minutes walk from resort lobby","distance_minutes":10,"accept_voucher":true,"voucher_types":["discount"],"avg_price_vnd":420000,"price_tier":"premium","cuisine_types":["japanese","seafood","asian"],"menu_tags":["sushi set","sashimi","teriyaki chicken","green tea"],"dietary_tags":["seafood","non_seafood_options"],"group_suitability":{"kids":2,"elderly":3,"large_group":2,"couple":5},"stroller_accessible":false,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:30-22:00"},"best_for":["japanese","couple","quiet","sunset"],"avoid_if":["kids","large group","stroller required"],"source_status":"synthetic","source_note":"Synthetic couple sushi option.","last_checked":"2026-06-04","lat":12.21362,"lng":109.21222},
+  {"id":"phu-quoc-vegetarian-buffet-corner","name":"Phu Quoc Vegetarian Buffet Corner","brand_area":"VinWonders Phu Quoc","zone":"Central Plaza","location_hint":"Vegetarian buffet corner inside Central Plaza dining hall.","distance_text":"4 minutes walk from Central Plaza","distance_minutes":4,"accept_voucher":true,"voucher_types":["buffet","meal_credit"],"avg_price_vnd":250000,"price_tier":"mid","cuisine_types":["buffet","vegetarian","asian","vietnamese"],"menu_tags":["vegetarian buffet","tofu","mushroom soup","rice"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":5,"large_group":4,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-14:30","dinner":"17:00-20:30"},"best_for":["vegetarian","buffet voucher","elderly","quiet"],"avoid_if":["wants meat heavy buffet"],"source_status":"synthetic","source_note":"Synthetic vegetarian buffet option.","last_checked":"2026-06-04","lat":10.33612,"lng":103.85524},
+  {"id":"nam-hoi-an-pizza-river-kids","name":"Nam Hoi An Pizza River Kids","brand_area":"VinWonders Nam Hoi An","zone":"Riverfront Dining","location_hint":"Pizza kiosk on the riverfront path close to family show seating.","distance_text":"9 minutes walk from main gate","distance_minutes":9,"accept_voucher":true,"voucher_types":["combo","meal_credit"],"avg_price_vnd":135000,"price_tier":"budget","cuisine_types":["pizza","western","fast_food","snack"],"menu_tags":["pizza slice","pasta","fries","juice"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":4,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:00-20:30"},"best_for":["pizza","kids","combo","budget"],"avoid_if":["needs quiet","elderly comfort"],"source_status":"synthetic","source_note":"Synthetic pizza kiosk for Nam Hoi An.","last_checked":"2026-06-04","lat":15.84742,"lng":108.36614},
+  {"id":"grand-world-allergy-safe-kitchen","name":"Grand World Allergy Safe Kitchen","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Quiet Alley","location_hint":"Simple allergy-aware kitchen in Quiet Alley with clear non-seafood menu labels.","distance_text":"5 minutes walk from lake stage","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":155000,"price_tier":"mid","cuisine_types":["vietnamese","asian","western"],"menu_tags":["chicken rice","vegetable pasta","soup","fruit"],"dietary_tags":["non_seafood_options","vegetarian","no_pork","kids_menu"],"group_suitability":{"kids":4,"elderly":4,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-21:00"},"best_for":["non seafood","quiet","kids","elderly"],"avoid_if":["wants seafood"],"source_status":"synthetic","source_note":"Synthetic allergy-aware kitchen for no-seafood prompts.","last_checked":"2026-06-04","lat":10.32775,"lng":103.8595},
+  {"id":"harbour-elderly-rice-porridge","name":"Harbour Elderly Rice Porridge","brand_area":"Vinpearl Harbour Nha Trang","zone":"Cable Car Station","location_hint":"Soft-food porridge shop beside cable car station waiting benches.","distance_text":"2 minutes walk from cable car station","distance_minutes":2,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":90000,"price_tier":"budget","cuisine_types":["vietnamese","asian"],"menu_tags":["rice porridge","chicken soup","vegetable soup","tea"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":5,"large_group":2,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":false,"opening_hours":{"breakfast":"08:00-10:30","lunch":"10:30-14:30","dinner":"16:30-20:00"},"best_for":["elderly","quiet","budget","near harbour"],"avoid_if":["large group","spicy food"],"source_status":"synthetic","source_note":"Synthetic elderly-friendly porridge shop.","last_checked":"2026-06-04","lat":12.23502,"lng":109.19397},
+  {"id":"nha-trang-luxury-rooftop-steak","name":"Nha Trang Luxury Rooftop Steak","brand_area":"VinWonders Nha Trang","zone":"Sea View Deck","location_hint":"Rooftop steak restaurant above the sea-view deck with elevator access.","distance_text":"12 minutes walk from main gate","distance_minutes":12,"accept_voucher":true,"voucher_types":["discount"],"avg_price_vnd":760000,"price_tier":"luxury","cuisine_types":["western","bbq"],"menu_tags":["steak","grilled chicken","salad","wine"],"dietary_tags":["non_seafood_options"],"group_suitability":{"kids":1,"elderly":3,"large_group":2,"couple":5},"stroller_accessible":false,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":true,"opening_hours":{"dinner":"17:30-22:00"},"best_for":["couple","luxury","quiet","western"],"avoid_if":["kids","large group","strict low budget","stroller required"],"source_status":"synthetic","source_note":"Synthetic luxury steak venue for couple trade-offs.","last_checked":"2026-06-04","lat":12.22428,"lng":109.1906},
+  {"id":"resort-large-group-vietnamese-hall","name":"Resort Large Group Vietnamese Hall","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Conference Wing","location_hint":"Large Vietnamese dining hall beside the resort conference wing.","distance_text":"6 minutes walk from resort lobby","distance_minutes":6,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":220000,"price_tier":"mid","cuisine_types":["vietnamese","asian"],"menu_tags":["set menu","family rice","soup","vegetables"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":5,"large_group":5,"couple":2},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"11:00-14:30","dinner":"17:00-21:00"},"best_for":["large group","elderly","vietnamese","wheelchair"],"avoid_if":["couple intimate dining"],"source_status":"synthetic","source_note":"Synthetic large-group Vietnamese hall.","last_checked":"2026-06-04","lat":12.21532,"lng":109.20961},
+  {"id":"phu-quoc-budget-seafood-rice","name":"Phu Quoc Budget Seafood Rice","brand_area":"VinWonders Phu Quoc","zone":"Aquarium Walk","location_hint":"Budget seafood rice counter opposite Aquarium Walk stroller bay.","distance_text":"6 minutes walk from Central Plaza","distance_minutes":6,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":115000,"price_tier":"budget","cuisine_types":["seafood","vietnamese","asian"],"menu_tags":["fish rice","shrimp rice","chicken rice","soup"],"dietary_tags":["seafood","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":3,"large_group":4,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-20:30"},"best_for":["seafood","budget","kids","combo"],"avoid_if":["strict no seafood smell"],"source_status":"synthetic","source_note":"Synthetic budget seafood rice option.","last_checked":"2026-06-04","lat":10.33634,"lng":103.85581},
+  {"id":"grand-world-ramen-after-show","name":"Grand World Ramen After Show","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Lake Stage","location_hint":"Ramen shop behind Lake Stage exit, useful after evening show crowds clear.","distance_text":"2 minutes walk from lake stage","distance_minutes":2,"accept_voucher":true,"voucher_types":["meal_credit"],"avg_price_vnd":170000,"price_tier":"mid","cuisine_types":["japanese","asian"],"menu_tags":["ramen","udon","teriyaki chicken","green tea"],"dietary_tags":["non_seafood_options"],"group_suitability":{"kids":3,"elderly":3,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":4,"indoor":true,"outdoor":false,"opening_hours":{"dinner":"17:00-23:00"},"best_for":["japanese","near stage","after show","couple"],"avoid_if":["strict low budget"],"source_status":"synthetic","source_note":"Synthetic ramen shop for late dinner prompts.","last_checked":"2026-06-04","lat":10.32805,"lng":103.85968},
+  {"id":"nam-hoi-an-halal-rice-lantern","name":"Nam Hoi An Halal Rice Lantern","brand_area":"VinWonders Nam Hoi An","zone":"Lantern Street","location_hint":"Halal-friendly rice stand near Lantern Street shaded benches.","distance_text":"6 minutes walk from main gate","distance_minutes":6,"accept_voucher":true,"voucher_types":["meal_credit","combo"],"avg_price_vnd":115000,"price_tier":"budget","cuisine_types":["vietnamese","asian","fast_food"],"menu_tags":["chicken rice","vegetable rice","egg rice","tea"],"dietary_tags":["halal_friendly","no_pork","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":4,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:00-20:30"},"best_for":["halal","budget","kids","vietnamese"],"avoid_if":["wants buffet"],"source_status":"synthetic","source_note":"Synthetic halal rice stand for Nam Hoi An.","last_checked":"2026-06-04","lat":15.84941,"lng":108.36538},
+  {"id":"nha-trang-cafe-maple-quiet","name":"Nha Trang Cafe Maple Quiet","brand_area":"VinWonders Nha Trang","zone":"Garden Rest Area","location_hint":"Quiet maple-themed cafe behind the garden rest area information sign.","distance_text":"8 minutes walk from main gate","distance_minutes":8,"accept_voucher":true,"voucher_types":["discount"],"avg_price_vnd":110000,"price_tier":"budget","cuisine_types":["cafe","dessert","vegetarian"],"menu_tags":["coffee","tea","cake","fruit bowl"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":5,"large_group":2,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":true,"opening_hours":{"all_day":"09:00-20:30"},"best_for":["quiet","elderly","couple","cafe"],"avoid_if":["full meal","large group"],"source_status":"synthetic","source_note":"Synthetic quiet cafe for correction demos.","last_checked":"2026-06-04","lat":12.22336,"lng":109.1952},
+  {"id":"harbour-low-budget-rice-roll","name":"Harbour Low Budget Rice Roll","brand_area":"Vinpearl Harbour Nha Trang","zone":"Harbour Night Lane","location_hint":"Rice roll cart near the start of Harbour Night Lane.","distance_text":"4 minutes walk from cable car station","distance_minutes":4,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":50000,"price_tier":"budget","cuisine_types":["vietnamese","snack","fast_food"],"menu_tags":["rice roll","sticky rice","egg roll","tea"],"dietary_tags":["non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":2,"large_group":3,"couple":2},"stroller_accessible":true,"wheelchair_accessible":false,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"breakfast":"08:00-10:30","dinner":"17:00-22:30"},"best_for":["budget","snack","combo","vietnamese"],"avoid_if":["wheelchair required","needs quiet"],"source_status":"synthetic","source_note":"Synthetic very low budget harbour snack.","last_checked":"2026-06-04","lat":12.23472,"lng":109.19428},
+  {"id":"resort-baby-friendly-buffet","name":"Resort Baby Friendly Buffet","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Resort Lobby","location_hint":"Buffet room beside resort lobby with high chairs and stroller parking.","distance_text":"2 minutes walk from resort lobby","distance_minutes":2,"accept_voucher":true,"voucher_types":["buffet","meal_credit","discount"],"avg_price_vnd":310000,"price_tier":"premium","cuisine_types":["buffet","vietnamese","western","asian"],"menu_tags":["buffet","baby porridge","fruit","pasta"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu","no_pork"],"group_suitability":{"kids":5,"elderly":5,"large_group":5,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"breakfast":"06:30-10:30","lunch":"11:00-14:30","dinner":"17:00-21:00"},"best_for":["stroller","kids","buffet voucher","elderly"],"avoid_if":["strict low budget"],"source_status":"synthetic","source_note":"Synthetic baby-friendly buffet for family happy paths.","last_checked":"2026-06-04","lat":12.21504,"lng":109.20988},
+  {"id":"phu-quoc-quiet-couple-wine-bar","name":"Phu Quoc Quiet Couple Wine Bar","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Lagoon Bridge","location_hint":"Quiet wine and small-plates bar beside Lagoon Bridge.","distance_text":"9 minutes walk from lake stage","distance_minutes":9,"accept_voucher":true,"voucher_types":["discount"],"avg_price_vnd":620000,"price_tier":"luxury","cuisine_types":["western","snack","seafood"],"menu_tags":["small plates","cheese","grilled fish","wine"],"dietary_tags":["seafood","non_seafood_options"],"group_suitability":{"kids":1,"elderly":3,"large_group":1,"couple":5},"stroller_accessible":false,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":true,"opening_hours":{"dinner":"18:00-23:00"},"best_for":["couple","quiet","luxury","discount voucher"],"avoid_if":["kids","large group","strict low budget"],"source_status":"synthetic","source_note":"Synthetic quiet luxury couple venue.","last_checked":"2026-06-04","lat":10.32792,"lng":103.86069},
+  {"id":"nam-hoi-an-senior-cao-lau","name":"Nam Hoi An Senior Cao Lau","brand_area":"VinWonders Nam Hoi An","zone":"Lantern Street","location_hint":"Quiet cao lau house beside Lantern Street rest benches.","distance_text":"5 minutes walk from main gate","distance_minutes":5,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":130000,"price_tier":"budget","cuisine_types":["vietnamese","asian"],"menu_tags":["cao lau","chicken rice","vegetable soup","tea"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":5,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":true,"opening_hours":{"lunch":"10:30-15:00","dinner":"16:30-20:30"},"best_for":["elderly","quiet","vietnamese","budget"],"avoid_if":["wants western fast food"],"source_status":"synthetic","source_note":"Synthetic senior-friendly Cao Lau venue.","last_checked":"2026-06-04","lat":15.84956,"lng":108.36533},
+  {"id":"nha-trang-night-dessert-waffle","name":"Nha Trang Night Dessert Waffle","brand_area":"VinWonders Nha Trang","zone":"Sea View Deck","location_hint":"Waffle dessert stand near the sea-view evening photo deck.","distance_text":"10 minutes walk from main gate","distance_minutes":10,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":95000,"price_tier":"budget","cuisine_types":["dessert","western","snack","vegetarian"],"menu_tags":["waffle","ice cream","fruit","milk tea"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":5,"elderly":2,"large_group":3,"couple":5},"stroller_accessible":true,"wheelchair_accessible":false,"quiet_level":3,"crowd_level":3,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"16:30-21:30"},"best_for":["dessert","kids","couple","budget"],"avoid_if":["wheelchair required","full meal"],"source_status":"synthetic","source_note":"Synthetic night dessert stand.","last_checked":"2026-06-04","lat":12.22403,"lng":109.19088},
+  {"id":"harbour-western-sandwich-deli","name":"Harbour Western Sandwich Deli","brand_area":"Vinpearl Harbour Nha Trang","zone":"Harbour Promenade","location_hint":"Sandwich deli beside harbour ticket help desk and shaded seats.","distance_text":"3 minutes walk from harbour information kiosk","distance_minutes":3,"accept_voucher":true,"voucher_types":["meal_credit","combo"],"avg_price_vnd":125000,"price_tier":"budget","cuisine_types":["western","fast_food","cafe"],"menu_tags":["sandwich","salad","coffee","kids juice"],"dietary_tags":["vegetarian","non_seafood_options","no_pork","kids_menu"],"group_suitability":{"kids":4,"elderly":4,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":false,"opening_hours":{"breakfast":"08:30-10:30","lunch":"10:30-15:30","dinner":"16:30-20:30"},"best_for":["western","budget","near harbour","elderly"],"avoid_if":["wants buffet"],"source_status":"synthetic","source_note":"Synthetic western deli for simple meal prompts.","last_checked":"2026-06-04","lat":12.23516,"lng":109.19389},
+  {"id":"phu-quoc-family-sushi-train","name":"Phu Quoc Family Sushi Train","brand_area":"VinWonders Phu Quoc","zone":"Central Plaza","location_hint":"Sushi train restaurant beside Central Plaza family seating and elevators.","distance_text":"3 minutes walk from Central Plaza","distance_minutes":3,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":260000,"price_tier":"premium","cuisine_types":["japanese","asian","seafood"],"menu_tags":["sushi train","teriyaki chicken","rice bowl","miso"],"dietary_tags":["seafood","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":3,"large_group":4,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":3,"crowd_level":3,"indoor":true,"outdoor":false,"opening_hours":{"lunch":"11:00-14:30","dinner":"16:30-21:00"},"best_for":["japanese","kids","wheelchair","discount voucher"],"avoid_if":["strict low budget"],"source_status":"synthetic","source_note":"Synthetic sushi train for Japanese/family coverage.","last_checked":"2026-06-04","lat":10.33602,"lng":103.85537},
+  {"id":"grand-world-budget-banh-xeo","name":"Grand World Budget Banh Xeo","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Night Market Lane","location_hint":"Banh xeo stall near Night Market Lane entrance and public benches.","distance_text":"5 minutes walk from lake stage","distance_minutes":5,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":75000,"price_tier":"budget","cuisine_types":["vietnamese","snack","fast_food"],"menu_tags":["banh xeo","spring rolls","tea","combo snack"],"dietary_tags":["non_seafood_options","vegetarian"],"group_suitability":{"kids":4,"elderly":2,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":false,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"dinner":"17:00-23:00"},"best_for":["budget","vietnamese","snack","combo"],"avoid_if":["wheelchair required","needs quiet"],"source_status":"synthetic","source_note":"Synthetic low-budget Vietnamese snack stall.","last_checked":"2026-06-04","lat":10.32858,"lng":103.86006},
+  {"id":"nam-hoi-an-western-wrap-station","name":"Nam Hoi An Western Wrap Station","brand_area":"VinWonders Nam Hoi An","zone":"Family Rides","location_hint":"Wrap station beside family rides shaded queue line.","distance_text":"5 minutes walk from main gate","distance_minutes":5,"accept_voucher":true,"voucher_types":["combo","discount"],"avg_price_vnd":115000,"price_tier":"budget","cuisine_types":["western","fast_food","snack","vegetarian"],"menu_tags":["chicken wrap","vegetable wrap","fries","juice"],"dietary_tags":["vegetarian","non_seafood_options","kids_menu"],"group_suitability":{"kids":4,"elderly":3,"large_group":3,"couple":3},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":2,"crowd_level":4,"indoor":false,"outdoor":true,"opening_hours":{"lunch":"10:00-15:00","dinner":"16:00-20:00"},"best_for":["western","budget","kids","combo"],"avoid_if":["needs quiet"],"source_status":"synthetic","source_note":"Synthetic western wrap station.","last_checked":"2026-06-04","lat":15.85055,"lng":108.36558},
+  {"id":"resort-quiet-halal-breakfast","name":"Resort Quiet Halal Breakfast","brand_area":"Vinpearl Resort Nha Trang / Hon Tre Island","zone":"Resort Lobby","location_hint":"Quiet halal-friendly breakfast room beside resort lobby elevator corridor.","distance_text":"2 minutes walk from resort lobby","distance_minutes":2,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":180000,"price_tier":"mid","cuisine_types":["asian","western","cafe"],"menu_tags":["halal chicken rice","omelet","fruit","coffee"],"dietary_tags":["halal_friendly","no_pork","non_seafood_options","vegetarian"],"group_suitability":{"kids":3,"elderly":5,"large_group":3,"couple":4},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":5,"crowd_level":1,"indoor":true,"outdoor":false,"opening_hours":{"breakfast":"06:30-10:30","lunch":"10:30-13:30"},"best_for":["halal","quiet","elderly","breakfast"],"avoid_if":["late dinner"],"source_status":"synthetic","source_note":"Synthetic quiet halal-friendly breakfast room.","last_checked":"2026-06-04","lat":12.21502,"lng":109.2098},
+  {"id":"phu-quoc-grand-cafe-vegetarian","name":"Phu Quoc Grand Cafe Vegetarian","brand_area":"Grand World / Vinpearl Phu Quoc area","zone":"Venice Canal","location_hint":"Vegetarian-friendly grand cafe beside Venice Canal bridge.","distance_text":"6 minutes walk from lake stage","distance_minutes":6,"accept_voucher":true,"voucher_types":["meal_credit","discount"],"avg_price_vnd":150000,"price_tier":"mid","cuisine_types":["cafe","vegetarian","western","dessert"],"menu_tags":["vegetarian sandwich","salad","cake","coffee"],"dietary_tags":["vegetarian","non_seafood_options","no_pork"],"group_suitability":{"kids":3,"elderly":4,"large_group":3,"couple":5},"stroller_accessible":true,"wheelchair_accessible":true,"quiet_level":4,"crowd_level":2,"indoor":true,"outdoor":true,"opening_hours":{"all_day":"09:00-22:30"},"best_for":["vegetarian","couple","quiet","cafe"],"avoid_if":["large buffet"],"source_status":"synthetic","source_note":"Synthetic vegetarian cafe for Grand World.","last_checked":"2026-06-04","lat":10.32827,"lng":103.86052}
 ]

@@ -80,12 +80,10 @@ def test_recommend_low_confidence_needs_clarification():
 
     assert response.status_code == 200
     body = response.json()
-    if body["status"] == "needs_clarification":
-        assert body["recommendations"] == []
-        assert body["clarification_questions"]
-    else:
-        assert body["recommendations"]
-        assert body["recommendations"][0]["confidence"] < 1
+    assert body["status"] == "needs_clarification"
+    assert body["type"] == "clarification"
+    assert body["questions"]
+    assert body["uncertainty"]["should_ask_clarification"] is True
 
 
 def test_recommend_failure_returns_no_match_or_fallbacks():
