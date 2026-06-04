@@ -362,13 +362,13 @@ def _explanation(
     missed: list[str],
     trade_offs: list[str],
 ) -> str:
-    why = ", ".join(matched[:4]) if matched else "fit score balances distance, price and group needs"
-    trade = "; ".join(trade_offs[:2]) if trade_offs else "no major trade-off flagged in the mock dataset"
-    miss = f" Missed preferences: {', '.join(missed)}." if missed else ""
+    why = ", ".join(matched[:4]) if matched else "cân bằng tốt giữa khoảng cách, giá và nhu cầu nhóm"
+    trade = "; ".join(trade_offs[:2]) if trade_offs else "không có đánh đổi lớn nào được ghi nhận"
+    miss = f" Tiêu chí chưa đáp ứng: {', '.join(missed)}." if missed else ""
     return (
-        f"{restaurant.name} is recommended because it matches {why}. "
-        f"It is not simply chosen by rating/name; the rank balances constraints, distance, accessibility and price. "
-        f"Trade-off: {trade}.{miss}"
+        f"Đề xuất {restaurant.name} vì phù hợp với {why}. "
+        f"Xếp hạng này tối ưu sau khi cân đối giữa các ràng buộc, khoảng cách, khả năng tiếp cận và mức giá. "
+        f"Đánh đổi: {trade}.{miss}"
     )
 
 

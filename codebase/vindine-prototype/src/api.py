@@ -129,19 +129,19 @@ def _error_route(
     if status == "needs_clarification":
         return ErrorRoute(
             type="low_confidence",
-            user_message="Need more information before making a reliable suggestion.",
+            user_message="Mình cần thêm thông tin trước khi chốt gợi ý đáng tin cậy.",
             next_action="ask_clarification",
             recover_options=[
-                "Share current zone/location",
-                "Share voucher type if voucher is required",
-                "Share budget or cuisine preference",
+                "Cho biết khu/sảnh hiện tại",
+                "Cho biết loại voucher nếu có",
+                "Nêu rõ ngân sách hoặc khẩu vị ưu tiên",
             ],
             learning_signal="Parser lacks important context such as location or voucher_type.",
         )
     if status == "no_match":
         return ErrorRoute(
             type="no_match",
-            user_message="No option satisfies the hard constraints exactly.",
+            user_message="Chưa tìm thấy lựa chọn thỏa các điều kiện cứng hiện tại.",
             next_action="relax_constraint",
             recover_options=fallback_suggestions,
             learning_signal="Ranking has no candidate after hard filters.",
@@ -149,12 +149,12 @@ def _error_route(
     if has_risky_recommendation:
         return ErrorRoute(
             type="risky_recommendation",
-            user_message="Usable suggestions exist, but trade-offs need human review.",
+            user_message="Có gợi ý dùng được nhưng còn trade-off cần người dùng kiểm tra.",
             next_action="human_review",
             recover_options=[
-                "Verify voucher at the counter",
-                "Confirm walking distance with the group",
-                "Check dietary/menu details before going",
+                "Kiểm tra lại voucher tại quầy trước khi đi",
+                "Xác nhận nhóm đồng ý khoảng cách đi bộ",
+                "Kiểm tra thực đơn/menu trước khi đi",
             ],
             learning_signal="Top recommendation has missing_info or notable trade_offs.",
         )
@@ -241,12 +241,12 @@ def recommend(request: RecommendationRequest) -> dict:
         uncertainty = assess_uncertainty(request, parsed, restaurants=restaurants)
         route = ErrorRoute(
             type="missing_data",
-            user_message="This assistant only supports resort dining decisions.",
+            user_message="Xin lỗi, mình chỉ hỗ trợ tìm quán ăn trong resort thôi nhé! Hãy cho mình biết nhu cầu ăn uống của bạn.",
             next_action="ask_clarification",
             recover_options=[
-                "Tell me group size and food preference",
-                "Tell me current resort zone",
-                "Tell me voucher type if any",
+                "Cho biết số người và loại đồ ăn muốn ăn",
+                "Nêu vị trí hiện tại trong resort",
+                "Cho biết loại voucher nếu có",
             ],
             learning_signal="User input is not related to dining.",
         )

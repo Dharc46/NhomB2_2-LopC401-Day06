@@ -8,13 +8,13 @@ from src.schemas import FeedbackRequest, ParsedConstraints
 
 
 REASON_TO_RECOVERY = {
-    "too_noisy": "Æ¯u tiÃªn quÃ¡n yÃªn tÄ©nh hÆ¡n vÃ  giáº£m Ä‘iá»ƒm quÃ¡n Ä‘Ã´ng/á»“n.",
-    "too_far": "Æ¯u tiÃªn khoáº£ng cÃ¡ch gáº§n hÆ¡n hoáº·c ná»›i cÃ¡c rÃ ng buá»™c khÃ¡c.",
-    "too_expensive": "Æ¯u tiÃªn budget/kiosk/combo vÃ  giáº£m quÃ¡n premium.",
-    "no_kids_menu": "Æ¯u tiÃªn quÃ¡n phÃ¹ há»£p tráº» em vÃ  cÃ³ kids menu.",
-    "no_voucher": "Æ¯u tiÃªn quÃ¡n khá»›p voucher hoáº·c gÃ³i meal credit/combo.",
-    "dietary_risk": "Æ¯u tiÃªn dietary tags an toÃ n hÆ¡n vÃ  trÃ¡nh quÃ¡n cÃ³ risk.",
-    "other": "Ghi nháº­n pháº£n há»“i vÃ  re-rank bá» gá»£i Ã½ Ä‘Ã£ reject.",
+    "too_noisy": "Ưu tiên quán yên tĩnh hơn và giảm điểm quán đông/ồn.",
+    "too_far": "Ưu tiên khoảng cách gần hơn hoặc nới các ràng buộc khác.",
+    "too_expensive": "Ưu tiên budget/kiosk/combo và giảm quán premium.",
+    "no_kids_menu": "Ưu tiên quán phù hợp trẻ em và có kids menu.",
+    "no_voucher": "Ưu tiên quán khớp voucher hoặc gói meal credit/combo.",
+    "dietary_risk": "Ưu tiên dietary tags an toàn hơn và tránh quán có risk.",
+    "other": "Ghi nhận phản hồi và re-rank bỏ gợi ý đã reject.",
 }
 
 
@@ -47,10 +47,10 @@ def route_error(
         recover = fallback_suggestions
     elif "no_perfect_match_or_fallback_needed" in issues:
         route = "show_best_compromise"
-        recover = ["Hiá»ƒn thá»‹ Top 3 compromise kÃ¨m trade-off vÃ  uncertainty."]
+        recover = ["Hiển thị Top 3 compromise kèm trade-off và uncertainty."]
     else:
         route = "human_review"
-        recover = ["NgÆ°á»i dÃ¹ng kiá»ƒm tra voucher, khoáº£ng cÃ¡ch, dietary trÆ°á»›c khi quyáº¿t."]
+        recover = ["Người dùng kiểm tra voucher, khoảng cách, dietary trước khi quyết."]
 
     return {
         "detect": issues,
