@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 import json
+import base64
+from pathlib import Path
 
 
 def safe_console_log(message: str) -> None:
@@ -8,6 +10,12 @@ def safe_console_log(message: str) -> None:
         print(message)
     except UnicodeEncodeError:
         print(message.encode("ascii", errors="replace").decode("ascii"))
+
+
+def load_background_data_uri() -> str:
+    background_path = Path(__file__).resolve().parent / "assets" / "background.png"
+    encoded = base64.b64encode(background_path.read_bytes()).decode("ascii")
+    return f"data:image/png;base64,{encoded}"
 
 # Cấu hình trang với thiết kế hiện đại
 st.set_page_config(
@@ -24,6 +32,23 @@ st.markdown(
     
     html, body, [class*="css"] {
         font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .stApp {
+        background:
+            linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.82)),
+            url("__BACKGROUND_DATA_URI__");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    [data-testid="stAppViewContainer"],
+    [data-testid="stHeader"] {
+        background: transparent;
+    }
+    [data-testid="stSidebar"] > div:first-child {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
     }
     .main-title {
         background: linear-gradient(90deg, #FF6B6B 0%, #FF8E53 100%);
@@ -104,7 +129,7 @@ st.markdown(
         margin: 2px;
     }
     </style>
-    """,
+    """.replace("__BACKGROUND_DATA_URI__", load_background_data_uri()),
     unsafe_allow_html=True,
 )
 
