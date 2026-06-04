@@ -157,12 +157,13 @@ và xử lý failure mode bằng câu hỏi làm rõ, fallback nới điều ki�
 </section>
 
 <section id="paths" class="card">
-  <div class="section-title"><div class="icon">🛣️</div><h2>6. Four paths</h2></div>
+  <div class="section-title"><div class="icon">🛣️</div><h2>6. Five paths (Updated)</h2></div>
   <div class="grid-2">
     <div class="path-card"><h3><span class="path-num">1</span>Happy</h3><p>Input: “Đang ở sảnh Vinpearl, 6 người, có voucher buffet, ông bà muốn món Việt, trẻ con thích pizza, cần xe đẩy.” AI trả Top 3, Top 1 pass voucher + gần + có món đa dạng.</p></div>
-    <div class="path-card"><h3><span class="path-num">2</span>Low-confidence</h3><p>Input thiếu vị trí hoặc voucher. AI không đoán, hỏi lại: “Bạn đang ở khu/sảnh nào?” hoặc “Voucher là buffet hay meal credit?”</p></div>
-    <div class="path-card"><h3><span class="path-num">3</span>Failure</h3><p>Input: “Tìm món dưới 40k/người trong resort.” AI báo không có match theo budget, đề xuất kiosk gần nhất, tăng budget, hoặc combo snack.</p></div>
-    <div class="path-card"><h3><span class="path-num">4</span>Correction</h3><p>User reject: “Quán này ồn, ông bà không thích.” AI ghi correction, giảm điểm tag noisy/festival-zone và re-rank quán yên tĩnh hơn.</p></div>
+    <div class="path-card"><h3><span class="path-num">2</span>Low-confidence / Clarification</h3><p>Input thiếu vị trí hoặc voucher. AI không đoán, hỏi lại bằng giao diện chọn: “Bạn đang ở khu/sảnh nào?” hoặc “Voucher là buffet hay meal credit?”</p></div>
+    <div class="path-card"><h3><span class="path-num">3</span>Failure / No Match</h3><p>Input: “Tìm món dưới 40k/người trong resort.” AI báo không có match theo budget, đề xuất fallback (được render thành nút bấm có thể click ngay): kiosk gần nhất, tăng budget, hoặc combo snack.</p></div>
+    <div class="path-card"><h3><span class="path-num">4</span>Correction / Feedback</h3><p>User reject bằng cách chọn nút "Từ chối và xếp hạng lại": “Quán này ồn, ông bà không thích.” AI ghi correction log, giảm điểm tag noisy và re-rank trả về ngay quán yên tĩnh hơn.</p></div>
+    <div class="path-card" style="grid-column: 1 / -1;"><h3><span class="path-num">5</span>Off-topic</h3><p>Input: "Tìm khách sạn 5 sao". Hệ thống từ chối khéo: "Xin lỗi, mình chỉ hỗ trợ tìm quán ăn trong resort thôi nhé!".</p></div>
   </div>
 </section>
 
