@@ -196,5 +196,11 @@ def parse_preference_text(request: RecommendationRequest | str) -> ParsedConstra
 
 
 def parse_user_text(request: RecommendationRequest) -> ParsedConstraints:
-    """Compatibility wrapper for API integration."""
+    """Try LLM parser first, fall back to regex."""
+    from src.llm_parser import parse_with_llm
+
+    result = parse_with_llm(request)
+    if result is not None:
+        return result
+
     return parse_preference_text(request)

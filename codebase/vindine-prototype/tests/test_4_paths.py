@@ -48,7 +48,7 @@ def test_happy_path_parser_classifies_hard_and_soft_constraints():
     assert response.status_code == 200
     assert body["status"] == "success"
     assert body["recommendations"]
-    assert body["debug"]["parser"] == "parse_user_text"
+    assert body["debug"]["parser"] in {"regex_parser", "llm_parser"}
 
 
 def test_low_confidence_path_asks_clarification_before_confident_ranking():
@@ -122,7 +122,7 @@ def test_correction_path_reclassifies_new_preference_and_reranks():
     assert correction_body["status"] in {"success", "needs_clarification"}
     assert correction_body["recommendations"]
     assert correction_body["parsed_constraints"]["quiet_preferred"] is True
-    assert correction_body["debug"]["parser"] == "parse_user_text"
+    assert correction_body["debug"]["parser"] in {"regex_parser", "llm_parser"}
     assert (
         correction_body["recommendations"][0]["restaurant_id"]
         != base_body["recommendations"][0]["restaurant_id"]

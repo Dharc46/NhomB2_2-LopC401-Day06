@@ -1,5 +1,9 @@
 """FastAPI app for the VinDine Concierge data/glue slice."""
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from typing import Annotated
 
 from fastapi import FastAPI, HTTPException, Query, Request
@@ -8,6 +12,9 @@ from fastapi.responses import JSONResponse
 
 from src.constraint_classifier import build_clarification_questions
 from src.data_loader import get_dataset_summary, load_restaurants
+from src.llm_client import is_llm_available
+from src.llm_explainer import generate_explanations
+from src.logger import get_logger
 from src.preference_parser import parse_user_text
 from src.ranking_engine import rank_restaurants
 from src.schemas import (
@@ -19,6 +26,8 @@ from src.schemas import (
     RecommendationResponse,
     Restaurant,
 )
+
+api_logger = get_logger("api")
 
 
 app = FastAPI(
@@ -179,6 +188,9 @@ def _error_route(
 def recommend(request: RecommendationRequest) -> RecommendationResponse:
     """Parse a group request, rank restaurants, and return cards or fallback guidance."""
     restaurants = _restaurants_or_500()
+    mode = "llm" if is_llm_available() else "regex"
+    api_logger.info("Recommend request | mode=%s | text=%s", mode, request.user_text[:80])
+
     parsed_constraints = parse_user_text(request)
 
     if request.correction:
@@ -194,6 +206,10 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
         recommendations, fallback_suggestions = rank_restaurants(
             restaurants, parsed_constraints
         )
+
+    ai_explanations = None
+    if recommendations:
+        ai_explanations = generate_explanations(parsed_constraints, recommendations)
 
     clarification_questions = build_clarification_questions(request, parsed_constraints)
 
@@ -214,18 +230,25 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
         for card in recommendations
     )
 
+    api_logger.info(
+        "Recommend result | status=%s | count=%d | mode=%s",
+        status, len(recommendations), mode,
+    )
+
     return RecommendationResponse(
         status=status,
         parsed_constraints=parsed_constraints,
         clarification_questions=clarification_questions,
         recommendations=recommendations,
         fallback_suggestions=fallback_suggestions,
+        ai_explanations=ai_explanations,
         error_route=_error_route(
             status, fallback_suggestions, has_risky_recommendation
         ),
         human_role=HumanRole(),
         debug={
-            "parser": "parse_user_text",
+            "mode": mode,
+            "parser": "llm_parser" if mode == "llm" else "regex_parser",
             "ranker": "rank_restaurants",
             "restaurant_count": len(restaurants),
         },

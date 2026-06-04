@@ -4,4 +4,6 @@ pydantic
 pytest
 httpx
 python-dotenv
+google-genai
+openai
 streamlit

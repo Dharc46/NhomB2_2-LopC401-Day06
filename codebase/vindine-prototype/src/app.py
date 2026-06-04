@@ -251,6 +251,11 @@ for msg_idx, msg in enumerate(st.session_state.messages):
     with st.chat_message(msg["role"]):
         st.write(msg["content"])
         
+        # 0. Hiển thị AI group summary (nếu có)
+        ai_expl = msg.get("ai_explanations")
+        if ai_expl and ai_expl.get("group_summary"):
+            st.info(f"💬 **AI Concierge:** {ai_expl['group_summary']}")
+
         # 1. Nếu có đính kèm thẻ gợi ý quán ăn
         if "recommendations" in msg and msg["recommendations"]:
             st.write("---")
@@ -277,9 +282,20 @@ for msg_idx, msg in enumerate(st.session_state.messages):
                         st.markdown(f"<div class='tradeoff-tag'>✗ {t}</div>", unsafe_allow_html=True)
                     for a in card.get("assumptions", []):
                         st.markdown(f"<div class='info-tag'>i {a}</div>", unsafe_allow_html=True)
-                        
+
+                    # AI explanation cho quán này (nếu có)
+                    ai_expl = msg.get("ai_explanations")
+                    if ai_expl and ai_expl.get("explanations"):
+                        for expl in ai_expl["explanations"]:
+                            if expl.get("restaurant_id") == card.get("restaurant_id"):
+                                st.markdown(f"<div class='info-tag'>💬 {expl.get('why_good', '')}</div>", unsafe_allow_html=True)
+                                if expl.get("trade_off"):
+                                    st.markdown(f"<div class='tradeoff-tag'>⚖️ {expl['trade_off']}</div>", unsafe_allow_html=True)
+                                if expl.get("least_happy"):
+                                    st.markdown(f"<div class='info-tag'>🤔 {expl['least_happy']}</div>", unsafe_allow_html=True)
+
                     st.write("")
-                    
+
                     # Các nút hành động tương tác ngay trong khung chat
                     btn_sel = st.button("Chọn 👍", key=f"sel_{msg_idx}_{idx}_{card.get('restaurant_id')}")
                     if btn_sel:
@@ -338,10 +354,12 @@ if chat_input := st.chat_input("Nhập nhu cầu ăn uống của bạn..."):
             if res.get("parsed_constraints"):
                 msg_data["parsed_constraints"] = res.get("parsed_constraints")
             
-            # Ghi nhận recommendations (nếu có) bất kể trạng thái nào
+            # Ghi nhận recommendations và AI explanations (nếu có)
             recs = res.get("recommendations", [])
             if recs:
                 msg_data["recommendations"] = recs
+            if res.get("ai_explanations"):
+                msg_data["ai_explanations"] = res["ai_explanations"]
             
             if status == "success":
                 assistant_reply = f"Mình đã tìm thấy {len(recs)} quán ăn phù hợp nhất với nhu cầu của bạn:"
@@ -390,8 +408,10 @@ if st.session_state.active_clarification:
                     "role": "assistant",
                     "content": f"Dựa trên thông tin làm rõ, đây là các đề xuất tối ưu:",
                     "recommendations": recs,
-                    "error_route": res.get("error_route")
+                    "error_route": res.get("error_route"),
                 }
+                if res.get("ai_explanations"):
+                    msg_data["ai_explanations"] = res["ai_explanations"]
                 if res.get("parsed_constraints"):
                     msg_data["parsed_constraints"] = res.get("parsed_constraints")
                     

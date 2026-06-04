@@ -139,6 +139,7 @@ class RecommendationResponse(BaseModel):
     clarification_questions: list[ClarificationQuestion] = Field(default_factory=list)
     recommendations: list[RecommendationCard] = Field(default_factory=list)
     fallback_suggestions: list[str] = Field(default_factory=list)
+    ai_explanations: dict[str, Any] | None = None
     error_route: ErrorRoute | None = None
     human_role: HumanRole = Field(default_factory=HumanRole)
     debug: dict[str, Any] | None = None
