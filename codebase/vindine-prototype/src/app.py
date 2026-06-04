@@ -137,6 +137,31 @@ except Exception:
     st.sidebar.warning("🟡 Offline (Dùng mock giả lập)")
 
 st.sidebar.markdown("---")
+st.sidebar.markdown("### 📍 Vị trí của bạn")
+ZONE_OPTIONS = {
+    "Chưa chọn": None,
+    "🚪 Cổng chính (VinWonders NT)": "sanh chinh",
+    "🏨 Sảnh Resort (Hon Tre)": "sanh resort",
+    "⚓ Harbour (Nha Trang)": "harbour",
+    "🍜 Food Court (VinWonders NT)": "food court",
+    "🌊 Water Park (Phu Quoc)": "water park",
+    "🌏 Grand World (Phu Quoc)": "grand world",
+    "🏮 Folk Island (Nam Hoi An)": "folk island",
+}
+selected_zone_label = st.sidebar.selectbox(
+    "Bạn đang ở khu nào?",
+    list(ZONE_OPTIONS.keys()),
+    index=0,
+)
+selected_zone = ZONE_OPTIONS[selected_zone_label]
+if selected_zone:
+    st.session_state["user_zone"] = selected_zone
+    st.sidebar.caption(f"✅ Khoảng cách sẽ tính từ **{selected_zone_label.split(' ', 1)[1]}**")
+else:
+    st.session_state["user_zone"] = None
+    st.sidebar.caption("Chọn khu vực để tính khoảng cách chính xác hơn")
+
+st.sidebar.markdown("---")
 st.sidebar.markdown("### 👥 Vai trò người dùng (Human-in-the-loop)")
 st.sidebar.info(
     "👉 **Decider**: Quyết định chọn quán cuối cùng\n\n"
@@ -341,27 +366,36 @@ if chat_input := st.chat_input("Nhập nhu cầu ăn uống của bạn..."):
         
     with st.chat_message("assistant"):
         with st.spinner("VinDine Concierge đang phân tích nhu cầu..."):
-            if is_correction:
-                res = call_recommend_api(st.session_state.original_query, correction=chat_input)
+            user_zone = st.session_state.get("user_zone")
+            if is_correction and st.session_state.original_query:
+                res = call_recommend_api(st.session_state.original_query, current_zone=user_zone, correction=chat_input)
             else:
                 st.session_state.original_query = chat_input
-                res = call_recommend_api(chat_input)
-            
+                res = call_recommend_api(chat_input, current_zone=user_zone)
+
             status = res.get("status")
             assistant_reply = ""
             msg_data = {"role": "assistant", "error_route": res.get("error_route")}
-            
+
             if res.get("parsed_constraints"):
                 msg_data["parsed_constraints"] = res.get("parsed_constraints")
-            
+
             # Ghi nhận recommendations và AI explanations (nếu có)
             recs = res.get("recommendations", [])
             if recs:
                 msg_data["recommendations"] = recs
             if res.get("ai_explanations"):
                 msg_data["ai_explanations"] = res["ai_explanations"]
-            
-            if status == "success":
+
+            if status == "error":
+                err = res.get("error_route", {})
+                assistant_reply = err.get("user_message", "Có lỗi xảy ra, vui lòng thử lại.")
+                msg_data["content"] = assistant_reply
+                msg_data.pop("error_route", None)
+                st.session_state.original_query = ""
+                st.session_state.active_clarification = None
+
+            elif status == "success":
                 assistant_reply = f"Mình đã tìm thấy {len(recs)} quán ăn phù hợp nhất với nhu cầu của bạn:"
                 msg_data["content"] = assistant_reply
                 

@@ -33,6 +33,8 @@ class Restaurant(BaseModel):
     brand_area: str
     zone: str
     location_hint: str
+    lat: float | None = None
+    lng: float | None = None
     distance_text: str
     distance_minutes: int = Field(ge=0)
     accept_voucher: bool

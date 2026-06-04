@@ -10,10 +10,14 @@ from src.schemas import ParsedConstraints, RecommendationRequest
 logger = logging.getLogger("vindine.parser")
 
 SYSTEM_PROMPT = """You are a Vietnamese text parser for a Vinpearl resort dining concierge.
-Extract structured constraints from the user's natural language description.
+Your ONLY job is to help guests find restaurants at the resort.
+
+FIRST: Determine if the user's message is related to dining, restaurants, food, or finding a place to eat at the resort.
+If the message is NOT related (e.g. coding questions, math, general knowledge, chitchat unrelated to dining), set "is_dining_related" to false.
 
 Return ONLY valid JSON matching this EXACT schema (use these field names exactly):
 {
+  "is_dining_related": bool,
   "party_size": int or null,
   "current_zone": string or null,
   "has_kids": bool,
@@ -29,6 +33,8 @@ Return ONLY valid JSON matching this EXACT schema (use these field names exactly
   "max_distance_minutes": int or null,
   "confidence": float 0.0-1.0
 }
+
+If is_dining_related is false, set ALL other fields to null/false/[] and confidence to 0.0.
 
 Vietnamese keyword guide:
 - "ông bà", "người lớn tuổi" → has_elderly=true, quiet_preferred=true
@@ -50,6 +56,12 @@ Infer what the user implies. "Đi cả nhà" with elderly and children = has_eld
 If something is not mentioned, set it to null/false/[].
 Set confidence based on how much information the user provided (0.3 for sparse, 0.9 for detailed).
 
+Handle simple/casual queries naturally:
+- "quán gần nhất" / "closest restaurant" → max_distance_minutes=5, confidence=0.5
+- "quán nào ngon" / "chỗ nào ăn ngon" → is_dining_related=true, confidence=0.4
+- "quán rẻ và gần" → budget_per_person=150000, max_distance_minutes=8, confidence=0.5
+- "chỗ nào yên tĩnh cho người lớn tuổi" → quiet_preferred=true, has_elderly=true, confidence=0.6
+
 IMPORTANT: Do NOT include "hard_constraints" or "soft_preferences" fields. Only return the fields listed above."""
 
 
@@ -66,6 +78,11 @@ def parse_with_llm(request: RecommendationRequest) -> ParsedConstraints | None:
         result = call_llm(system=SYSTEM_PROMPT, user=user_msg, json_mode=True)
         data = json.loads(result)
 
+        if not data.get("is_dining_related", True):
+            logger.info("LLM determined input is NOT dining-related, rejecting")
+            return "off_topic"
+
+        data.pop("is_dining_related", None)
         data.pop("hard_constraints", None)
         data.pop("soft_preferences", None)
 

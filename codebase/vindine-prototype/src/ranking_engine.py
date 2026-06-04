@@ -1,5 +1,7 @@
 """Weighted scoring engine and orchestrator for restaurant ranking."""
 
+import math
+
 from src.constraint_filter import FilterReport, apply_hard_filters
 from src.fallback_handler import generate_fallback_suggestions
 from src.schemas import (
@@ -8,6 +10,40 @@ from src.schemas import (
     RecommendationCard,
     Restaurant,
 )
+
+ZONE_COORDINATES: dict[str, tuple[float, float]] = {
+    "sanh chinh": (12.2257, 109.1976),
+    "cong chinh": (12.2257, 109.1976),
+    "main gate": (12.2257, 109.1976),
+    "lobby": (12.2150, 109.2100),
+    "sanh resort": (12.2150, 109.2100),
+    "resort": (12.2150, 109.2100),
+    "harbour": (12.2350, 109.1940),
+    "ben cang": (12.2350, 109.1940),
+    "food court": (12.2218, 109.1932),
+    "water park": (10.3350, 103.8550),
+    "cong vien nuoc": (10.3350, 103.8550),
+    "grand world": (10.3280, 103.8600),
+    "folk island": (15.8500, 108.3650),
+}
+
+WALK_SPEED_KMH = 4.5
+
+
+def _haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
+    """Distance in km between two lat/lng points."""
+    r = 6371
+    dlat = math.radians(lat2 - lat1)
+    dlng = math.radians(lng2 - lng1)
+    a = (
+        math.sin(dlat / 2) ** 2
+        + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlng / 2) ** 2
+    )
+    return r * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+
+def _walk_minutes(km: float) -> int:
+    return max(1, round(km / WALK_SPEED_KMH * 60))
 
 BASE_WEIGHTS = {
     "voucher": 25,
@@ -134,24 +170,31 @@ def _score_budget(
 def _score_distance(
     restaurant: Restaurant, constraints: ParsedConstraints, weight: float
 ) -> tuple[float, str | None, str | None]:
+    distance = restaurant.distance_minutes
+    zone_bonus = 1.0
+
     if constraints.current_zone:
         zone_lower = constraints.current_zone.lower()
+        user_coords = ZONE_COORDINATES.get(zone_lower)
+
+        if user_coords and restaurant.lat and restaurant.lng:
+            km = _haversine_km(user_coords[0], user_coords[1], restaurant.lat, restaurant.lng)
+            distance = _walk_minutes(km)
+
         brand_lower = restaurant.brand_area.lower()
         zone_bonus = (
             1.2 if any(word in brand_lower for word in zone_lower.split()) else 1.0
         )
-    else:
-        zone_bonus = 1.0
 
-    if restaurant.distance_minutes <= 5:
+    if distance <= 5:
         score = weight * 1.0 * zone_bonus
-        return min(score, weight), "Khoảng cách đi bộ rất ngắn", None
-    if restaurant.distance_minutes <= 10:
+        return min(score, weight), f"Khoảng cách đi bộ rất ngắn (~{distance} phút)", None
+    if distance <= 10:
         score = weight * 0.7 * zone_bonus
-        return min(score, weight), "Khoảng cách đi bộ ngắn", None
-    if restaurant.distance_minutes <= 15:
+        return min(score, weight), f"Khoảng cách đi bộ ngắn (~{distance} phút)", None
+    if distance <= 15:
         return weight * 0.3, None, None
-    return 0, None, "Đi bộ khá xa"
+    return 0, None, f"Đi bộ khá xa (~{distance} phút)"
 
 
 def _score_accessibility(
