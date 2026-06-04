@@ -389,9 +389,17 @@ def rank_restaurants(
     weights = _get_weights(constraints, score_adjustments)
     max_possible = sum(weights.values())
 
+    menu_scores: dict[str, float] = {}
+    if constraints.preferred_cuisines:
+        from src.menu_search import semantic_search
+        query = " ".join(constraints.preferred_cuisines)
+        menu_scores = semantic_search(query, candidates)
+
     scored: list[tuple[float, Restaurant, list[str], list[str]]] = []
     for restaurant in candidates:
         score, reasons, trade_offs = _score_restaurant(restaurant, constraints, weights)
+        menu_boost = menu_scores.get(restaurant.id, 0.0) * 10
+        score += menu_boost
         scored.append((score, restaurant, reasons, trade_offs))
 
     scored.sort(key=lambda item: item[0], reverse=True)
