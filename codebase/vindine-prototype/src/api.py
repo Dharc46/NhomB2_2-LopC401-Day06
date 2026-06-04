@@ -6,15 +6,15 @@ from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from src.constraint_classifier import build_clarification_questions
 from src.data_loader import get_dataset_summary, load_restaurants
-from src.mock_parser import parse_user_text_stub
+from src.preference_parser import parse_user_text
 from src.ranking_engine import rank_restaurants
 from src.schemas import (
     ApiErrorResponse,
     ClarificationQuestion,
     ErrorRoute,
     HumanRole,
-    ParsedConstraints,
     RecommendationRequest,
     RecommendationResponse,
     Restaurant,
@@ -113,10 +113,10 @@ def dataset_summary() -> dict:
 
 
 def _clarification_questions(
-    parsed_constraints: ParsedConstraints
+    request: RecommendationRequest, confidence: float
 ) -> list[ClarificationQuestion]:
     questions: list[ClarificationQuestion] = []
-    if not parsed_constraints.current_zone and parsed_constraints.confidence < 0.6:
+    if not request.current_zone and confidence < 0.6:
         questions.append(
             ClarificationQuestion(
                 id="current_zone",
@@ -124,7 +124,7 @@ def _clarification_questions(
                 options=["Cổng chính", "Sảnh resort", "Harbour", "Food Court"],
             )
         )
-    if parsed_constraints.voucher_required and not parsed_constraints.voucher_type:
+    if "voucher" in request.user_text.lower() and not request.voucher_type:
         questions.append(
             ClarificationQuestion(
                 id="voucher_type",
@@ -179,7 +179,7 @@ def _error_route(
 def recommend(request: RecommendationRequest) -> RecommendationResponse:
     """Parse a group request, rank restaurants, and return cards or fallback guidance."""
     restaurants = _restaurants_or_500()
-    parsed_constraints = parse_user_text_stub(request)
+    parsed_constraints = parse_user_text(request)
 
     if request.correction:
         from src.fallback_handler import generate_correction_adjustments
@@ -195,7 +195,7 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
             restaurants, parsed_constraints
         )
 
-    clarification_questions = _clarification_questions(parsed_constraints)
+    clarification_questions = build_clarification_questions(request, parsed_constraints)
 
     if not recommendations:
         status = "no_match"
@@ -225,7 +225,7 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
         ),
         human_role=HumanRole(),
         debug={
-            "parser": "parse_user_text_stub",
+            "parser": "parse_user_text",
             "ranker": "rank_restaurants",
             "restaurant_count": len(restaurants),
         },
