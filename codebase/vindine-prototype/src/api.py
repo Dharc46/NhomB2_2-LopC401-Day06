@@ -6,8 +6,9 @@ from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from src.constraint_classifier import build_clarification_questions
 from src.data_loader import get_dataset_summary, load_restaurants
-from src.mock_parser import parse_user_text_stub
+from src.preference_parser import parse_user_text
 from src.ranking_engine import rank_restaurants
 from src.schemas import (
     ApiErrorResponse,
@@ -178,7 +179,7 @@ def _error_route(
 def recommend(request: RecommendationRequest) -> RecommendationResponse:
     """Parse a group request, rank restaurants, and return cards or fallback guidance."""
     restaurants = _restaurants_or_500()
-    parsed_constraints = parse_user_text_stub(request)
+    parsed_constraints = parse_user_text(request)
 
     if request.correction:
         from src.fallback_handler import generate_correction_adjustments
@@ -194,9 +195,7 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
             restaurants, parsed_constraints
         )
 
-    clarification_questions = _clarification_questions(
-        request, parsed_constraints.confidence
-    )
+    clarification_questions = build_clarification_questions(request, parsed_constraints)
 
     if not recommendations:
         status = "no_match"
@@ -226,7 +225,7 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
         ),
         human_role=HumanRole(),
         debug={
-            "parser": "parse_user_text_stub",
+            "parser": "parse_user_text",
             "ranker": "rank_restaurants",
             "restaurant_count": len(restaurants),
         },
