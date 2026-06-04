@@ -363,10 +363,6 @@ for msg_idx, msg in enumerate(st.session_state.messages):
             err = msg["error_route"]
             st.warning(f"⚠️ **{err.get('user_message')}**")
             
-            # Nếu có danh sách checklists cần kiểm tra (recover_options)
-            st.write("**📋 Danh sách việc cần lưu ý/xác nhận:**")
-            for option in err.get("recover_options", []):
-                st.checkbox(option, key=f"chk_{msg_idx}_{option[:15]}")
         
         # 3. Hiển thị gợi ý phương án thay thế (Fallback)
         if "fallbacks" in msg and msg["fallbacks"]:
