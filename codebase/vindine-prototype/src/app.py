@@ -341,30 +341,33 @@ if chat_input := st.chat_input("Nhập nhu cầu ăn uống của bạn..."):
         
     with st.chat_message("assistant"):
         with st.spinner("VinDine Concierge đang phân tích nhu cầu..."):
-            if is_correction:
+            if is_correction and st.session_state.original_query:
                 res = call_recommend_api(st.session_state.original_query, correction=chat_input)
             else:
                 st.session_state.original_query = chat_input
                 res = call_recommend_api(chat_input)
-            
+
             status = res.get("status")
             assistant_reply = ""
             msg_data = {"role": "assistant", "error_route": res.get("error_route")}
-            
+
             if res.get("parsed_constraints"):
                 msg_data["parsed_constraints"] = res.get("parsed_constraints")
-            
+
             # Ghi nhận recommendations và AI explanations (nếu có)
             recs = res.get("recommendations", [])
             if recs:
                 msg_data["recommendations"] = recs
             if res.get("ai_explanations"):
                 msg_data["ai_explanations"] = res["ai_explanations"]
-            
+
             if status == "error":
                 err = res.get("error_route", {})
                 assistant_reply = err.get("user_message", "Có lỗi xảy ra, vui lòng thử lại.")
                 msg_data["content"] = assistant_reply
+                msg_data.pop("error_route", None)
+                st.session_state.original_query = ""
+                st.session_state.active_clarification = None
 
             elif status == "success":
                 assistant_reply = f"Mình đã tìm thấy {len(recs)} quán ăn phù hợp nhất với nhu cầu của bạn:"
