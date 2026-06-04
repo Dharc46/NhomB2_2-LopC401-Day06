@@ -11,8 +11,21 @@ class LLMError(Exception):
     """Raised when an LLM call fails."""
 
 
+def _normalize_api_key(value: str | None) -> str:
+    """Clean common copy/paste wrappers without changing the actual key."""
+    if not value:
+        return ""
+
+    key = value.strip().strip('"').strip("'")
+    for prefix in ("Bearer ", "bearer ", "ApiKey ", "apikey "):
+        if key.startswith(prefix):
+            key = key[len(prefix):].strip()
+            break
+    return key
+
+
 def is_llm_available() -> bool:
-    return bool(os.getenv("VINDINE_LLM_KEY"))
+    return bool(_normalize_api_key(os.getenv("VINDINE_LLM_KEY")))
 
 
 def _get_provider() -> str:
@@ -82,7 +95,7 @@ def call_llm(*, system: str, user: str, json_mode: bool = False) -> str:
 
     Raises LLMError on any failure.
     """
-    api_key = os.getenv("VINDINE_LLM_KEY")
+    api_key = _normalize_api_key(os.getenv("VINDINE_LLM_KEY"))
     if not api_key:
         raise LLMError("VINDINE_LLM_KEY not set")
 

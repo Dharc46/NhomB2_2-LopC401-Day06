@@ -2,6 +2,13 @@ import streamlit as st
 import requests
 import json
 
+
+def safe_console_log(message: str) -> None:
+    try:
+        print(message)
+    except UnicodeEncodeError:
+        print(message.encode("ascii", errors="replace").decode("ascii"))
+
 # Cấu hình trang với thiết kế hiện đại
 st.set_page_config(
     page_title="VinDine Concierge - AI Resort Dining Assistant",
@@ -325,7 +332,7 @@ for msg_idx, msg in enumerate(st.session_state.messages):
                     btn_sel = st.button("Chọn 👍", key=f"sel_{msg_idx}_{idx}_{card.get('restaurant_id')}")
                     if btn_sel:
                         st.success(f"Bạn đã chọn quán **{card.get('name')}**!")
-                        print(f"[CHAT-LOG] Chọn quán: {card.get('name')}")
+                        safe_console_log(f"[CHAT-LOG] Chọn quán: {card.get('name')}")
         
         # 2. Hiển thị Error Route (low_confidence, no_match, risky_recommendation)
         if "error_route" in msg and msg["error_route"]:

@@ -30,6 +30,88 @@ def _contains_any(text: str, phrases: list[str]) -> bool:
     return any(normalize_text(phrase) in text for phrase in phrases)
 
 
+DINING_INTENT_KEYWORDS = [
+    "do an",
+    "mon",
+    "quan",
+    "nha hang",
+    "restaurant",
+    "food",
+    "dining",
+    "buffet",
+    "pizza",
+    "com",
+    "pho",
+    "bun",
+    "hai san",
+    "voucher",
+    "kiosk",
+    "snack",
+    "gan nhat",
+    "resort",
+    "vinpearl",
+    "vinwonders",
+]
+
+DINING_INTENT_TOKENS = {
+    "an",
+    "uong",
+    "com",
+    "pho",
+    "bun",
+}
+
+DINING_CONTEXT_KEYWORDS = [
+    "nguoi",
+    "khach",
+    "nhom",
+    "gia dinh",
+    "tre em",
+    "ong ba",
+    "nguoi gia",
+    "nguoi lon tuoi",
+    "xe day",
+    "xe lan",
+    "sanh",
+    "cong chinh",
+    "harbour",
+    "food court",
+    "water park",
+    "grand world",
+]
+
+GREETING_ONLY_MESSAGES = {
+    "hi",
+    "hello",
+    "hey",
+    "xin chao",
+    "chao",
+    "alo",
+    "hello ban",
+    "hi ban",
+}
+
+
+def is_off_topic_message(text: str) -> bool:
+    """Reject greetings or unrelated short messages before ranking can run."""
+    normalized = normalize_text(text)
+    normalized = re.sub(r"[^a-z0-9\s]", " ", normalized)
+    normalized = re.sub(r"\s+", " ", normalized).strip()
+    tokens = set(normalized.split())
+
+    if not normalized:
+        return True
+    if normalized in GREETING_ONLY_MESSAGES:
+        return True
+    if tokens & DINING_INTENT_TOKENS:
+        return False
+    if _contains_any(normalized, DINING_INTENT_KEYWORDS):
+        return False
+    if _contains_any(normalized, DINING_CONTEXT_KEYWORDS):
+        return False
+    return True
+
+
 def _extract_budget(text: str) -> int | None:
     budget_patterns = [
         r"(?:duoi|toi da|khoang|tam|budget|ngan sach)?\s*(\d{2,4})\s*k\b",
@@ -200,6 +282,9 @@ def parse_user_text(request: RecommendationRequest) -> ParsedConstraints | str:
 
     Returns ParsedConstraints on success, or "off_topic" if input is not dining-related.
     """
+    if is_off_topic_message(request.user_text):
+        return "off_topic"
+
     from src.llm_parser import parse_with_llm
 
     result = parse_with_llm(request)
