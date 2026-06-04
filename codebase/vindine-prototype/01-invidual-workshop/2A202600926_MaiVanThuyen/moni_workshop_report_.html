@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài Thu Hoạch Workshop - Moni AI (Final)</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:1100px;margin:auto;padding:40px;line-height:1.7;background:#f7f7fb}
+.section{background:white;padding:24px;margin-bottom:20px;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+h1,h2{color:#4b3fbf}
+table{width:100%;border-collapse:collapse}
+td,th{border:1px solid #ddd;padding:10px}
+.code{background:#f3f3f3;padding:12px;border-left:4px solid #4b3fbf}
+.path{padding:12px;margin:8px 0;border-radius:8px}
+.happy{background:#e9f7e9}
+.low{background:#fff3d9}
+.fail{background:#ffe6e6}
+.correct{background:#eee9ff}
+</style>
+</head>
+<body>
+
+<h1>Workshop — Mổ App AI Thật</h1>
+<p><b>Sản phẩm:</b> Moni - Trợ thủ tài chính của MoMo</p>
+
+<div class="section">
+<h2>1. Promise vs Reality</h2>
+
+<table>
+<tr><th>Hạng mục</th><th>Nội dung</th></tr>
+<tr>
+<td>Product Promise</td>
+<td>Moni hỗ trợ người dùng tìm kiếm, tra cứu và thanh toán hóa đơn bằng ngôn ngữ tự nhiên.</td>
+</tr>
+<tr>
+<td>Target User</td>
+<td>Người dùng MoMo muốn tìm hóa đơn nhanh mà không cần đi qua nhiều màn hình.</td>
+</tr>
+<tr>
+<td>Expected Task</td>
+<td>Người dùng nhập: "Đưa hóa đơn điện nước". Hệ thống nhận diện đúng loại hóa đơn và cho phép thanh toán.</td>
+</tr>
+<tr>
+<td>Reality</td>
+<td>Moni trả về hóa đơn điện thoại thay vì hóa đơn điện hoặc nước.</td>
+</tr>
+</table>
+</div>
+
+<div class="section">
+<h2>2. Evidence</h2>
+
+<ul>
+<li>Prompt thử nghiệm: <b>"Đưa hóa đơn điện nước"</b></li>
+<li>Kết quả quan sát: Moni trả về hóa đơn điện thoại.</li>
+<li>Không xuất hiện màn hình xác nhận lại intent.</li>
+<li>Không có nút sửa kết quả hoặc chọn lại loại hóa đơn.</li>
+<li>Screenshot thực tế cần đính kèm khi nộp bài.</li>
+</ul>
+
+<h2>Screenshot thực tế</h2>
+
+<img
+    src="minhchung.jpg"
+    alt="Minh chứng lỗi"
+    style="
+        width:100%;
+        max-width:300px;
+        display:block;
+        margin:auto;
+        border-radius:12px;
+        border:1px solid #ddd;
+        box-shadow:0 2px 8px rgba(0,0,0,.1);
+    ">
+
+<p style="text-align:center;">
+    Hình 1. Moni trả về hóa đơn điện thoại thay vì hóa đơn điện nước.
+</p>
+
+
+<h3>Observation</h3>
+<ul>
+<li>Moni không hỏi lại khi câu lệnh có thể mang nhiều nghĩa.</li>
+<li>Không hiển thị độ chắc chắn của AI.</li>
+<li>Không cung cấp recovery path.</li>
+<li>User phải nhập lại truy vấn từ đầu.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>3. Finding → Product Decision</h2>
+
+<div class="code">
+Khi user yêu cầu xem hóa đơn điện nước,<br>
+AI hiểu sai intent và trả về hóa đơn điện thoại.<br>
+Hậu quả là user nhận sai thông tin và workflow thanh toán bị đứt gãy.<br>
+Lỗi thuộc layer Intent + UX Recovery.<br>
+Nên sửa bằng Clarification Flow, Correction Flow và lưu Correction Log để cải thiện mô hình.
+</div>
+</div>
+
+<div class="section">
+<h2>4. As-Is Flow</h2>
+
+<pre>
+User
+ ↓
+Nhập: "Đưa hóa đơn điện nước"
+ ↓
+Moni phân tích intent
+ ↓
+Nhận sai intent
+ ↓
+Hiển thị hóa đơn điện thoại
+ ↓
+Không có nút sửa
+ ↓
+User nhập lại
+ ↓
+End
+</pre>
+</div>
+
+<div class="section">
+<h2>5. 4 Paths Analysis</h2>
+
+<div class="path happy">
+<b>Happy Path</b><br>
+AI nhận diện đúng loại hóa đơn → hiển thị hóa đơn → thanh toán ngay.
+</div>
+
+<div class="path low">
+<b>Low-confidence Path</b><br>
+Nếu confidence thấp (ví dụ dưới ngưỡng đề xuất 70%), hệ thống hỏi lại:
+[Điện] [Nước] [Điện thoại]
+</div>
+
+<div class="path fail">
+<b>Failure Path</b><br>
+Nếu AI trả sai kết quả, hiển thị nút:
+"Chọn lại loại hóa đơn" hoặc "Báo lỗi".
+</div>
+
+<div class="path correct">
+<b>Correction Path</b><br>
+Thông tin user sửa được lưu vào Correction Log → Eval Dataset → cải thiện phiên bản tiếp theo.
+</div>
+
+</div>
+
+<div class="section">
+<h2>6. To-Be Flow</h2>
+
+<pre>
+User
+ ↓
+Nhập yêu cầu
+ ↓
+AI phân tích intent
+ ↓
+Confidence đủ cao?
+ ├─ Có → Hiển thị hóa đơn đúng → Thanh toán
+ └─ Không → Hỏi lại bằng chip xác nhận
+                ↓
+          User chọn intent
+                ↓
+          Hiển thị kết quả đúng
+
+Nếu user sửa:
+Correction Log
+      ↓
+Eval Dataset
+      ↓
+Model Improvement
+</pre>
+
+</div>
+
+<div class="section">
+<h2>7. SPEC Change</h2>
+
+<ul>
+<li>Thêm Clarification Flow khi intent không rõ ràng.</li>
+<li>Thêm Correction Chips dưới mỗi kết quả.</li>
+<li>Thêm cơ chế lưu Correction Log.</li>
+<li>Định nghĩa ngưỡng confidence để kích hoạt hỏi lại.</li>
+<li>Bổ sung chỉ số User Correction Rate.</li>
+</ul>
+
+</div>
+
+<div class="section">
+<h2>8. KPI Đề Xuất</h2>
+
+<ul>
+<li>Intent Accuracy > 95%</li>
+<li>User Correction Rate</li>
+<li>Chip Click Through Rate</li>
+<li>Average Resolution Turns</li>
+<li>Correction Log Coverage</li>
+</ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshop — Mổ App AI Thật: MoMo Moni</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: "default" });
+  </script>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #b0006d;
+      --primary-soft: #fde7f3;
+      --border: #e5e7eb;
+      --dark: #111827;
+      --success: #0f766e;
+      --warning: #b45309;
+      --danger: #b91c1c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #b0006d, #ec4899);
+      color: white;
+      padding: 42px;
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(176, 0, 109, 0.22);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 6px 0;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .meta-item {
+      background: rgba(255, 255, 255, 0.16);
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .meta-item strong {
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      opacity: 0.8;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      margin: 22px 0;
+      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.05);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 26px;
+      color: var(--dark);
+    }
+
+    h3 {
+      margin-top: 24px;
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .quote {
+      border-left: 5px solid var(--primary);
+      background: #fff7fb;
+      padding: 16px 18px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 16px 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #fbfbfd;
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 16px;
+    }
+
+    .card h4 {
+      margin: 0 0 10px;
+      color: var(--dark);
+    }
+
+    ul, ol { padding-left: 22px; }
+
+    code, pre {
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+    }
+
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 16px;
+      border-radius: 14px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .mermaid {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      margin-top: 14px;
+      overflow-x: auto;
+    }
+
+    .stuck {
+      border: 2px solid #f59e0b;
+      background: #fffbeb;
+      border-radius: 18px;
+      padding: 18px;
+      margin: 18px 0;
+    }
+
+    .decision {
+      border: 2px solid var(--success);
+      background: #ecfdf5;
+      border-radius: 18px;
+      padding: 20px;
+      margin: 18px 0;
+      font-weight: 600;
+    }
+
+    .danger {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 800px) {
+      .hero { padding: 28px; }
+      .hero h1 { font-size: 30px; }
+      .meta, .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: white; }
+      .page { max-width: none; padding: 0; }
+      .section, .hero { box-shadow: none; page-break-inside: avoid; }
+      .hero { color: white; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>Workshop — Mổ App AI Thật</h1>
+      <p><strong>Sản phẩm được chọn:</strong> MoMo — Moni</p>
+      <p><strong>Chủ đề:</strong> App → Flow → Path yếu → Sửa</p>
+      <div class="meta">
+        <div class="meta-item">
+          <strong>AI Feature</strong>
+          Trợ lý tài chính cá nhân
+        </div>
+        <div class="meta-item">
+          <strong>Output</strong>
+          Finding Note + As-Is / To-Be
+        </div>
+        <div class="meta-item">
+          <strong>Thời lượng</strong>
+          35–45 phút
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="badge">1. Product Promise</span>
+      <h2>MoMo Moni hứa giúp người dùng điều gì?</h2>
+      <p>Moni được định vị là trợ lý tài chính giúp người dùng hiểu tình hình chi tiêu, quản lý ngân sách và đưa ra gợi ý tiết kiệm.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Promise chính</h4>
+          <ul>
+            <li>Hiểu tình hình chi tiêu.</li>
+            <li>Quản lý ngân sách.</li>
+            <li>Đưa ra gợi ý tiết kiệm.</li>
+            <li>Hỗ trợ ra quyết định tài chính tốt hơn.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>User mục tiêu</h4>
+          <ul>
+            <li>Người đi làm có thu nhập cố định.</li>
+            <li>Người sử dụng MoMo thường xuyên.</li>
+            <li>Người muốn kiểm soát chi tiêu.</li>
+            <li>Người có mục tiêu tiết kiệm cá nhân.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="badge">2. Query phân tích</span>
+      <h2>Tình huống được chọn</h2>
+      <p>Tôi chọn một tình huống có rủi ro quyết định cao, vì đây không phải câu hỏi tra cứu dữ liệu mà là câu hỏi cần AI đưa ra recommendation.</p>
+      <div class="quote">“Nếu tôi muốn tiết kiệm thêm 2 triệu đồng mỗi tháng thì nên cắt khoản nào?”</div>
+      <h3>Lý do chọn query này</h3>
+      <ul>
+        <li>Cần AI phân tích dữ liệu giao dịch thật.</li>
+        <li>Cần hiểu mục tiêu tài chính của user.</li>
+        <li>Cần đưa ra đề xuất có thể hành động.</li>
+        <li>Nếu recommendation sai, user có thể đưa ra quyết định tài chính sai.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <span class="badge">3. Promise vs Reality</span>
+      <h2>Kỳ vọng và thực tế</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Kỳ vọng của user</h4>
+          <ol>
+            <li>Xem lịch sử giao dịch.</li>
+            <li>Xác định khoản chi lớn nhất.</li>
+            <li>Tìm khoản có thể tối ưu.</li>
+            <li>Giải thích lý do bằng dữ liệu.</li>
+            <li>Đề xuất kế hoạch tiết kiệm cụ thể.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h4>Quan sát thực tế</h4>
+          <p>Moni có xu hướng đưa ra các khuyến nghị chung:</p>
+          <pre>Hãy giảm ăn uống.
+Hãy giảm mua sắm.
+Hãy hạn chế chi tiêu không cần thiết.</pre>
+        </div>
+      </div>
+      <h3>Điểm gãy</h3>
+      <p>AI không chứng minh được vì sao chọn khoản đó, khoản đó chiếm bao nhiêu phần trăm ngân sách và đề xuất có thật sự khả thi hay không.</p>
+    </section>
+
+    <section class="section">
+      <span class="badge">4. User Stuck Point</span>
+      <h2>User bị kẹt ở đâu?</h2>
+      <div class="mermaid">
+flowchart TD
+    A[User muốn tiết kiệm 2 triệu/tháng]
+    --> B[Hỏi Moni nên cắt khoản nào]
+    --> C[Moni đưa lời khuyên chung]
+    --> D[User không biết nên cắt khoản nào thật]
+    --> E[User phải tự phân tích lại]
+      </div>
+      <div class="stuck">
+        <strong>Stuck Point:</strong> Moni đã trả lời, nhưng chưa giúp user ra quyết định. User vẫn phải tự quay lại phân tích dữ liệu chi tiêu của mình.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="badge">5. As-Is Flow</span>
+      <h2>Luồng hiện tại</h2>
+      <div class="mermaid">
+flowchart TD
+    A[User muốn tiết kiệm 2 triệu/tháng]
+    --> B[User hỏi Moni]
+    --> C[Moni đọc dữ liệu tổng quan]
+    --> D[Moni sinh khuyến nghị chung]
+    --> E[User tự đánh giá]
+    --> F[User tự quyết định]
+      </div>
+      <h3>Vấn đề trong As-Is Flow</h3>
+      <p>Moni bỏ qua bước <strong>Insight Generation</strong>. AI nhảy thẳng từ <strong>Data</strong> sang <strong>Recommendation</strong>.</p>
+      <pre>Data
+↓
+Recommendation</pre>
+    </section>
+
+    <section class="section">
+      <span class="badge">6. Root Cause</span>
+      <h2>Nguyên nhân gốc</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Root Cause</th>
+            <th>Mô tả</th>
+            <th>Tác động tới user</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Thiếu xác định spending driver</td>
+            <td>Moni chưa chỉ ra khoản chi nào tác động lớn nhất tới mục tiêu tiết kiệm.</td>
+            <td>User không biết nên cắt khoản nào trước.</td>
+          </tr>
+          <tr>
+            <td>Thiếu giải thích bằng dữ liệu</td>
+            <td>Recommendation không kèm lý do, phần trăm tăng, hoặc so sánh lịch sử.</td>
+            <td>User khó tin và khó hành động.</td>
+          </tr>
+          <tr>
+            <td>Thiếu clarification flow</td>
+            <td>Moni không hỏi thêm khi mục tiêu hoặc ràng buộc tài chính chưa rõ.</td>
+            <td>AI có nguy cơ đề xuất cắt khoản không phù hợp.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <span class="badge">7. To-Be Flow</span>
+      <h2>Luồng cải tiến</h2>
+      <div class="mermaid">
+flowchart TD
+    A[User muốn tiết kiệm 2 triệu/tháng]
+    --> B[User hỏi Moni]
+    B --> C[Moni kiểm tra dữ liệu]
+    C --> D[Moni hỏi thêm nếu thiếu thông tin]
+    D --> E[User xác nhận mục tiêu]
+    E --> F[Moni phân tích giao dịch]
+    F --> G[Moni xác định khoản tối ưu nhất]
+    G --> H[Moni giải thích bằng dữ liệu]
+    H --> I[Moni tạo kế hoạch tiết kiệm]
+    I --> J[User xác nhận]
+      </div>
+      <h3>Recovery UX cần có</h3>
+      <ul>
+        <li>Clarification: hỏi lại mục tiêu và khoản không thể cắt.</li>
+        <li>Source/Reason: giải thích recommendation bằng dữ liệu.</li>
+        <li>Action Button: “Tính lại”, “Sửa mục tiêu”, “Lưu kế hoạch”.</li>
+        <li>Correction Log: ghi nhớ preference của user cho lần sau.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <span class="badge">8. Product Finding</span>
+      <h2>Finding chính</h2>
+      <p>Khi người dùng yêu cầu tư vấn tiết kiệm tiền, Moni thường đưa ra khuyến nghị tổng quát thay vì recommendation dựa trên dữ liệu giao dịch thực tế.</p>
+      <p>Điều này khiến người dùng vẫn phải tự phân tích và tự ra quyết định.</p>
+      <h3>Lỗi thuộc layer</h3>
+      <ul>
+        <li>Intent Understanding</li>
+        <li>Insight Generation</li>
+        <li>Recommendation UX</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <span class="badge">9. Product Decision</span>
+      <h2>Quyết định sản phẩm</h2>
+      <div class="decision">
+        Moni sẽ không đưa ra recommendation tiết kiệm khi chưa xác định được khoản chi có tác động lớn nhất tới mục tiêu tài chính của người dùng.
+      </div>
+      <p>Trước khi đưa ra recommendation, Moni phải:</p>
+      <ol>
+        <li>Phân tích cơ cấu chi tiêu.</li>
+        <li>Xác định khoản chi có khả năng tối ưu cao nhất.</li>
+        <li>Giải thích bằng dữ liệu.</li>
+        <li>Chuyển recommendation thành kế hoạch hành động cụ thể.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <span class="badge">10. SPEC Change</span>
+      <h2>Thay đổi SPEC đề xuất</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Requirement</th>
+            <th>Nội dung</th>
+            <th>Ví dụ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Top Spending Drivers</td>
+            <td>Moni must identify top spending drivers before generating saving recommendations.</td>
+            <td>Chỉ ra danh mục chi tiêu tăng mạnh nhất.</td>
+          </tr>
+          <tr>
+            <td>Data-based Justification</td>
+            <td>Every recommendation must include data-based justification.</td>
+            <td>“Mua sắm tăng 42% so với trung bình 3 tháng gần nhất.”</td>
+          </tr>
+          <tr>
+            <td>Clarification Flow</td>
+            <td>Moni must support clarification flow when user goals are unclear.</td>
+            <td>Hỏi user muốn tiết kiệm để du lịch, quỹ khẩn cấp hay mục tiêu khác.</td>
+          </tr>
+          <tr>
+            <td>Correction Log</td>
+            <td>Moni should remember user constraints and preferences.</td>
+            <td>Không đề xuất cắt tiền thuê nhà, học phí, trả góp nếu user đã đánh dấu là khoản cố định.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <span class="badge">11. Kết luận</span>
+      <h2>Từ bug rời rạc thành Product Decision</h2>
+      <p>Điểm gãy lớn nhất của Moni không phải là sai dữ liệu.</p>
+      <p>Điểm gãy nằm ở việc:</p>
+      <pre>AI trả lời đúng dữ liệu
+nhưng chưa giúp người dùng ra quyết định.</pre>
+      <p>Vì vậy, Product cần chuyển Moni từ:</p>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Hiện tại</h4>
+          <p class="danger">Expense Reporter</p>
+        </div>
+        <div class="card">
+          <h4>Mục tiêu cải tiến</h4>
+          <p><strong>Financial Insight Assistant</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer">Workshop UX/Product — MoMo Moni Analysis</p>
+  </main>
+</body>
+</html>
